@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -103,10 +103,33 @@ attempts were rejected when Skyrim owned foreground or exposed only its
 minimized title bar. The accepted harness asks Skyrim to minimize itself, waits
 for Windows to transfer focus naturally and uses only no-activate/bottom window
 operations with DPI-correct sizing. The run had
-zero SKSE error markers. Save rollback, full process recovery, actor scale and
-regional suppression remain S4-S6.
+zero SKSE error markers. Actor scale and regional suppression remain S5-S6.
 
 Evidence: [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md).
+
+SKYRIM-004 closes the recovery gate. The plug-in now reports a distinct runtime
+session for each game process and advances a load epoch after every successful
+load. SKSE lifecycle messages expose pre-load, post-load and save boundaries;
+test-gated native named save/load uses Skyrim's existing save manager. Fork
+authority and terminal receipts remain outside Skyrim saves.
+
+In `recovery-live-05`, one named checkpoint and the original older Whiterun save
+were loaded in process, then the older save was loaded again through a second
+game process. The checkpoint restored the saved `02:00` clock; the older save
+restored its independently observed `20.712118` baseline. Two old terminal
+commands returned idempotent receipts without changing the rolled-back clock or
+Lydia. New commands bound to authority revision, runtime session and load epoch
+restored `02:00` plus Lydia's drawn weapon after rollback and restart.
+
+Five independent worker processes proved a 1,500 ms outage and same-context
+restart. The 41,554 ms run returned 27 applied terminals and six idempotent
+duplicates with zero SKSE error markers. An independently fresh owned Fork
+server restart retained the sampled transport, routine, population, perception,
+memory, goal, journal, presentation and identity state without duplication.
+SKSE co-save serialization remains available for Skyrim-local plug-in state,
+but it is deliberately not the authority because it rolls back with the save.
+
+Evidence: [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md).
 
 ## Native capability catalogue
 

@@ -1,5 +1,16 @@
 # Wiki Log
 
+## [2026-08-10] ingest | SKYRIM-004 recovery @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+  and [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-recovery-proof.md`
+- Proven: native named save/load, genuine older-save rollback, immutable old
+  terminals, revision/session/load-epoch reconciliation, worker outage/restart,
+  two game processes and fresh owned Fork restart with zero live SKSE errors.
+- Boundary: 20 embodied plus 200 abstract actor scale and reversible target
+  region suppression remain SKYRIM-005 and SKYRIM-006.
+
 ## [2026-08-10] ingest | SKYRIM-003 embodied day @ working tree
 
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)

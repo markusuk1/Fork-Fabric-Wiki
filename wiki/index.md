@@ -64,7 +64,7 @@ community ecosystem and Fork integration boundaries.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, pinned extension stack, durable humanoid bridge and an observed three-actor embodied day with interruption/recovery and background visual proof. | 2026-08-10 |
+| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, pinned extension stack, durable humanoid bridge, observed embodied day and save/rollback/process recovery with context-bound repair. | 2026-08-10 |
 
 ## workflow
 
