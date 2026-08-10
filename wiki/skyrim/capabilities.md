@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -131,6 +131,25 @@ but it is deliberately not the authority because it rolls back with the save.
 
 Evidence: [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md).
 
+SKYRIM-005 closes the bounded scale gate without conflating loaded physical
+actors with unloaded semantic actors. A test-gated read-only CommonLib sample
+uses `ProcessLists::ForEachHighActor` and Skyrim's own animation-frame timer;
+it does not spawn or move actors. At native schedule hour 16, 100 samples over
+35.459 seconds held 29-33 living, 3D-loaded playable-race NPCs and at least 29
+valid native packages. Twenty-two actors changed cell, position, package or
+furniture/sit-sleep state through native execution.
+
+Engine frame p95/p99 was 16.667/16.667 ms. High-actor scan p95 was 68 us and
+durable receipt p95 was 117.767 ms, with zero SKSE error markers. Separately,
+an isolated owned Fork database advanced exactly 200 non-embodied canonical
+population members through 60 transactional clock ticks and 12,000 immutable
+transitions at 5.916 ms p95 and 10.068 ms maximum. Exact replay, divergent
+identity, stale time and an unchanged whole-database fingerprint after server
+restart passed. This qualifies the loaded/off-screen ownership split on the
+observed machine; it is not a claim that 220 actors were rendered at once.
+
+Evidence: [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md).
+
 ## Native capability catalogue
 
 | Area | Native capability | Project use |
@@ -196,7 +215,8 @@ embedding work on Skyrim's game thread.
 - Papyrus and save files are not substitutes for Fork's durable ledger.
 - Native packages do not create believable goals, beliefs, memory or economics.
 - Unloaded actors and cross-world events still need abstraction and careful
-  reconciliation; community mods often simulate or teleport around failures.
+  reconciliation. The Fork off-screen clock now proves a 200-actor
+  transactional baseline, but Skyrim still does not provide unloaded physics.
 - Runtime updates can break SKSE native plugins.
 - The engine is proprietary and cannot be fixed or instrumented like OpenMW.
 - Vanilla quests/aliases/scenes have hidden dependencies; a clean world requires

@@ -1,9 +1,9 @@
 # Household Occupancy and Unloaded Actors
 
-> Sources: POP-002 prior-art research, foundation evidence and exact lifecycle/reconciliation evidence, 2026-08-09
-> Raw: [Research](../../raw/architecture/2026-08-09-pop-002-household-occupancy-unloaded-actor-research.md), [Foundation Evidence](../../raw/architecture/2026-08-09-pop-002-household-runtime-evidence.md), [Exact Lifecycle Evidence](../../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md)
+> Sources: POP-002 prior-art research, foundation evidence, exact lifecycle/reconciliation evidence and SKYRIM-005 scale evidence, 2026-08-09 to 2026-08-10
+> Raw: [Research](../../raw/architecture/2026-08-09-pop-002-household-occupancy-unloaded-actor-research.md), [Foundation Evidence](../../raw/architecture/2026-08-09-pop-002-household-runtime-evidence.md), [Exact Lifecycle Evidence](../../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md), [SKYRIM-005 Scale Evidence](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md)
 > Commit: c0cea44
-> Updated: 2026-08-09
+> Updated: 2026-08-10
 
 ## Released population model
 
@@ -40,6 +40,23 @@ The final accelerated day recorded 25 clock observations/arrivals, eight
 activity kinds, four exact inactive reconciliation commands/receipts, ten
 unique embodiments, 1.85 average CPU cores and no engine/Lua errors. This is
 bounded schedule materialization, not full unloaded physics or navigation.
+
+## Transactional off-screen scale
+
+SKYRIM-005 extends the same canonical population tables with
+`offscreen_population_clock`, immutable `offscreen_population_tick` rows and
+one `advance_offscreen_population_clock` reducer. A tick validates world,
+expected revision, strictly advancing game time, target-place ownership and
+capacity before updating any actor. SpacetimeDB transaction semantics ensure
+that either every selected non-embodied member advances or none do.
+
+The isolated qualification seeded 200 real profiles and matching non-embodied
+members. Sixty ticks advanced all 200 presences and occupancy reservations,
+producing 12,000 transitions at 5.916 ms p95 and 10.068 ms maximum. Exact
+replay was inert, divergent tick identity and stale time rejected, and the
+whole public-table fingerprint was unchanged after an owned server restart.
+This reducer is qualified in current module source; it has not been deployed
+into the retained OpenMW production database during the Skyrim programme.
 
 ## Persistence and recovery
 

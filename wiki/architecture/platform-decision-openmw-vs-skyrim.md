@@ -1,7 +1,7 @@
 # OpenMW versus Skyrim Platform Decision
 
 > Sources: PLATFORM-001 research plus delivered GAME-OPENMW completion evidence, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKYRIM-002 live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [SKYRIM-003 embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [SKYRIM-004 recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKYRIM-002 live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [SKYRIM-003 embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [SKYRIM-004 recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [SKYRIM-005 scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -119,7 +119,7 @@ one-shot deletion of interconnected records.
 | S2 Fork bridge | Identity/time/package/equipment observation plus one receipt-bound command | **Pass:** Lydia shared the player cell; draw/restore, replay/conflict/expiry/target rejection and post-restart no-duplicate-effect receipts pass with zero SKSE errors |
 | S3 Embodied day | Three NPCs cover home/sleep, work/trade, patrol and social packages across cells | **Pass:** exact authored records, seven live cells, >1,100 comparable same-cell units per actor, furniture/sit-sleep state, native interruption/recovery, invalid-destination retention and guarded UWQHD capture pass with zero routine-actor teleports |
 | S4 Recovery | Save/load, older-save rollback and all process restarts | **Pass:** named save/load, genuine older-save rollback, immutable old terminals, context-bound repair, worker outage/restart, two game processes and fresh owned Fork restart pass with zero SKSE errors |
-| S5 Scale | 20 embodied + 200 abstract actors | 5,000-command transport passes; embodied and abstract actor budgets remain |
+| S5 Scale | 20 embodied + 200 abstract actors | **Pass:** 100 samples held 29-33 loaded humanoids with at least 29 native packages and 22 progressing actors at 16.667 ms frame p95/p99; separately, 200 Fork actors completed 60 atomic ticks/12,000 updates at 5.916 ms p95 with replay, stale/divergent and restart-fingerprint safety |
 | S6 Suppression | Reversible clean target region and system allowlist | No vanilla actor/quest leakage and no lost engine machinery |
 
 If S2, S3 or S4 fails after bounded remediation, retain OpenMW and implement the

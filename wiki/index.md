@@ -12,13 +12,13 @@ boundaries.
 | Article | Summary | Updated |
 |---|---|---|
 | [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md) | Side-by-side ownership matrix showing what each platform supplies, what their combination delivers, and its integrated QA maturity. | 2026-08-10 |
-| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Weighted platform comparison, conditional Skyrim pivot, first living-village contract, authority boundary, world-suppression strategy and S1-S3 validation results. | 2026-08-10 |
+| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Weighted platform comparison, conditional Skyrim pivot, first living-village contract, authority boundary, world-suppression strategy and S1-S5 validation results. | 2026-08-10 |
 | [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md) | Companion and conditional native-bridge topology, contracts, failure behaviour, staged delivery, and reliable protocol-6 lifecycle. | 2026-08-10 |
 | [Reliable OpenMW/Fork Bridge Protocol](architecture/reliable-bridge-protocol.md) | Protocol-6 identity, ordering, applied/obsolete/dead-letter terminals, atomic projection, acknowledgement, bounds and restart behavior. | 2026-08-10 |
 | [Player Identity and Save Lineage](architecture/player-identity-and-save-lineage.md) | Released native five-screen creation, opaque project identity/lineage, ACK gating, save/load/restart proof, and promoted automatic desktop resume. | 2026-08-09 |
 | [Unified NPC Profile and State](architecture/unified-npc-profile-and-state.md) | Canonical eleven-person profiles, revisioned needs/affect, economy projection, exact upgrades and fail-closed companion sync. | 2026-08-09 |
 | [Daily NPC Routines and Terminal Repair](architecture/daily-routines-and-terminal-repair.md) | Game-time schedules, exclusive stations, need evolution, physical receipts, interruption/resumption, bounded repair and persistence. | 2026-08-10 |
-| [Household Occupancy and Unloaded Actors](architecture/household-occupancy-and-unloaded-actors.md) | Canonical homes/workplaces/capacities, separate desired/observed state, exact inactive-object reconciliation, persistence/recovery and day/night evidence. | 2026-08-09 |
+| [Household Occupancy and Unloaded Actors](architecture/household-occupancy-and-unloaded-actors.md) | Canonical homes/workplaces/capacities, desired/observed state, inactive-object reconciliation and a restart-safe 200-actor transactional off-screen clock. | 2026-08-10 |
 | [Normalized Physical and Social Perception](architecture/normalized-perception-and-attention.md) | Observer-specific attack, death, native-crime, stance and speech evidence with attention, provenance, rejection, replay and recovery. | 2026-08-10 |
 | [Epistemic Memory and Bounded Recall](architecture/epistemic-memory-and-bounded-recall.md) | Immutable native-backed episodes, typed claim revision, evidence graph relations, non-destructive maintenance and temporal budgeted recall with abstention. | 2026-08-10 |
 | [Explainable Goal and Intention Arbitration](architecture/explainable-goal-and-intention-arbitration.md) | Five audited goals, commitment hysteresis, revision-bound dispatch, allow-listed OpenMW actuation and physical receipt closure. | 2026-08-09 |
@@ -45,7 +45,7 @@ Released and planned capabilities of the forked SpacetimeDB platform.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Fork Capability Baseline](fork/capabilities.md) | Build-36 transactional, memory, graph, causal, context, work, perception, web, and operational capabilities with shipped/configured boundaries. | 2026-08-09 |
+| [Fork Capability Baseline](fork/capabilities.md) | Build-36 transactional, memory, graph, causal, context, work, perception, web and operational capabilities plus the qualified 200-actor off-screen module boundary. | 2026-08-10 |
 
 ## openmw
 
@@ -64,7 +64,7 @@ community ecosystem and Fork integration boundaries.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, pinned extension stack, durable humanoid bridge, observed embodied day and save/rollback/process recovery with context-bound repair. | 2026-08-10 |
+| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, durable humanoid bridge, embodied day, rollback/process recovery and measured 29-33 loaded actor scale beside 200 Fork actors. | 2026-08-10 |
 
 ## workflow
 

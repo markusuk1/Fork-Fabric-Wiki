@@ -1,9 +1,9 @@
 # Fork Capability Baseline
 
-> Sources: Fork build-36 release state, complete manual, source tree, maintained Fork wiki and LLM-002 runtime evidence, inspected 2026-08-09
-> Raw: [Fork Build 36 Capability Inventory](../../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md)
+> Sources: Fork build-36 release state, complete manual, source tree, maintained Fork wiki, LLM-002 runtime evidence and SKYRIM-005 scale evidence, inspected 2026-08-09 to 2026-08-10
+> Raw: [Fork Build 36 Capability Inventory](../../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [SKYRIM-005 Scale Evidence](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md)
 > Commit: 4cdd46b
-> Updated: 2026-08-09
+> Updated: 2026-08-10
 
 ## Overview
 
@@ -80,6 +80,15 @@ Fabric owns claim, retry, expiry, completion and dead-letter state; external
 workers return digest-checked audio; and exact OpenMW receipts close playback.
 Stale workers, companion restart and actual Fork restart cannot duplicate or
 lose ownership. Providers and audio decoding remain external to Fork.
+
+SKYRIM-005 exercises unloaded population progression rather than transport
+alone. The current game module advances canonical non-embodied population
+presence and occupancy in one serial reducer with an expected world revision,
+strictly increasing game time, immutable tick identity and state digest. An
+isolated 200-actor/60-tick run produced 12,000 updates at 5.916 ms p95 and
+retained an identical full-database fingerprint across an owned server restart.
+This is current module capability, not a claim that the retained OpenMW
+production database has already been upgraded to the new schema.
 
 ## Performance and safety boundaries
 

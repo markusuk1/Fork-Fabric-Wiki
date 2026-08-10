@@ -1,5 +1,21 @@
 # Wiki Log
 
+## [2026-08-10] ingest | SKYRIM-005 loaded/off-screen scale @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md),
+  [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md),
+  [Household Occupancy and Unloaded Actors](architecture/household-occupancy-and-unloaded-actors.md)
+  and [Fork Capability Baseline](fork/capabilities.md).
+- Raw: `raw/skyrim/2026-08-10-skyrim-scale-prior-art.md` and
+  `raw/skyrim/2026-08-10-skyrim-scale-proof.md`.
+- Proven: 29-33 simultaneous loaded humanoids, at least 29 native packages,
+  22 progressing actors and 16.667 ms frame p95/p99 across 100 samples;
+  separately, 200 Fork actors, 60 atomic ticks and 12,000 updates at 5.916 ms
+  p95 with replay, stale/divergent and restart-fingerprint safety.
+- Boundary: the counts are intentionally separate, current module scale is not
+  an OpenMW production-schema upgrade, and reversible regional suppression
+  remains SKYRIM-006.
+
 ## [2026-08-10] ingest | SKYRIM-004 recovery @ working tree
 
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
