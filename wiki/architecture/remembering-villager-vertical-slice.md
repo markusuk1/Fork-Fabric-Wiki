@@ -1,8 +1,8 @@
 # Remembering Villager Vertical Slice
 
 > Sources: BRIDGE-001 prior-art and implementation evidence, plus BRIDGE-002 greeting correction, 2026-08-07
-> Raw: BRIDGE-001 Combine Decision, BRIDGE-001 Implementation Evidence, Greeting Fault Diagnosis, Greeting Runtime Verification
-> Commit: unknown
+> Raw: [BRIDGE-001 Combine Decision](../../raw/architecture/2026-08-07-bridge-001-one-remembering-villager.md), [BRIDGE-001 Implementation Evidence](../../raw/architecture/2026-08-07-bridge-001-implementation-evidence.md), [Greeting Fault Diagnosis](../../raw/openmw/2026-08-07-bridge-002-greeting-fault-diagnosis.md), [Greeting Runtime Verification](../../raw/openmw/2026-08-07-bridge-002-greeting-runtime-verification.md)
+> Commit: c0cea44
 > Updated: 2026-08-08
 
 ## Delivered capability
@@ -108,10 +108,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\test-village-runtime
 The check must see exactly one Ralen creation and zero missing-Hello,
 engine/fatal, or Lua errors after the normal greeting delay.
 
-## Next slice
+## Subsequent delivered evolution
 
 `NPC-001` delivered the next deterministic intention proof with three witness
 profiles, native Travel execution, destination receipts and explicit social
-knowledge transfer. See [Profile-Driven NPC Cognition and Social
-Knowledge](profile-driven-npc-cognition.md). LLM work still waits for a typed
-cognition lease, broader routine lifecycle and versioned reconnect hardening.
+knowledge transfer. The originally deferred typed cognition leases, broader
+routine lifecycle and versioned reconnect hardening were subsequently delivered
+by LLM-001/002, ROUTINE-001 and BRIDGE-003. See [Profile-Driven NPC Cognition and
+Social Knowledge](profile-driven-npc-cognition.md), [Bounded Key-NPC Cognition
+Leases](bounded-key-npc-cognition-leases.md), [Daily NPC Routines and Terminal
+Repair](daily-routines-and-terminal-repair.md) and [Reliable OpenMW/Fork Bridge
+Protocol](reliable-bridge-protocol.md).

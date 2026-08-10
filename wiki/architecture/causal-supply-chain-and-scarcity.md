@@ -1,7 +1,7 @@
 # Causal Supply Chain and Scarcity
 
 > Sources: ECONOMY-001 research and implementation evidence, 2026-08-09
-> Raw: Prior-art research, Implementation evidence
+> Raw: [Prior-art research](../../raw/architecture/2026-08-09-economy-001-supply-chain-research.md), [Implementation evidence](../../raw/architecture/2026-08-09-economy-001-causal-supply-chain-evidence.md)
 > Commit: unknown
 > Updated: 2026-08-09
 
@@ -75,6 +75,6 @@ dead-letter counts were zero.
 ## See Also
 
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Reliable OpenMW/Fork Bridge Protocol](reliable-bridge-protocol.md)
 - [Living Village, Commerce, Conversation and Voice](living-village-commerce-dialogue-voice.md)

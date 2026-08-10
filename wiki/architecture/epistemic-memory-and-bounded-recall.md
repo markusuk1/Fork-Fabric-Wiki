@@ -1,9 +1,9 @@
 # Epistemic Memory and Bounded Recall
 
-> Sources: MEMORY-001 prior-art research and implementation/runtime evidence, 2026-08-09
-> Raw: Prior-art research, Implementation evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Sources: MEMORY-001 prior-art research and implementation/runtime evidence plus AUDIT-001 closure reconciliation, 2026-08-09 to 2026-08-10
+> Raw: [Prior-art research](../../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-research.md), [Implementation evidence](../../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-evidence.md), [Programme Closure Audit](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Contract
 
@@ -85,13 +85,14 @@ episodes/native cells and 44 rejected results created none. Standalone Fork
 restart, OpenMW save/load, companion outage/replay, visible interaction and the
 embodied witness loop pass with zero engine/Lua errors.
 
-## Boundary and next dependency
+## Boundary and delivered consumers
 
-MEMORY-001 does not yet select goals or intentions. `DECIDE-001` must consume
+MEMORY-001 does not itself select goals or intentions. DECIDE-001 now consumes
 profiles, dynamic state, routine context, current perception and bounded recall
 to arbitrate competing goals with revision-bound, stale-safe explanations.
-Social propagation, player journal topics and LLM cognition remain separate
-later tasks and cannot claim delivery merely because memory storage exists.
+SOCIAL-001, JOURNAL-002 and LLM-001 now consume the same provenance-bearing
+boundary for embodied propagation, player topics and bounded cognition. Their
+separate completion evidence—not memory storage alone—supports those claims.
 
 ## See Also
 
@@ -99,5 +100,5 @@ later tasks and cannot claim delivery merely because memory storage exists.
 - [Unified NPC Profile and State](unified-npc-profile-and-state.md)
 - [Daily NPC Routines and Terminal Repair](daily-routines-and-terminal-repair.md)
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Production Living-World Gap-Closure Programme](system-gap-closure-programme.md)

@@ -1,10 +1,222 @@
 # Wiki Log
 
+## [2026-08-10] correction | Current production wording and publication mirror @ working tree
+
+- Updated: routine, population, journal, reputation, profile cognition, player
+  identity, remembering-villager, capability-matrix and continuity articles.
+- Source: WIKI-002 staleness/publication reconciliation.
+- Correction: v9/v11/v57/v64/v178/v183 are retained as exact historical task
+  qualification revisions, not current playable targets. Consolidated
+  production is v203, and the originally deferred routine, reliable bridge and
+  bounded LLM consumers are delivered.
+- Workflow: the local `wiki/` plus linked `raw/` sources remain authoritative;
+  `markusuk1/Fork-Fabric-Wiki` mirrors the maintained wiki while internal raw
+  evidence remains local.
+
+## [2026-08-10] completion | DIALOGUE-002 natural deterministic speech @ working tree
+
+- Updated: [Profile-Derived Natural Speech](architecture/profile-derived-natural-speech.md), [Reliable Bridge Protocol](architecture/reliable-bridge-protocol.md), [Display and Interface Scaling](openmw/display-and-interface.md), [Provider-Neutral Spatial Speech](architecture/provider-neutral-spatial-speech.md), [Capability Matrix](architecture/capability-matrix.md), [Production Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Programme Closure Reconciliation](architecture/programme-closure-reconciliation.md), and [Wiki Index](index.md)
+- Source: [Final Qualification](../raw/architecture/2026-08-10-dialogue-002-final-qualification-evidence.md)
+- Result: production v203 has eleven distinct deterministic speech identities,
+  strict diagnostic/stage-direction boundaries, audited obsolete restored-save
+  presentation, bounded atomic VFS replacement retry, exact 3440x1440/1.50 WGC
+  evidence and a matching 6,467 ms Piper WAV. Final save/load/restart checks
+  have zero engine, Lua and dead-letter errors.
+
+## [2026-08-10] completion | AUDIT-001 programme closure reconciliation @ working tree
+
+- Added: [Programme Closure Reconciliation](architecture/programme-closure-reconciliation.md)
+- Updated: [Capability Matrix](architecture/capability-matrix.md), [Production Living-World Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Daily NPC Routines](architecture/daily-routines-and-terminal-repair.md), [Epistemic Memory](architecture/epistemic-memory-and-bounded-recall.md), [Profile-Driven Cognition](architecture/profile-driven-npc-cognition.md), [Persistent Conversation](architecture/persistent-contextual-conversation-state.md), [Bounded Cognition Leases](architecture/bounded-key-npc-cognition-leases.md), [Proactive Cognition](architecture/proactive-observation-range-cognition.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Integration Architecture](architecture/integration-architecture.md), and [Wiki Index](index.md)
+- Source: [AUDIT-001 Evidence](../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+- Result: every accepted PROGRAM-001 task is Done; DIALOGUE-002 remains the
+  sole owner-observation blocker. Platform boundaries, unaccepted expansions,
+  configured-provider evidence and separate programmes are now explicit, and
+  maintained implementation source contains no unowned completion marker.
+
+## [2026-08-10] completion | QA-001 integrated living-village qualification @ working tree
+
+- Added: [Integrated Living-Village Qualification](architecture/integrated-living-village-qualification.md)
+- Updated: [Production Living-World Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Capability Matrix](architecture/capability-matrix.md), and [Wiki Index](index.md)
+- Source: [QA-001 Evidence](../raw/architecture/2026-08-10-qa-001-integrated-living-village-evidence.md)
+- Evidence: 10/10 gates in 332.1 seconds; real 24-hour day and cell round-trip,
+  120-second resource soak, save/load, outage recovery and spatial voice pass;
+  production v202's 113-table digest and owned directory/process sets remain
+  unchanged.
+
+## [2026-08-10] completion | TEST-001 owned Fork regression isolation @ working tree
+
+- Updated: [Owned Fork Regression Isolation](workflow/owned-fork-regression-isolation.md) and [Wiki Index](index.md)
+- Source: [TEST-001 Evidence](../raw/architecture/2026-08-10-test-001-owned-regression-isolation-evidence.md)
+- Released: 52 stateful tests own current-module random-port runtimes; 12
+  Fork-independent and one production-only case are explicit; zero unsafe
+  historical/shared unattended defaults remain.
+- Evidence: 12/12 representative cases passed in 236.7 seconds. All 113 public
+  production v202 tables retained the same SHA-256 digest; owned directory and
+  standalone process sets were unchanged; real OpenMW cases ended with zero
+  engine/Lua/dead-letter errors.
+
+## [2026-08-09] correction | DIALOGUE-002 owner audio rejection and final voice boundary @ working tree
+
+- Updated: [Profile-Derived Natural Deterministic Speech](architecture/profile-derived-natural-speech.md), [Provider-Neutral Spatial NPC Speech](architecture/provider-neutral-spatial-speech.md), [Capability Matrix](architecture/capability-matrix.md), and [Wiki Index](index.md)
+- Source: [Owner Audio Rejection and Final Voice Boundary](../raw/architecture/2026-08-09-dialogue-002-owner-audio-rejection-and-voice-boundary.md)
+- Correction: the owner heard the obsolete `0/1000` scale, disproving the
+  narrower v201 acceptance claim. v202 now rejects unsafe speech at the common
+  Fork queue, activation and stale-state sweep, the synthesis worker, and
+  OpenMW projection/save recovery.
+- Evidence: focused and isolated natural-speech suites pass; Delantris v202
+  production auto-resume passes; an isolated clean exact-subtitle Piper WAV was
+  retained. WGC still fails with `0x80070424`, so owner reinspection remains.
+
+## [2026-08-09] ingest | TEST-001 owned Fork regression isolation @ working tree
+
+- Added: [Owned Fork Regression Isolation](workflow/owned-fork-regression-isolation.md)
+- Source: [TEST-001 Research](../raw/architecture/2026-08-09-test-001-regression-isolation-research.md)
+- Decision: **Adapt** the existing token-owned process/data helper with safe
+  restart and leaf-test context semantics; do not reset production, retain
+  historical defaults or add a new container/test dependency.
+- Inventory: 47 scripts referenced historical databases/shared port 3012;
+  seven already owned a runtime, one separate orchestrator covered eight
+  current-module boundaries, and forty candidates require migration or an
+  explicit production-only classification.
+
+## [2026-08-09] correction | DIALOGUE-002 WGC acceptance boundary @ working tree
+
+- Updated: [Profile-Derived Natural Deterministic Speech](architecture/profile-derived-natural-speech.md), [OpenMW Display and Interface Scaling](openmw/display-and-interface.md), [Capability Matrix](architecture/capability-matrix.md), and [Wiki Index](index.md)
+- Source: [WGC Acceptance Correction](../raw/architecture/2026-08-09-dialogue-002-wgc-acceptance-correction.md)
+- Correction: the F12 renderer candidate is diagnostic rather than accepted
+  visual evidence and was deleted. The dialogue harness now requires WGC and
+  can request the exact 3440x1440/1.50 proof profile.
+- Observed blocker: Windows fails at the WGC support query with `0x80070424`;
+  the protected per-user capture service cannot be started. The shortcut,
+  manifest and profile are correct, but owner observation remains required.
+
+## [2026-08-09] correction | DIALOGUE-002 spoken diagnostics and UI projection @ working tree
+
+- Updated: [Profile-Derived Natural Deterministic Speech](architecture/profile-derived-natural-speech.md) and [Wiki Index](index.md)
+- Source: [Spoken Diagnostic Leak Correction](../raw/architecture/2026-08-09-dialogue-002-spoken-diagnostic-leak-correction.md)
+- Correction: normalized scarcity and other diagnostic values remain exact
+  transcript fields but can no longer enter deterministic or accepted model
+  speech. OpenMW now receives Arelion's real profile-derived style and keeps
+  hashes, revisions, scores and variant identifiers out of the player panel.
+- Evidence: forced `0/1000` state speaks "extremely scarce"; process-scoped
+  background capture shows a clean live response; v201 production auto-resume
+  remains stable without engine/Lua errors.
+
+## [2026-08-09] update | DIALOGUE-002 natural deterministic speech @ working tree
+
+- Added: [Profile-Derived Natural Deterministic Speech](architecture/profile-derived-natural-speech.md)
+- Updated: [Persistent Conversation State](architecture/persistent-contextual-conversation-state.md), [Provider-Neutral Speech](architecture/provider-neutral-spatial-speech.md), [Integration Architecture](architecture/integration-architecture.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Capability Matrix](architecture/capability-matrix.md), and [Wiki Index](index.md)
+- Sources: [Research](../raw/architecture/2026-08-09-dialogue-002-natural-deterministic-speech-research.md) and [Qualification Evidence](../raw/architecture/2026-08-09-dialogue-002-natural-deterministic-speech-evidence.md)
+- Result: 11 profile-derived style/reply identities, clean spoken text, stable
+  variants, LLM stage-direction rejection, cache/timeout/restart proof and real
+  OpenMW active-dialogue save/load pass on the v199 production build.
+- Open item: owner-visible UWQHD inspection remains required because Windows
+  background capture returned `0x80070424`; no foreground fallback was used.
+
+## [2026-08-09] release | POP-002 exact household and inactive-actor lifecycle @ working tree
+
+- Updated: [Household Occupancy and Unloaded Actors](architecture/household-occupancy-and-unloaded-actors.md), [Daily Routines](architecture/daily-routines-and-terminal-repair.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Display and Interface](openmw/display-and-interface.md), and [Wiki Index](index.md)
+- Source: [Exact Lifecycle Evidence](../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md)
+- Result: v183 separates desired presence from exact observed embodiment,
+  reconciles only inactive lineage/revision-bound objects, survives save/load,
+  Fork restart and companion crash/reconnect, and finishes with zero pending
+  work, dead letters or runtime errors.
+- Visual/display: inspected work/home renderer previews were produced without
+  foreground activation. Capture configuration is isolated from the playable
+  3440x1440/1.50 explorer profile.
+- Correction: disposable command projections now reset before launch, so a
+  reused data directory cannot execute intentions from an earlier database.
+
+## [2026-08-09] update | POP-002 household and inactive-actor foundation @ working tree
+
+- Added: [Household Occupancy and Unloaded Actors](architecture/household-occupancy-and-unloaded-actors.md)
+- Updated: [Daily Routines](architecture/daily-routines-and-terminal-repair.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Wiki Index](index.md)
+- Sources: [POP-002 Research](../raw/architecture/2026-08-09-pop-002-household-occupancy-unloaded-actor-research.md) and [POP-002 Runtime Evidence](../raw/architecture/2026-08-09-pop-002-household-runtime-evidence.md)
+- Result: schema-2 places/members/capacities and Fork presence authority pass
+  isolated proofs; an accelerated OpenMW day safely materialized eight inactive
+  actors, deferred twelve visible cross-cell moves and logged zero errors.
+- Boundary: manual work/home inspection and exact lifecycle/restart/outage
+  reconciliation remain open, so POP-002 stays In Progress.
+
+## [2026-08-09] release | Native player identity and promoted desktop resume @ working tree
+
+- Updated: [Player Identity and Save Lineage](architecture/player-identity-and-save-lineage.md), [Reliable Bridge Protocol](architecture/reliable-bridge-protocol.md), [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Wiki Index](index.md)
+- Sources: [Native Character and Production Evidence](../raw/architecture/2026-08-09-player-001-native-character-production-evidence.md), [Large-Epoch ACK Correction](../raw/architecture/2026-08-09-player-001-large-epoch-ack-research.md), and [Atomic Status Stability](../raw/architecture/2026-08-09-player-001-atomic-status-read-stability-research.md)
+- Result: the user-created Delantris identity and lineage survive native
+  save/load, OpenMW/companion restart and real Fork restart. Eight
+  current-schema subsystem regressions pass in isolated servers.
+- Production: v178 is the launcher default; the generated promoted manifest
+  auto-resumes the newest exact save through the ordinary desktop path, while
+  `-NewCharacter` is the explicit bypass. Final launch loaded all three masters,
+  remained focus-safe and reported zero engine/Lua errors.
+- Corrections: ACK schema 2 string-projects int64 epochs for OpenMW markup;
+  post-load readiness requires a fresh ACK; focus guards test OpenMW ownership,
+  not unrelated app changes; a one-second validated-status grace absorbs atomic
+  replacement gaps without masking persistent or authoritative offline state.
+
+## [2026-08-09] correction | Fork-authoritative social save rollback @ working tree
+
+- Updated: [Embodied Social Information Flow](architecture/embodied-social-information-flow.md), [Integration Architecture](architecture/integration-architecture.md), and [Capability Matrix](architecture/capability-matrix.md)
+- Source: [SOCIAL-001 Save Rollback Correction](../raw/architecture/2026-08-09-social-001-save-load-rollback-correction.md)
+- Correction: an older OpenMW save can predate a later Fork commit, so restored
+  social movement must not blindly re-emit the same delivery or journal identity
+  with newly measured physical evidence.
+- Decision: combine saved OpenMW physical work with the current bounded Fork
+  projection. Re-authorize exact live dispatches, suppress terminal ones and
+  wait fail-closed if authority is unavailable. The isolated native proof
+  restored 10/10 actors, delivered two messages, suppressed one stale replay
+  and ended with zero dead letters or engine/Lua errors.
+
+## [2026-08-09] update | UWQHD interface scale 1.50 @ working tree
+
+- Updated: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
+- Source: [UWQHD Interface Scale 1.50 Preference](../raw/openmw/2026-08-09-uwqhd-scale-150-preference.md)
+- Observed: the safe applicator set 3440x1440 borderless and GUI scale 1.50,
+  created a backup, and preserved reflection detail 2 / RTT size 1024.
+
+## [2026-08-09] correction | GPU-backed background OpenMW capture @ working tree
+
+- Updated: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
+- Source: [PLAYER-001 GPU-Backed Background Capture Correction](../raw/openmw/2026-08-09-player-001-wgc-capture-correction.md)
+- Correction: `PrintWindow` was a title-bar false positive for the black
+  OpenGL client, and fully off-screen WGC retained a stale loading frame.
+- Decision: adapt Microsoft's `Windows.Graphics.Capture` HWND snapshot path,
+  launch with `SW_SHOWMINNOACTIVE`, keep OpenMW at the bottom of the desktop
+  stack, and require an unchanged foreground handle plus inspected live frame.
+
+## [2026-08-09] ingest | Player identity and save lineage @ working tree
+
+- Added: [Player Identity and Save Lineage](architecture/player-identity-and-save-lineage.md)
+- Sources: [PLAYER-001 prior art](../raw/architecture/2026-08-09-player-001-character-bootstrap-prior-art.md), [persistence evidence](../raw/architecture/2026-08-09-player-001-persistence-harness-evidence.md), and [non-intrusive capture evidence](../raw/openmw/2026-08-09-player-001-nonintrusive-visual-capture.md)
+- Status: implemented and partially runtime-qualified, not released. Native
+  ACK-gated save/load plumbing and real isolated Fork restart pass; one
+  user-consented five-screen creation run remains before full OpenMW restart,
+  regression and production promotion gates.
+
+## [2026-08-09] ingest | Non-intrusive OpenMW visual evidence @ working tree
+
+- Updated: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
+- Source: [PLAYER-001 Non-Intrusive OpenMW Visual Capture Evidence](../raw/openmw/2026-08-09-player-001-nonintrusive-visual-capture.md)
+- Decision: automated OpenMW captures run in an isolated off-screen window and
+  use foreground-invariant `PrintWindow` capture. There is no focus-taking or
+  visible-desktop fallback; capture failure fails the proof.
+
+## [2026-08-09] ingest | Provider-neutral spatial NPC speech @ working tree
+
+- Added: [Provider-Neutral Spatial NPC Speech](architecture/provider-neutral-spatial-speech.md)
+- Updated: [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Fork Capabilities](fork/capabilities.md), and [OpenMW Capabilities](openmw/capabilities.md)
+- Sources: [VOICE-001 research](../raw/architecture/2026-08-09-voice-001-provider-neutral-spatial-speech-research.md) and [implementation evidence](../raw/architecture/2026-08-09-voice-001-provider-neutral-spatial-speech-evidence.md)
+- Decision: combine Fork domain/Fabric ownership, a provider-neutral verified
+  cache worker, a measured 32-slot OpenMW VFS ring and actor-local physical
+  receipts. Priority, cancellation, timeout, save/load, live slot wrap and
+  worker/companion/Fork restart gates pass. Piper is the proved baseline;
+  uncalled cloud-provider quality is not claimed.
+
 ## [2026-08-09] ingest | Proactive observation-range cognition @ working tree
 
 - Added: [Proactive Observation-Range Cognition](architecture/proactive-observation-range-cognition.md)
 - Updated: [Bounded Cognition Leases](architecture/bounded-key-npc-cognition-leases.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Profile Cognition](architecture/profile-driven-npc-cognition.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Fork Capabilities](fork/capabilities.md), and [OpenMW Capabilities](openmw/capabilities.md)
-- Source: LLM-002 implementation evidence
+- Source: [LLM-002 implementation evidence](../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md)
 - Decision: combine actor-local OpenMW entry/LOS evidence with profile-driven
   Fork salience/cooldown, native Context/Fabric wait/initiate work and a fresh
   physical receipt gate. Direct, live, save/load, Fork restart, visual and
@@ -14,7 +226,7 @@
 
 - Added: [Bounded Key-NPC Cognition Leases](architecture/bounded-key-npc-cognition-leases.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Fork Capabilities](fork/capabilities.md), and [OpenMW Capabilities](openmw/capabilities.md)
-- Sources: LLM-001 research and implementation evidence
+- Sources: [LLM-001 research](../raw/architecture/2026-08-09-llm-001-cognition-lease-research.md) and [implementation evidence](../raw/architecture/2026-08-09-llm-001-bounded-cognition-lease-evidence.md)
 - Decision: combine native Fork Context/Fabric with external provider-neutral
   structured inference and the existing dialogue/routine receipt boundary.
   Direct adversarial, real OpenMW, save/load, Fork restart, visual and regression
@@ -25,7 +237,7 @@
 
 - Added: [Persistent Contextual Conversation State](architecture/persistent-contextual-conversation-state.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Reliable Bridge Protocol](architecture/reliable-bridge-protocol.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), and [OpenMW Capabilities](openmw/capabilities.md)
-- Sources: DIALOGUE-001 research and implementation evidence
+- Sources: [DIALOGUE-001 research](../raw/architecture/2026-08-09-dialogue-001-contextual-state-research.md) and [implementation evidence](../raw/architecture/2026-08-09-dialogue-001-contextual-state-evidence.md)
 - Decision: adapt proven dialogue lifecycle/state patterns into Fork-owned
   sessions, bounded context and typed actions while OpenMW owns UI, routines,
   Barter and save state. Direct, live, visual, save/load and restart proof pass.
@@ -34,7 +246,7 @@
 ## [2026-08-09] correction | REPUTATION-001 visual gate resolved @ working tree
 
 - Updated: [Derived Player Identity, Reputation and NPC Reactions](architecture/contextual-presentation-reactions.md) and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Source: REPUTATION-001 implementation evidence
+- Source: [REPUTATION-001 implementation evidence](../raw/architecture/2026-08-09-reputation-001-derived-identity-evidence.md)
 - Correction: the protected Windows Security dialog no longer blocks the task.
   A guarded `PrintWindow` fallback captured only the verified OpenMW window;
   the inspected frame visibly shows Guard Sera's `EXPOSE FALSE GUARD` result,
@@ -44,7 +256,7 @@
 
 - Added: [Causal Supply Chain and Scarcity](architecture/causal-supply-chain-and-scarcity.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), [Living Village Commerce](architecture/living-village-commerce-dialogue-voice.md), and [Ecosystem Reuse Matrix](architecture/ecosystem-reuse-matrix.md)
-- Sources: ECONOMY-001 research and implementation evidence
+- Sources: [ECONOMY-001 research](../raw/architecture/2026-08-09-economy-001-supply-chain-research.md) and [implementation evidence](../raw/architecture/2026-08-09-economy-001-causal-supply-chain-evidence.md)
 - Decision: combine OpenMW physical inventory, actor Travel, native Barter,
   crime and saves with Fork production, provenance, delivery, balance and
   scarcity authority. Direct, live, visual, save/load, restart and transport
@@ -54,7 +266,7 @@
 
 - Replaced: [Derived Player Identity, Reputation and NPC Reactions](architecture/contextual-presentation-reactions.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: REPUTATION-001 research and implementation evidence
+- Sources: [REPUTATION-001 research](../raw/architecture/2026-08-09-reputation-001-derived-identity-research.md) and [implementation evidence](../raw/architecture/2026-08-09-reputation-001-derived-identity-evidence.md)
 - Decision: combine OpenMW physical/native/causal evidence with Fork-owned
   condition, objective deeds, observer-local exposure and identity appraisal.
   Production schema 10 rejects semantic truth claims; direct, live, restart and
@@ -63,7 +275,7 @@
 ## [2026-08-09] ingest | General player journal and knowledge interactions @ working tree
 
 - Updated: [General Player Journal and Knowledge Interactions](architecture/journal-driven-knowledge-interactions.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), and [OpenMW Capability Baseline](openmw/capabilities.md)
-- Sources: JOURNAL-002 research and implementation evidence
+- Sources: [JOURNAL-002 research](../raw/architecture/2026-08-09-journal-002-general-player-journal-research.md) and [implementation evidence](../raw/architecture/2026-08-09-journal-002-general-player-journal-evidence.md)
 - Decision: combine OpenMW physical/native journal surfaces with Fork-owned
   revisioned current knowledge and immutable correction history. Direct and
   live proofs cover all five source kinds, paging, deliberate disclosure,
@@ -73,7 +285,7 @@
 
 - Added: [Embodied Social Information Flow](architecture/embodied-social-information-flow.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: SOCIAL-001 research and implementation evidence
+- Sources: [SOCIAL-001 research](../raw/architecture/2026-08-09-social-001-embodied-information-flow-research.md) and [implementation evidence](../raw/architecture/2026-08-09-social-001-embodied-information-flow-evidence.md)
 - Decision: combine OpenMW actor-local movement/range/ray evidence with Fork
   message, trust, privacy, memory and bounded provenance. Direct and live
   proofs cover rejected privacy, real overhearing, hops 0/1/2, active
@@ -83,7 +295,7 @@
 
 - Added: [Explainable Goal and Intention Arbitration](architecture/explainable-goal-and-intention-arbitration.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Normalized Perception](architecture/normalized-perception-and-attention.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: DECIDE-001 research and implementation evidence
+- Sources: [DECIDE-001 research](../raw/architecture/2026-08-09-decide-001-goal-arbitration-research.md) and [implementation evidence](../raw/architecture/2026-08-09-decide-001-explainable-goal-arbitration-evidence.md)
 - Decision: combine deterministic BDI stage separation, utility ranking,
   conflict explanations, commitment hysteresis, Fork revision checks and
   existing OpenMW AI packages. Production v24 proves 20 atomic threat
@@ -94,7 +306,7 @@
 
 - Added: [Epistemic Memory and Bounded Recall](architecture/epistemic-memory-and-bounded-recall.md)
 - Updated: [Normalized Perception](architecture/normalized-perception-and-attention.md), [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: MEMORY-001 research and implementation evidence
+- Sources: [MEMORY-001 research](../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-research.md) and [implementation evidence](../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-evidence.md)
 - Decision: combine immutable typed domain evidence with the native Fork Memory
   Engine. Production v16 proves vector/version/CMT creation, traversable
   support/contradiction edges, deterministic claim revision, non-destructive
@@ -104,7 +316,7 @@
 
 - Added: [Normalized Physical and Social Perception](architecture/normalized-perception-and-attention.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), [Gap-Closure Programme](architecture/system-gap-closure-programme.md), [OpenMW Capability Baseline](openmw/capabilities.md), and [World-Shell Pipeline](openmw/world-shell-pipeline.md)
-- Sources: PERCEPT-001 research and implementation evidence
+- Sources: [PERCEPT-001 research](../raw/architecture/2026-08-09-percept-001-observation-gateway-research.md) and [implementation evidence](../raw/architecture/2026-08-09-percept-001-normalized-observation-evidence.md)
 - Decision: combine OpenMW actor-local physical evidence with independent
   observer geometry and Fork profile/state-weighted appraisal. Production v12
   proves five stimulus kinds, detected/rejected evidence, exact replay,
@@ -114,7 +326,7 @@
 
 - Added: [Daily NPC Routines and Terminal Repair](architecture/daily-routines-and-terminal-repair.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: ROUTINE-001 research and implementation evidence
+- Sources: [ROUTINE-001 research](../raw/architecture/2026-08-09-routine-001-scheduler-research.md) and [implementation evidence](../raw/architecture/2026-08-09-routine-001-daily-scheduler-evidence.md)
 - Decision: combine OpenMW game time, AI and save lifecycle with Fork-owned
   slots, reservations, commands and transitions. Production v11 proves a full
   accelerated day, physical receipts, interruption/resumption, bounded repair,
@@ -124,7 +336,7 @@
 
 - Added: [Unified NPC Profile and State](architecture/unified-npc-profile-and-state.md)
 - Updated: [Profile-Driven NPC Cognition](architecture/profile-driven-npc-cognition.md), [Capability Matrix](architecture/capability-matrix.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: PROFILE-001 research and implementation evidence
+- Sources: [PROFILE-001 research](../raw/architecture/2026-08-09-profile-001-unified-npc-model-research.md) and [implementation evidence](../raw/architecture/2026-08-09-profile-001-unified-npc-model-evidence.md)
 - Decision: combine OpenMW physical records, one validated authored manifest
   and revisioned Fork definition/state/history. Production v9 proves exact
   reseed/upgrades, internal event fingerprints, restart retention, fail-closed
@@ -134,7 +346,7 @@
 
 - Added: [Reliable OpenMW/Fork Bridge Protocol](architecture/reliable-bridge-protocol.md)
 - Updated: [Integration Architecture](architecture/integration-architecture.md), [Capability Matrix](architecture/capability-matrix.md), and [Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Sources: BRIDGE-003 research and implementation evidence
+- Sources: [BRIDGE-003 research](../raw/architecture/2026-08-09-bridge-003-reliable-transport-research.md) and [implementation evidence](../raw/architecture/2026-08-09-bridge-003-reliable-transport-evidence.md)
 - Decision: combine the existing VFS/tagged-log seam, CloudEvents-shaped outer
   envelope, Fork ordering semantics and a thin bounded journal. Protocol 6 now
   proves stable replay, atomic checkpoint/domain effects, explicit ack,
@@ -144,7 +356,7 @@
 ## [2026-08-08] correction | Person-to-person trade is negotiated and compensated @ working tree
 
 - Updated: [Journal-Driven Knowledge and Physical Interactions](architecture/journal-driven-knowledge-interactions.md), [Contextual Player Presentation](architecture/contextual-presentation-reactions.md), and [Capability Matrix](architecture/capability-matrix.md)
-- Source: COMMERCE-001 negotiated-trade evidence
+- Source: [COMMERCE-001 negotiated-trade evidence](../raw/architecture/2026-08-08-commerce-001-negotiated-trade-evidence.md)
 - Correction: the delivered flow is no longer fixed at one item/base value.
   Players choose exact quantity and total asking price; Fork can accept, counter
   or decline; counter acceptance/decline is explicit and parent-bound. Exact
@@ -155,7 +367,7 @@
 ## [2026-08-08] ingest | Production living-world gap-closure programme @ 6e7f7a9
 
 - Added: [Production Living-World Gap-Closure Programme](architecture/system-gap-closure-programme.md)
-- Source: System gap audit and prior-art decision
+- Source: [System gap audit and prior-art decision](../raw/architecture/2026-08-08-program-001-system-gap-audit-research.md)
 - Decision: combine OpenMW physical/UI/time authority, Fork durable cognition
   and work authority, and a hardened companion; accept no player capability
   from a staged reducer path alone.
@@ -164,7 +376,7 @@
 ## [2026-08-08] correction | Interaction backend made usable end to end @ working tree
 
 - Updated: [Journal-Driven Knowledge and Physical Interactions](architecture/journal-driven-knowledge-interactions.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), [Capability Matrix](architecture/capability-matrix.md), and [Integration Architecture](architecture/integration-architecture.md)
-- Source: INTERACT-003 Evidence
+- Source: [INTERACT-003 Evidence](../raw/architecture/2026-08-08-interact-003-usable-interactions-evidence.md)
 - Correction: INTERACT-001 proved reducers and transfers but its player flow
   closed on click, used fleeting HUD replies and silently chose demo food. The
   production bridge was also blocked by a stale unversioned companion. The UI
@@ -176,7 +388,7 @@
 ## [2026-08-08] correction | Custom interaction root requires a visible layer @ working tree
 
 - Updated: [Journal-Driven Knowledge and Physical Interactions](architecture/journal-driven-knowledge-interactions.md)
-- Source: Visible UI correction
+- Source: [Visible UI correction](../raw/openmw/2026-08-08-interact-002-visible-ui-correction.md)
 - Correction: the INTERACT-001 construction marker did not prove visibility.
   The MWUI root was detached because it named no layer while Interface mode
   still paused the game. It now attaches to `Windows`; a captured OpenMW frame
@@ -186,14 +398,14 @@
 ## [2026-08-08] verify | Deterministic responses are receipt-closed @ working tree
 
 - Updated: [Journal-Driven Knowledge and Physical Interactions](architecture/journal-driven-knowledge-interactions.md)
-- Source: Response-receipt verification
+- Source: [Response-receipt verification](../raw/architecture/2026-08-08-interact-001-response-receipt-verification.md)
 - Result: the final OpenMW proof produced one zero-delta response presentation
   receipt plus the gift, sale and theft receipts, with zero engine/Lua errors.
 
 ## [2026-08-08] correction | Final interaction database is v4b @ working tree
 
 - Updated: [Journal-Driven Knowledge and Physical Interactions](architecture/journal-driven-knowledge-interactions.md)
-- Source: Production database correction
+- Source: [Production database correction](../raw/architecture/2026-08-08-interact-001-production-database-correction.md)
 - Correction: the final response-receipt build is published and seeded at
   `game-openmw-npc-v4b`; `v4a` is superseded after its anonymous owner identity
   rejected an in-place refresh.
@@ -202,7 +414,7 @@
 
 - Added: [Journal-Driven Knowledge and Physical Interactions](architecture/journal-driven-knowledge-interactions.md)
 - Updated: [Capability Matrix](architecture/capability-matrix.md), [Living Village](architecture/living-village-commerce-dialogue-voice.md), and [World-Shell Pipeline](openmw/world-shell-pipeline.md)
-- Source: INTERACT-001 Evidence
+- Source: [INTERACT-001 Evidence](../raw/architecture/2026-08-08-interact-001-journal-interaction-evidence.md)
 - Result: clickable topics, stat-tiered knowledge, sourced disclosure,
   need/funds-aware gift/sale decisions, later-tick physical reconciliation and
   native Theft passed Fork/live OpenMW proofs.
@@ -213,8 +425,8 @@
 
 - Updated: [Living Village, Commerce, Conversation and Voice](architecture/living-village-commerce-dialogue-voice.md)
 - Updated: [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md)
-- Updated: [ForkÃ¢â‚¬â€œOpenMW Integration Architecture](architecture/integration-architecture.md)
-- Source: VILLAGE-001 Evidence
+- Updated: [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md)
+- Source: [VILLAGE-001 Evidence](../raw/openmw/2026-08-08-village-001-spatial-commerce-evidence.md)
 - Result: ten project villagers now occupy six exterior, three tradehouse and
   one census anchor; the project merchant exposes 16 stock types, 35 units,
   800 gold and native Barter mode with zero engine/Lua/dialogue errors.
@@ -227,10 +439,10 @@
 
 - Added: [Living Village, Commerce, Conversation and Voice](architecture/living-village-commerce-dialogue-voice.md)
 - Updated: [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md)
-- Updated: [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md)
+- Updated: [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md)
 - Updated: [OpenMW Ecosystem Reuse Matrix](architecture/ecosystem-reuse-matrix.md)
 - Updated: [OpenMW Capability Baseline](openmw/capabilities.md)
-- Source: DISC-002 Research
+- Source: [DISC-002 Research](../raw/architecture/2026-08-08-disc-002-village-commerce-dialogue-voice-research.md)
 - Decision: replace player-relative actor offsets with authored spatial anchors;
   reuse the retained tradehouse and native barter; combine deterministic and
   leased LLM dialogue; keep voice provider-neutral with OpenMW spatial playback.
@@ -238,7 +450,7 @@
 ## [2026-08-08] correction | Appearance presets no longer over-encumber the explorer @ working tree
 
 - Updated: [Contextual Player Presentation and NPC Reactions](architecture/contextual-presentation-reactions.md)
-- Source: NPC-003 Active-Preset Inventory Decision
+- Source: [NPC-003 Active-Preset Inventory Decision](../raw/openmw/2026-08-08-npc-003-active-preset-inventory-decision.md)
 - Owner-observed fault: NPC-002 placed all four presets' items in the player
   inventory simultaneously, exceeding carry capacity and preventing movement.
 - Decision: adapt native OpenMW object removal/creation so only exact project-
@@ -250,8 +462,8 @@
 ## [2026-08-08] ingest | Contextual player presentation and NPC reactions @ working tree
 
 - Added: [Contextual Player Presentation and NPC Reactions](architecture/contextual-presentation-reactions.md)
-- Updated: [Profile-Driven NPC Cognition and Social Knowledge](architecture/profile-driven-npc-cognition.md), [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md), and [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md)
-- Sources: NPC-002 Research and NPC-002 Evidence
+- Updated: [Profile-Driven NPC Cognition and Social Knowledge](architecture/profile-driven-npc-cognition.md), [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md), and [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md)
+- Sources: [NPC-002 Research](../raw/architecture/2026-08-08-npc-002-contextual-appearance-research.md) and [NPC-002 Evidence](../raw/architecture/2026-08-08-npc-002-contextual-appearance-evidence.md)
 - Decision: combine OpenMW real stance/equipment/condition perception and native
   actuation with Fork-owned observer appraisal, identity/reputation context and
   receipt lifecycle.
@@ -264,7 +476,7 @@
 
 - Updated: [Profile-Driven NPC Cognition and Social Knowledge](architecture/profile-driven-npc-cognition.md)
 - Source: current `bridge/fork-module/src/lib.rs` implementation and the existing
-  NPC-001 Evidence
+  [NPC-001 Evidence](../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md)
 - Correction: roles and spouse identities are stored context, but roles do not
   yet affect witness candidate scores; spouse identity currently addresses the
   delayed private disclosure only.
@@ -272,8 +484,8 @@
 ## [2026-08-08] ingest | Profile-driven NPC cognition and social knowledge @ 6e7f7a9
 
 - Added: [Profile-Driven NPC Cognition and Social Knowledge](architecture/profile-driven-npc-cognition.md)
-- Updated: [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md), [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md), [Remembering Villager Vertical Slice](architecture/remembering-villager-vertical-slice.md), and [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md)
-- Sources: NPC-001 Research and NPC-001 Evidence
+- Updated: [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md), [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md), [Remembering Villager Vertical Slice](architecture/remembering-villager-vertical-slice.md), and [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md)
+- Sources: [NPC-001 Research](../raw/architecture/2026-08-08-npc-001-profile-driven-witness-research.md) and [NPC-001 Evidence](../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md)
 - Result: three profile-driven witness decisions, OpenMW destination receipts,
   delayed non-omniscient guard/spouse belief transfer, and the required empty
   Idle dialogue substrate are now verified.
@@ -282,7 +494,7 @@
 
 - Updated: [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md)
 - Updated: [Remembering Villager Vertical Slice](architecture/remembering-villager-vertical-slice.md)
-- Sources: Greeting Fault Diagnosis, Greeting Runtime Verification
+- Sources: [Greeting Fault Diagnosis](../raw/openmw/2026-08-07-bridge-002-greeting-fault-diagnosis.md), [Greeting Runtime Verification](../raw/openmw/2026-08-07-bridge-002-greeting-runtime-verification.md)
 - Correction: the BRIDGE-001 startup smoke missed a native ambient-greeting
   lookup that began about ten seconds after Ralen appeared and generated 5,244
   per-frame errors because every Dialogue record had been removed.
@@ -293,8 +505,8 @@
 ## [2026-08-07] verify | First remembering villager delivered @ working tree
 
 - Added: [Remembering Villager Vertical Slice](architecture/remembering-villager-vertical-slice.md)
-- Updated: [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md)
-- Sources: BRIDGE-001 Combine Decision, Implementation Evidence
+- Updated: [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md)
+- Sources: [BRIDGE-001 Combine Decision](../raw/architecture/2026-08-07-bridge-001-one-remembering-villager.md), [Implementation Evidence](../raw/architecture/2026-08-07-bridge-001-implementation-evidence.md)
 - Result: OpenMW created Ralen Varo with native Wander and project activation;
   Fork stored the meeting idempotently; a fresh process recalled count 1; the
   no-companion run kept gameplay active and displayed offline fallback.
@@ -304,7 +516,7 @@
 ## [2026-08-07] verify | Seyda Neen explorer launch passed @ working tree
 
 - Updated: [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md)
-- Sources: Village Spawn Decision, Seyda Neen Launch Verification
+- Sources: [Village Spawn Decision](../raw/openmw/2026-08-07-village-spawn-native-profile-decision.md), [Seyda Neen Launch Verification](../raw/openmw/2026-08-07-seyda-neen-explorer-launch-verification.md)
 - Decision: configure OpenMW's native unquoted `start=Seyda Neen` profile and
   bypass mode; keep the generated Main inert.
 - Result: the desktop launcher loaded exterior `Seyda Neen (-2, -9)`, remained
@@ -313,7 +525,7 @@
 ## [2026-08-07] verify | Clean GOTY world shell passed @ working tree
 
 - Updated: [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md)
-- Source: SHELL-002 Clean GOTY World Evidence
+- Source: [SHELL-002 Clean GOTY World Evidence](../raw/openmw/2026-08-07-shell-002-clean-goty-world.md)
 - Result: the checked three-master pipeline removed all legacy world actors,
   spawns, dialogue/journals, scripts, startup registrations, and 12,276 actor
   placements while retaining world record counts.
@@ -325,7 +537,7 @@
 ## [2026-08-07] update | Native Stop hook enforces continuation integrity @ 6e7f7a9
 
 - Updated: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md)
-- Source: Codex Stop Continuation Gate
+- Source: [Codex Stop Continuation Gate](../raw/workflow/2026-08-07-codex-stop-continuation-gate.md)
 - Decision: configure Codex's native project `Stop` hook to reject final
   messages claiming work is still starting, continuing, or active.
 - Verification: direct tests cover initial and repeated blocking, completed
@@ -335,7 +547,7 @@
 
 - Added: [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md)
 - Updated: [OpenMW Ecosystem Reuse Matrix](architecture/ecosystem-reuse-matrix.md)
-- Source: SHELL-001 World-Shell Proof Evidence
+- Source: [SHELL-001 World-Shell Proof Evidence](../raw/openmw/2026-08-07-shell-001-world-shell-proof.md)
 - Result: a source-pinned manifest removed Fargoth and the functional quest
   closure, preserved cell/landscape/static counts, and loaded successfully in
   Seyda Neen using generated Morrowind plus installed Tribunal/Bloodmoon.
@@ -351,7 +563,7 @@
 ## [2026-08-07] correction | Installed Morrowind is disposable @ 6e7f7a9
 
 - Updated: [OpenMW Ecosystem Reuse Matrix](architecture/ecosystem-reuse-matrix.md)
-- Source: Disposable Source Install Decision
+- Source: [Disposable Source Install Decision](../raw/openmw/2026-08-07-disposable-source-install-decision.md)
 - Correction: there are no saves or installation state to preserve, and GOG
   reinstall is acceptable. Prefer the cleanest replacement game/master instead
   of an overlay chosen only to protect installed files. Redistribution limits
@@ -360,10 +572,10 @@
 ## [2026-08-07] ingest | OpenMW ecosystem prior-art and reuse matrix @ 6e7f7a9
 
 - Added: [OpenMW Ecosystem Reuse Matrix](architecture/ecosystem-reuse-matrix.md)
-- Updated: [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md)
+- Updated: [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md)
 - Updated: [OpenMW Capability Baseline](openmw/capabilities.md)
 - Updated: [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md)
-- Source: OpenMW Ecosystem Prior-Art Survey
+- Source: [OpenMW Ecosystem Prior-Art Survey](../raw/openmw/2026-08-07-openmw-ecosystem-prior-art-survey.md)
 - Decisions: combine DeltaPlugin with a thin declarative world-shell transformer;
   adapt Zdo RPG AI's file-in/log-out seam for the first Fork bridge; reuse
   official Lua and asset tooling; defer TES3MP to a separate multiplayer program.
@@ -379,28 +591,28 @@
 ## [2026-08-07] verify | Conservative water baseline stable @ unknown
 
 - Updated: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
-- Source: Water Recovery Verification
+- Source: [Water Recovery Verification](../raw/openmw/2026-08-07-openmw-water-recovery-verification.md)
 - Result: world/exterior assets loaded, no new NVIDIA/OpenMW error event was
   observed, and OpenMW logged `Quitting peacefully`.
 
 ## [2026-08-07] update | NVIDIA OpenGL crash isolated from display scaling @ unknown
 
 - Updated: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
-- Source: NVIDIA Driver Crash Evidence
+- Source: [NVIDIA Driver Crash Evidence](../raw/openmw/2026-08-07-openmw-nvidia-driver-crash.md)
 - Diagnosis: `nvoglv64.dll` kernel exception, error 3/subcode 7, after enabling
   maximum water settings; no explicit OpenGL out-of-memory evidence.
 
 ## [2026-08-07] update | OpenMW 0.51 installed and UWQHD preset applied @ unknown
 
 - Updated: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
-- Source: Local Installation Verification
+- Source: [Local Installation Verification](../raw/openmw/2026-08-07-openmw-local-install-verification.md)
 - Observed the verified official install, GOG content configuration, exact
   3440x1440 preset application, and a responsive 0.51.0 engine process.
 
 ## [2026-08-07] ingest | OpenMW display and interface scaling @ unknown
 
 - Added: [OpenMW Display and Interface Scaling](openmw/display-and-interface.md)
-- Source: Display and Interface Scaling Prior Art
+- Source: [Display and Interface Scaling Prior Art](../raw/openmw/2026-08-07-openmw-display-ui-scaling-prior-art.md)
 - Decision: configure OpenMW 0.51 native video and GUI settings through a
   resolution-aware, reversible preset applicator; do not rewrite the UI.
 
@@ -409,8 +621,8 @@
 - Added: [Fork Capability Baseline](fork/capabilities.md)
 - Added: [OpenMW Capability Baseline](openmw/capabilities.md)
 - Added: [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md)
-- Added: [Forkâ€“OpenMW Integration Architecture](architecture/integration-architecture.md)
-- Sources: Fork Inventory, OpenMW Inventory, and Integration Analysis
+- Added: [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md)
+- Sources: [Fork Inventory](../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [OpenMW Inventory](../raw/openmw/2026-08-07-openmw-0.51-capability-inventory.md), and [Integration Analysis](../raw/architecture/2026-08-07-fork-openmw-integration-analysis.md)
 
 ## [2026-08-07] lint | 0 issues found
 
@@ -420,7 +632,7 @@
 ## [2026-08-07] ingest | Repository Continuity and Knowledge Workflow @ unknown
 
 - Added: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md)
-- Source: Repository Continuity and Knowledge System
+- Source: [Repository Continuity and Knowledge System](../raw/workflow/2026-08-07-repository-continuity-system.md)
 
 ## [2026-08-07] lint | 0 issues found
 

@@ -1,9 +1,9 @@
 # Bounded Key-NPC Cognition Leases
 
-> Sources: LLM-001 and LLM-002 research, implementation and observed runtime evidence, 2026-08-09
-> Raw: Prior-art research, LLM-001 evidence, LLM-002 evidence
-> Commit: unknown
-> Updated: 2026-08-09
+> Sources: LLM-001/LLM-002 research and runtime evidence plus AUDIT-001 closure reconciliation, 2026-08-09 to 2026-08-10
+> Raw: [Prior-art research](../../raw/architecture/2026-08-09-llm-001-cognition-lease-research.md), [LLM-001 evidence](../../raw/architecture/2026-08-09-llm-001-bounded-cognition-lease-evidence.md), [LLM-002 evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [Programme Closure Audit](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Authority boundary
 
@@ -74,12 +74,13 @@ No model endpoint is configured locally, so natural-language quality has not
 been claimed. LLM-002 now supplies the separate salience-triggered,
 cooldown-bound observation-range lease and reuses this validation and step-out
 contract; see [Proactive Observation-Range Cognition](proactive-observation-range-cognition.md).
-Voice playback remains a separate task.
+VOICE-001 now supplies the separate provider-neutral playback boundary without
+changing the lease's authority contract.
 
 ## See Also
 
 - [Persistent Contextual Conversation State](persistent-contextual-conversation-state.md)
 - [Daily NPC Routines and Terminal Repair](daily-routines-and-terminal-repair.md)
 - [Epistemic Memory and Bounded Recall](epistemic-memory-and-bounded-recall.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)

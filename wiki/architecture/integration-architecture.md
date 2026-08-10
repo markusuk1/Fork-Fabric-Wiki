@@ -1,9 +1,10 @@
-# Forkâ€“OpenMW Integration Architecture
+# Fork–OpenMW Integration Architecture
 
-> Sources: Fork build-36 and OpenMW 0.51 capability inventories, ARCH-001 integration analysis, DISC-001 ecosystem survey, NPC/interaction runtime evidence, BRIDGE-003 transport evidence, PERCEPT-001 observation evidence, MEMORY-001 epistemic-memory evidence, DECIDE-001 arbitration evidence and LLM-002 proactive-cognition evidence, 2026-08-09
-> Raw: Integration Analysis, Fork Inventory, OpenMW Inventory, Ecosystem Survey, NPC-001 Evidence, NPC-002 Evidence, INTERACT-003 Evidence, BRIDGE-003 Evidence, ROUTINE-001 Evidence, MEMORY-001 Evidence, DECIDE-001 Evidence, LLM-002 Evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Sources: Fork build-36 and OpenMW 0.51 capability inventories, ARCH-001 integration analysis, DISC-001 ecosystem survey, NPC/interaction runtime evidence, BRIDGE-003 transport evidence, PERCEPT-001 observation evidence, MEMORY-001 epistemic-memory evidence, DECIDE-001 arbitration evidence, LLM-002 proactive-cognition evidence and POP-002 exact lifecycle evidence, 2026-08-09
+> Raw: [Integration Analysis](../../raw/architecture/2026-08-07-fork-openmw-integration-analysis.md), [Fork Inventory](../../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [OpenMW Inventory](../../raw/openmw/2026-08-07-openmw-0.51-capability-inventory.md), [Ecosystem Survey](../../raw/openmw/2026-08-07-openmw-ecosystem-prior-art-survey.md), [NPC-001 Evidence](../../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md), [NPC-002 Evidence](../../raw/architecture/2026-08-08-npc-002-contextual-appearance-evidence.md), [INTERACT-003 Evidence](../../raw/architecture/2026-08-08-interact-003-usable-interactions-evidence.md), [BRIDGE-003 Evidence](../../raw/architecture/2026-08-09-bridge-003-reliable-transport-evidence.md), [ROUTINE-001 Evidence](../../raw/architecture/2026-08-09-routine-001-daily-scheduler-evidence.md), [MEMORY-001 Evidence](../../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-evidence.md), [DECIDE-001 Evidence](../../raw/architecture/2026-08-09-decide-001-explainable-goal-arbitration-evidence.md), [SOCIAL-001 Rollback Correction](../../raw/architecture/2026-08-09-social-001-save-load-rollback-correction.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [PLAYER-001 Native Production Evidence](../../raw/architecture/2026-08-09-player-001-native-character-production-evidence.md), [POP-002 Exact Lifecycle Evidence](../../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
+> Reconciliation: [AUDIT-001 Programme Closure](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
 
 ## Decision
 
@@ -21,7 +22,7 @@ Build a hybrid runtime with a deliberate split:
 
 ```text
 Player / OpenMW 0.51
-  rendering Â· physics Â· mechanics Â· navmesh Â· saves
+  rendering · physics · mechanics · navmesh · saves
            |
   Lua gameplay adapters (`openmw.brain` project API)
            |
@@ -31,9 +32,9 @@ Player / OpenMW 0.51
   companion (auth, protocol, subscriptions, reconnect)
            |
   SpacetimeDB game module on Fork build 36
-  tables Â· Memory Â· Graph Â· CMT Â· Context Â· Fabric Â· Perception
+  tables · Memory · Graph · CMT · Context · Fabric · Perception
            |
-  external workers (LLM Â· embeddings Â· voice Â· tools)
+  external workers (LLM · embeddings · voice · tools)
 ```
 
 ## Why the companion is the default
@@ -169,6 +170,16 @@ Fork records the rejection as evidence; it does not force the physical world.
 
 Use a project `entity_id` as the durable database key.
 
+The player is now a released special case. OpenMW owns the confirmed native
+record; one opaque `player:ow-<32 hex>` ID and matching
+`save:ow-<32 hex>:v1` lineage are generated once after Review, persisted in the
+save, and registered in Fork before ordinary domain traffic. Fork owns the
+current player projection, active lineage, immutable revision/fingerprint, and
+migration provenance. The companion binds to the first valid player/lineage and
+rejects divergent reuse. The production explorer manifest selects the promoted
+save and v178 database automatically; `-NewCharacter` is the explicit reset
+route. See [Player Identity and Save Lineage](player-identity-and-save-lineage.md).
+
 - Content-defined objects map to normalized content-file identity plus
   FormId/RefNum and record ID.
 - Dynamically created objects receive a project UUID persisted with OpenMW
@@ -254,6 +265,17 @@ revision. During a companion outage, loaded actors use bounded native fallback,
 not an independent durable schedule. See
 [Daily NPC Routines and Terminal Repair](daily-routines-and-terminal-repair.md).
 
+POP-002 adds the cross-cell ownership rule: a schedule command may materialize
+the saved OpenMW actor at a home/work station only while that actor is absent
+from `world.activeActors`. Visible actors defer cross-cell work and continue a
+safe local Wander. Fork separately validates typed places, membership,
+capacity, presence revision and transition replay. Desired presence and
+observed embodiment are separate tables. Active/inactive/census observations
+bind the exact object and record to a save lineage/source epoch; inactive-only
+commands and their receipts bind both current revisions and verify final
+coordinates. Save/load, standalone Fork restart and companion crash/reconnect
+are qualified. See [Household Occupancy and Unloaded Actors](household-occupancy-and-unloaded-actors.md).
+
 ## Actuation levels
 
 Prefer the highest safe level:
@@ -283,6 +305,13 @@ allow-listed typed actions; OpenMW owns the visible window, exact routine
 interrupt/resume and native Barter. Active state survives save/load through a
 fresh producer epoch, and Fork restart retains the ordered transcript. See
 [Persistent Contextual Conversation State](persistent-contextual-conversation-state.md).
+
+DIALOGUE-002 adds a natural deterministic realisation layer without changing
+that authority. Canonical traits, competencies, values and role derive bounded
+register/cadence/manner/role metadata; grounded templates use it without
+speaking labels such as “Matter-of-factly”. Stable variation ignores unrelated
+mutable context, while LLM output with a delivery-direction prefix is rejected.
+See [Profile-Derived Natural Deterministic Speech](profile-derived-natural-speech.md).
 
 LLM-001 now delivers the temporary proposal layer on that boundary. Native
 Context frames cap selected evidence at eight references, 4096 bytes and 1024
@@ -318,12 +347,14 @@ Conversation uses three tiers: immediate authored reflexes, deterministic
 structured topics, and a temporary LLM cognition lease for active free-form
 interaction. The delivered lease receives a bounded provenance-bearing native
 Context packet and returns speech plus typed action proposals through native
-Fabric. Reducers validate both before anything persists or reaches OpenMW. A
-separate proactive observation-range lease remains to be delivered. A
-provider-neutral voice worker then
-caches or generates audio while `core.sound.say` provides spatial playback,
-the exact subtitle and normal voiced animation. See
-[Living Village, Commerce, Conversation and Voice](living-village-commerce-dialogue-voice.md).
+Fabric. Reducers validate both before anything persists or reaches OpenMW. The
+separate proactive observation-range wait/initiate lease is also delivered.
+VOICE-001 then submits validated speech through native Fabric to a
+provider-neutral cache/synthesis worker. It atomically fills one of 32
+pre-indexed WAV slots while actor-local `core.sound.say/isSayActive/stopSay`
+provides spatial playback, the exact subtitle, interruption and physical
+receipts. Audio failure settles to subtitle-only and cannot block gameplay.
+See [Provider-Neutral Spatial NPC Speech](provider-neutral-spatial-speech.md).
 
 ## Active and inactive world simulation
 
@@ -344,12 +375,24 @@ abstract facts needed for decisions and reconcile through explicit receipts.
   or dead-letters background work.
 - **Reconnect:** the companion replays its capture-before-cursor journal;
   unacknowledged OpenMW messages retain their identity until Fork commits.
+- **Fresh launch/database switch:** disposable VFS command projections start
+  empty and are repopulated from the selected Fork database; stale projected
+  intentions can never execute before current authority arrives.
+- **Atomic projection read gap:** OpenMW reuses the last fully validated bridge
+  status for at most one second, preventing replacement races from inventing an
+  outage while still failing closed on persistent absence or a valid offline
+  status.
 - **Duplicate message:** an exact envelope returns a no-op; divergent identity
   reuse and stale/gapped sequence fail closed.
 - **Poison message:** deterministic invalid data becomes a terminal Fork dead
   letter after bounded attempts and intentionally advances that stream.
 - **Save/load:** select or create the save lineage, advance session/epoch, reject
-  commands from other lineages and rebuild runtime object mappings.
+  commands from other lineages and rebuild runtime object mappings. Restored
+  physical work that may have committed externally after the save must consult
+  the current Fork projection before it resumes. The social path re-authorizes
+  an exact live dispatch, suppresses an absent terminal dispatch and waits
+  without emitting when the projection is unavailable; divergent replay
+  protection is never weakened to accommodate local rollback.
 - **Content change:** compare content/load-order digest and run an explicit
   migration or open a new lineage.
 - **Stale intention:** fail the precondition, report rejection and replan.
@@ -372,12 +415,12 @@ abstract facts needed for decisions and reconcile through explicit receipts.
 
 ## Delivery roadmap
 
-### Stage 0 â€” reproducible baselines
+### Stage 0 — reproducible baselines
 
 Pin OpenMW 0.51.0 and Fork build 36, define asset/content licensing, select a
 small legal test world, and record the content/load-order digest.
 
-### Stage 1 â€” one remembered event
+### Stage 1 — one remembered event
 
 Implement the hardened file/log protocol, companion and minimal Rust module. One
 NPC observes one player action; Fork persists it; a custom Lua debug panel
@@ -396,7 +439,7 @@ acknowledgements and handles gaps, transient retry, poison, crash replay,
 compaction, log rotation and real Fork/OpenMW restarts. See
 [Reliable OpenMW/Fork Bridge Protocol](reliable-bridge-protocol.md).
 
-### Stage 2 â€” one verified intention
+### Stage 2 — one verified intention
 
 **Delivered by NPC-001:** three witnesses consume the same staged incident,
 select three different deterministic actions, execute allow-listed native
@@ -415,7 +458,7 @@ faction establishes authority. The v64 live proof persisted and applied 20
 derived reactions with restart/reconnect recovery and zero final engine/Lua
 errors.
 
-### Stage 3 â€” memory, relationships and dialogue
+### Stage 3 — memory, relationships and dialogue
 
 Add graph-backed relationships, Context Engine packets and a custom
 conversation UI. Introduce an external LLM worker through Fabric only after the
@@ -447,7 +490,7 @@ surface grounded in profile/state, relationships, observer-local identity and
 reputation, personal knowledge, routines and market state. Its typed
 `open_native_barter` action reaches the existing physical shop only through an
 exact receipt. LLM-001 reuses this schema without acquiring mechanical
-authority; voice remains a separate later presentation layer.
+authority; VOICE-001 supplies the separate presentation layer.
 
 ECONOMY-001 now closes the first causal shop loop. Fork produces one finite
 provenance lot and dispatches a revisioned delivery command; OpenMW temporarily
@@ -459,7 +502,7 @@ ledger survives Fork restart, and tracked stock is excluded from static
 restocking seed inventory. OpenMW 0.51 native Barter remains authoritative; no
 unsupported dynamic-offer hook is claimed.
 
-### Stage 4 â€” living-world systems
+### Stage 4 — living-world systems
 
 Add inactive-region ticks, rumors, faction/economy state, plan scheduling,
 operator tooling and interest-managed scale tests.

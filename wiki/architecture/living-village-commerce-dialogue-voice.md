@@ -1,9 +1,10 @@
 # Living Village, Commerce, Conversation and Voice
 
-> Sources: DISC-002 research, VILLAGE/INTERACT evidence, DIALOGUE-001 contextual-session evidence and LLM-002 proactive-cognition evidence, 2026-08-09
-> Raw: DISC-002 Research, VILLAGE-001 Evidence, INTERACT-003 Evidence, DIALOGUE-001 Evidence, LLM-002 Evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Sources: DISC-002 research, VILLAGE/INTERACT evidence, DIALOGUE-001 contextual-session evidence, LLM-002 proactive-cognition evidence and VOICE-001 spatial-speech evidence, 2026-08-09
+> Raw: [DISC-002 Research](../../raw/architecture/2026-08-08-disc-002-village-commerce-dialogue-voice-research.md), [VILLAGE-001 Evidence](../../raw/openmw/2026-08-08-village-001-spatial-commerce-evidence.md), [INTERACT-003 Evidence](../../raw/architecture/2026-08-08-interact-003-usable-interactions-evidence.md), [DIALOGUE-001 Evidence](../../raw/architecture/2026-08-09-dialogue-001-contextual-state-evidence.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [VOICE-001 Evidence](../../raw/architecture/2026-08-09-voice-001-provider-neutral-spatial-speech-evidence.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
+> Reconciliation: [AUDIT-001 Programme Closure](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
 
 ## Overview
 
@@ -129,6 +130,12 @@ once. The same session/UI survives OpenMW save/load, and the Fork transcript
 survives restart. See [Persistent Contextual Conversation
 State](persistent-contextual-conversation-state.md).
 
+DIALOGUE-002 derives each speaker's register, cadence, manner and role voice
+from the canonical profile, stores them separately from tone/text, and selects
+stable grounded variants without speaking stage directions. This preserves the
+same facts and typed authority while making ordinary villagers distinct. See
+[Profile-Derived Natural Deterministic Speech](profile-derived-natural-speech.md).
+
 | Tier | Use | Runtime | Voice |
 |---|---|---|---|
 | 0: reflex | Danger, greeting, refusal, acknowledgement | Deterministic local rule | Pre-generated and immediate |
@@ -156,8 +163,8 @@ See [Bounded Key-NPC Cognition Leases](bounded-key-npc-cognition-leases.md).
 
 ## Voice architecture
 
-There is no required or currently identified turnkey ElevenLabs plugin for
-OpenMW. Use the companion as a provider-neutral voice worker:
+VOICE-001 confirms there is no required turnkey ElevenLabs plugin for OpenMW.
+The released path uses the companion plus a separate provider-neutral worker:
 
 ```text
 validated speech intent
@@ -170,12 +177,16 @@ validated speech intent
 
 OpenMW supplies spatial playback, subtitles and its normal voiced-speech
 animation. The provider supplies audio. Fork supplies the validated text,
-speaker identity, emotion, priority, causal history and persistence.
+speaker identity, emotion, priority, causal history and persistence. Exact
+actor/slot/subtitle receipts prove presentation without giving audio mechanical
+authority.
 
-Because OpenMW indexes VFS paths at startup, the first prototype pre-creates a
-small rotating set of slot filenames. It must test file/decode caching and
-interruption before this seam is accepted. A narrow native audio/IPC bridge is
-conditional hardening, not the first design.
+Because OpenMW indexes VFS paths at startup, the launcher pre-creates 32
+allow-listed slot filenames. A live allocation-33 proof made one running engine
+decode different text and WAV digests from slot 00, so this seam is accepted.
+Content-addressed cache corruption, cancellation, priority replacement,
+save/load, helper restarts and actual Fork restart are also proven. See
+[Provider-Neutral Spatial NPC Speech](provider-neutral-spatial-speech.md).
 
 ## Provider decisions
 
@@ -223,16 +234,20 @@ latency.
 2. `DIALOGUE-001` **delivered**: bounded contextual sessions, ordered turns,
    persistent UI, typed native Barter, exact routine lifecycle and save/restart
    recovery.
-3. `LLM-001`: provider-neutral bounded cognition leases, validated proposals,
+3. `LLM-001` **delivered**: provider-neutral bounded cognition leases, validated proposals,
    timeouts/fallback and terminal-repair step-out using the delivered schema.
-4. `VOICE-001`: provider-neutral voice slots, spatial playback, subtitles,
-   cancellation, caching and offline fallback.
-5. `PLAYER-001`, `POP-002` and `QA-001`: project player identity, household/
-   occupancy semantics and integrated long-run qualification.
+4. `VOICE-001` **delivered**: provider-neutral voice slots, spatial playback,
+   exact subtitles/receipts, cancellation/priority, caching, offline fallback,
+   save/load and worker/companion/Fork restart continuity.
+5. `PLAYER-001` and `POP-002` **delivered**: project player identity plus exact
+   household/occupancy and inactive-object reconciliation semantics.
+6. `QA-001` **delivered**: the ten-gate integrated day, cell, save/load, outage,
+   spatial-voice and resource-budget qualification passes without mutating
+   production state.
 
 ## See Also
 
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
 - [Causal Supply Chain and Scarcity](causal-supply-chain-and-scarcity.md)
 - [Persistent Contextual Conversation State](persistent-contextual-conversation-state.md)

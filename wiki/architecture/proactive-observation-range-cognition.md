@@ -1,9 +1,9 @@
 # Proactive Observation-Range Cognition
 
-> Sources: LLM-002 implementation and observed direct, live, persistence and visual evidence, 2026-08-09
-> Raw: LLM-002 implementation evidence, LLM-001 prior-art research
-> Commit: unknown
-> Updated: 2026-08-09
+> Sources: LLM-002 runtime evidence and AUDIT-001 closure reconciliation, 2026-08-09 to 2026-08-10
+> Raw: [LLM-002 implementation evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [LLM-001 prior-art research](../../raw/architecture/2026-08-09-llm-001-cognition-lease-research.md), [Programme Closure Audit](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Purpose
 
@@ -57,8 +57,8 @@ leases or bridge dead letters. One initiation opened a normal zero-turn
 conversation and interrupted/resumed its routine exactly once.
 
 Fixture provenance is visible and durable. It proves the integration and
-safety contract, not language quality. Spatial voice playback is not delivered
-here; it is the next separate provider-neutral boundary.
+safety contract, not language quality. VOICE-001 now provides the separate
+provider-neutral spatial playback boundary.
 
 ## See Also
 
@@ -66,4 +66,4 @@ here; it is the next separate provider-neutral boundary.
 - [Persistent Contextual Conversation State](persistent-contextual-conversation-state.md)
 - [Normalized Physical and Social Perception](normalized-perception-and-attention.md)
 - [Daily NPC Routines and Terminal Repair](daily-routines-and-terminal-repair.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)

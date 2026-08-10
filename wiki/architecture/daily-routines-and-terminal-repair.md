@@ -1,9 +1,9 @@
 # Daily NPC Routines and Terminal Repair
 
-> Sources: ROUTINE-001 prior-art research and implementation/runtime evidence, 2026-08-09
-> Raw: Research, Evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Sources: ROUTINE-001 prior-art/implementation evidence, POP-002 exact lifecycle evidence and AUDIT-001 closure reconciliation, 2026-08-09 to 2026-08-10
+> Raw: [Research](../../raw/architecture/2026-08-09-routine-001-scheduler-research.md), [Routine Evidence](../../raw/architecture/2026-08-09-routine-001-daily-scheduler-evidence.md), [POP-002 Exact Lifecycle Evidence](../../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md), [Programme Closure Audit](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Capability
 
@@ -16,7 +16,9 @@ actually happened.
 
 This split makes time scaling, pause and save/load engine-correct while keeping
 needs, future work output and cognitive interruptions transactionally coherent.
-The production target is `game-openmw-npc-v11`.
+ROUTINE-001 was originally qualified on `game-openmw-npc-v11`. Current
+consolidated production is `game-openmw-npc-v203`, which retains this routine
+contract and its later population, dialogue and recovery consumers.
 
 ## Clock and schedule contract
 
@@ -41,8 +43,9 @@ records three interruptions and three resumptions.
 No-progress is measured in simulation time, avoiding false stalls while a menu
 pauses the world. One deterministic repair resets and retries the station. If
 progress still cannot be made, the actor enters a safe local Wander fallback;
-there is no unbounded retry loop. LLM-001 may later propose a validated repair,
-but ordinary correctness never depends on a model.
+there is no unbounded retry loop. LLM-001 now also permits a bounded validated
+repair proposal after deterministic exhaustion, but ordinary correctness never
+depends on a model.
 
 Late messages are expected around slot changes, especially under accelerated
 time. A validated receipt/interruption/stall for a superseded command is stored
@@ -63,16 +66,20 @@ current commands; offline behavior does not become a second durable schedule.
 
 ## Proven boundary
 
-The delivered slice proves same-cell daily life, reservations, need evolution,
+The delivered ROUTINE-001 slice proves same-cell daily life, reservations, need evolution,
 physical arrival, interruption/resumption, terminal repair, stale/late message
-handling, save/load, companion outage and Fork restart. It does not yet produce
-economic output, simulate unloaded cross-cell travel, arbitrate general goals
-or use an LLM. Those boundaries belong to ECONOMY-001, POP-002, DECIDE-001 and
-LLM-001 respectively.
+handling, save/load, companion outage and Fork restart. ROUTINE-001 itself does
+not own economic output, general goal arbitration or model execution: those
+downstream contracts are now delivered by ECONOMY-001, DECIDE-001 and LLM-001.
+POP-002 now adds canonical household/work places, capacity,
+exact lifecycle/census identity and inactive-only cross-cell materialization
+with lineage/revision-bound receipts. Save/load, Fork restart and companion
+outage/reconnect qualification pass. See
+[Household Occupancy and Unloaded Actors](household-occupancy-and-unloaded-actors.md).
 
 ## See Also
 
 - [Unified NPC Profile and State](unified-npc-profile-and-state.md)
 - [Reliable OpenMW/Fork Bridge Protocol](reliable-bridge-protocol.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Production Living-World Gap-Closure Programme](system-gap-closure-programme.md)

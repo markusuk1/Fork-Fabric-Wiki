@@ -1,7 +1,7 @@
 # Unified NPC Profile and State
 
 > Sources: PROFILE-001 prior-art research and implementation/runtime evidence, 2026-08-09
-> Raw: Research, Evidence
+> Raw: [Research](../../raw/architecture/2026-08-09-profile-001-unified-npc-model-research.md), [Evidence](../../raw/architecture/2026-08-09-profile-001-unified-npc-model-evidence.md)
 > Commit: 6e7f7a9
 > Updated: 2026-08-09
 

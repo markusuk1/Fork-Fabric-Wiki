@@ -1,7 +1,7 @@
 # Explainable Goal and Intention Arbitration
 
 > Sources: DECIDE-001 prior-art review and implementation/runtime evidence, plus PROFILE-001, ROUTINE-001, PERCEPT-001 and MEMORY-001 contracts, 2026-08-09
-> Raw: Prior-art decision, Implementation evidence
+> Raw: [Prior-art decision](../../raw/architecture/2026-08-09-decide-001-goal-arbitration-research.md), [Implementation evidence](../../raw/architecture/2026-08-09-decide-001-explainable-goal-arbitration-evidence.md)
 > Commit: 6e7f7a9
 > Updated: 2026-08-09
 
@@ -97,4 +97,4 @@ must pass the same revision, allow-list and receipt boundary.
 - [Daily NPC Routines and Terminal Repair](daily-routines-and-terminal-repair.md)
 - [Normalized Physical and Social Perception](normalized-perception-and-attention.md)
 - [Epistemic Memory and Bounded Recall](epistemic-memory-and-bounded-recall.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)

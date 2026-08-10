@@ -1,7 +1,7 @@
 # OpenMW Ecosystem Reuse Matrix
 
 > Sources: OpenMW ecosystem prior-art survey and disposable-install product decision, 2026-08-07
-> Raw: OpenMW Ecosystem Prior-Art Survey, Disposable Source Install Decision
+> Raw: [OpenMW Ecosystem Prior-Art Survey](../../raw/openmw/2026-08-07-openmw-ecosystem-prior-art-survey.md), [Disposable Source Install Decision](../../raw/openmw/2026-08-07-disposable-source-install-decision.md)
 > Commit: 6e7f7a9
 > Updated: 2026-08-07
 
@@ -144,7 +144,7 @@ joins the installed command-line tools in the content gate:
 ## See Also
 
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [OpenMW Capability Baseline](../openmw/capabilities.md)
 - [Living Village, Commerce, Conversation and Voice](living-village-commerce-dialogue-voice.md)
 - [Causal Supply Chain and Scarcity](causal-supply-chain-and-scarcity.md)

@@ -1,9 +1,10 @@
 # Normalized Physical and Social Perception
 
 > Sources: PERCEPT-001 official-surface research and implementation/runtime evidence, 2026-08-09
-> Raw: Prior-art research, Implementation evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Raw: [Prior-art research](../../raw/architecture/2026-08-09-percept-001-observation-gateway-research.md), [Implementation evidence](../../raw/architecture/2026-08-09-percept-001-normalized-observation-evidence.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
+> Reconciliation: [AUDIT-001 Programme Closure](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
 
 ## Contract
 
@@ -68,7 +69,7 @@ with 100 candidate audits and zero engine/Lua/dead-letter errors.
 The outage test also corrected transport comparison: a resend is compared by
 its canonical tagged envelope, never by the surrounding log timestamp.
 
-## Boundary and next dependency
+## Boundary and delivered consumers
 
 This system records what each actor could attend to. MEMORY-001 consumes that
 boundary and provides immutable episodes, typed belief revision,
@@ -80,7 +81,7 @@ physical action: revision-bound dispatch is the sole projection boundary.
 ## See Also
 
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Reliable OpenMW/Fork Bridge Protocol](reliable-bridge-protocol.md)
 - [Unified NPC Profile and State](unified-npc-profile-and-state.md)
 - [Production Living-World Gap-Closure Programme](system-gap-closure-programme.md)

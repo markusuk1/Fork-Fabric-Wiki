@@ -1,8 +1,8 @@
 # General Player Journal and Knowledge Interactions
 
 > Sources: OpenMW 0.51/API-129 native-surface inspection and INTERACT-001 through JOURNAL-002 implementation/runtime evidence, 2026-08-09
-> Raw: JOURNAL-002 research, JOURNAL-002 evidence, INTERACT-001 evidence, INTERACT-003 evidence, COMMERCE-001 evidence
-> Commit: unknown
+> Raw: [JOURNAL-002 research](../../raw/architecture/2026-08-09-journal-002-general-player-journal-research.md), [JOURNAL-002 evidence](../../raw/architecture/2026-08-09-journal-002-general-player-journal-evidence.md), [INTERACT-001 evidence](../../raw/architecture/2026-08-08-interact-001-journal-interaction-evidence.md), [INTERACT-003 evidence](../../raw/architecture/2026-08-08-interact-003-usable-interactions-evidence.md), [COMMERCE-001 evidence](../../raw/architecture/2026-08-08-commerce-001-negotiated-trade-evidence.md)
+> Commit: c0cea44
 > Updated: 2026-08-09
 
 ## Delivered boundary
@@ -15,8 +15,10 @@ read/sight/hearing evidence, native book and quest-journal surfaces, player save
 state and the clickable project UI. The companion validates schema-9 events and
 projects a bounded atomic snapshot.
 
-The clean playable Fork target is `game-openmw-npc-v57`; the matching default
-data generation is `village-lab-data-journal11`.
+JOURNAL-002 was qualified on `game-openmw-npc-v57` with isolated data generation
+`village-lab-data-journal11`. Current consolidated production is
+`game-openmw-npc-v203`; those older names identify task evidence, not the
+ordinary playable target.
 
 ## Acquisition and correction contract
 
@@ -89,12 +91,12 @@ witnessing/hearing, visible selection UI, 6/6 save/load identity retention and
 zero pending/dead-letter/engine/Lua errors. Companion crash recovery preserves
 the physical facts; an isolated Fork stop/start preserves one entry, two
 versions and two events. See
-the private `COMP-JOURNAL-002` completion record.
+[COMP-JOURNAL-002](../../docs/completions/COMP-JOURNAL-002.md).
 
 ## Related
 
 - [Embodied Social Information Flow](embodied-social-information-flow.md)
 - [Epistemic Memory and Bounded Recall](epistemic-memory-and-bounded-recall.md)
 - [Living Village, Commerce, Conversation and Voice](living-village-commerce-dialogue-voice.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Replacement World-Shell Pipeline](../openmw/world-shell-pipeline.md)

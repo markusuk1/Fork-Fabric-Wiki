@@ -1,9 +1,9 @@
 # Reliable OpenMW/Fork Bridge Protocol
 
-> Sources: BRIDGE-003 research/implementation and DIALOGUE-001 save/replay evidence, 2026-08-09
-> Raw: Prior-art research, BRIDGE-003 evidence, DIALOGUE-001 evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Sources: BRIDGE-003 research/implementation, dialogue save/replay evidence, PLAYER-001 compatibility/stability corrections and DIALOGUE-002 restored-save/projection corrections, 2026-08-09 to 2026-08-10
+> Raw: [Prior-art research](../../raw/architecture/2026-08-09-bridge-003-reliable-transport-research.md), [BRIDGE-003 evidence](../../raw/architecture/2026-08-09-bridge-003-reliable-transport-evidence.md), [DIALOGUE-001 evidence](../../raw/architecture/2026-08-09-dialogue-001-contextual-state-evidence.md), [Large-Epoch ACK Correction](../../raw/architecture/2026-08-09-player-001-large-epoch-ack-research.md), [Atomic Status Stability](../../raw/architecture/2026-08-09-player-001-atomic-status-read-stability-research.md), [Restored-Save Presentation Research](../../raw/architecture/2026-08-10-dialogue-002-stale-presentation-obsolete-research.md), [Atomic Snapshot Sharing Research](../../raw/architecture/2026-08-10-dialogue-002-atomic-snapshot-sharing-research.md), [Final Qualification](../../raw/architecture/2026-08-10-dialogue-002-final-qualification-evidence.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Guarantee
 
@@ -42,6 +42,11 @@ also checks that envelope and payload world/session/sequence/type/schema agree.
   reducer transaction as the domain mutation.
 - An exact message replay returns successfully without repeating the domain
   reducer. Reused identity with different content fails.
+- Fully valid but superseded physical input can terminate as `obsolete` when a
+  reducer has an explicit audit contract. Restored-save player-presentation
+  baselines use this path: strict direct stale writes still fail, the bridge
+  retains the envelope plus one immutable obsolete audit, and current state is
+  not rewound.
 - A gap remains pending. Later messages cannot overtake the missing sequence.
 - Connectivity failures remain pending with bounded backoff. Deterministic
   invalid data is retried to the configured limit, then
@@ -66,6 +71,19 @@ a digest is resubmitted to Fork for canonical replay/divergence validation;
 identity alone cannot silently discard content. Protocol generations use
 separate VFS roots and mutex names to prevent stale companions from masquerading
 as current ones.
+
+ACK projection schema 2 represents 64-bit source epochs/high watermarks as
+decimal strings because OpenMW 0.51 markup integer scalars are C++ `int`-bound;
+Lua normalizes them with `tonumber`, while companion/Fork authority remains
+int64. For `status.json`, OpenMW reuses only the last fully validated snapshot
+for at most one second during an atomic replacement gap. A valid offline status
+is applied immediately, and persistent absence still becomes offline.
+
+Companion JSON projections use same-directory temporary files and atomic
+replacement. OpenMW can briefly hold a reader handle without delete sharing;
+the writer therefore retries only `IOException` with bounded backoff. It never
+falls back to truncate-in-place or delete-then-move, and non-I/O or exhausted
+failures still make bridge health fail closed.
 
 ## Failure behavior
 
@@ -93,6 +111,6 @@ required.
 
 ## See Also
 
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
 - [Production Living-World Gap-Closure Programme](system-gap-closure-programme.md)

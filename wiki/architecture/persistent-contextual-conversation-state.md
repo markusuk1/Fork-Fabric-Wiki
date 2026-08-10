@@ -1,9 +1,9 @@
 # Persistent Contextual Conversation State
 
-> Sources: DIALOGUE-001 research, implementation and observed runtime evidence, 2026-08-09
-> Raw: Prior-art research, Implementation evidence
-> Commit: unknown
-> Updated: 2026-08-09
+> Sources: DIALOGUE-001 runtime evidence and AUDIT-001 closure reconciliation, 2026-08-09 to 2026-08-10
+> Raw: [Prior-art research](../../raw/architecture/2026-08-09-dialogue-001-contextual-state-research.md), [Implementation evidence](../../raw/architecture/2026-08-09-dialogue-001-contextual-state-evidence.md), [Programme Closure Audit](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Ownership
 
@@ -15,7 +15,7 @@ Conversation is split by fact ownership rather than by presentation layer:
 | Actor activation, visible UI, physical interruption/resumption, native Barter and save state | OpenMW |
 | Schema-12 retry, acknowledgement, bounded snapshots and reconnect | Companion/protocol 6 |
 
-This is the deterministic contract that later LLM cognition must reuse. An LLM
+This is the deterministic contract now reused by LLM-001 and LLM-002. An LLM
 may propose speech and an allow-listed action, but it cannot write conversation
 tables, inventory, gold, crime, quests, memories or routines directly.
 
@@ -31,6 +31,13 @@ Tier-0/1 policy uses that evidence for tone and for work, recognition, news and
 market responses. Missing knowledge is explicitly surfaced; the system does not
 invent a fact to fill a dialogue line. `open_barter` becomes the typed
 `open_native_barter` action and reaches OpenMW only after reducer validation.
+
+DIALOGUE-002 keeps tone and profile-derived register, cadence, manner and role
+voice as separate turn metadata. The spoken line contains no delivery label.
+Stable template variation is speaker/profile/action/turn-bound rather than
+seeded by the whole mutable context, so unrelated evidence cannot randomly
+change ordinary phrasing. See [Profile-Derived Natural Deterministic
+Speech](profile-derived-natural-speech.md).
 
 ## Lifecycle and replay
 
@@ -72,8 +79,9 @@ fingerprint and source revisions.
 ## See Also
 
 - [Reliable OpenMW/Fork Bridge Protocol](reliable-bridge-protocol.md)
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Living Village, Commerce, Conversation and Voice](living-village-commerce-dialogue-voice.md)
+- [Profile-Derived Natural Deterministic Speech](profile-derived-natural-speech.md)
 - [Epistemic Memory and Bounded Recall](epistemic-memory-and-bounded-recall.md)
 - [Derived Player Identity, Reputation and NPC Reactions](contextual-presentation-reactions.md)
 - [Causal Supply Chain and Scarcity](causal-supply-chain-and-scarcity.md)

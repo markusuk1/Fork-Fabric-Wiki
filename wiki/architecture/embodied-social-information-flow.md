@@ -1,7 +1,7 @@
 # Embodied Social Information Flow
 
 > Sources: SOCIAL-001 prior-art research and implementation evidence, 2026-08-09
-> Raw: Research, Evidence
+> Raw: [Research](../../raw/architecture/2026-08-09-social-001-embodied-information-flow-research.md), [Evidence](../../raw/architecture/2026-08-09-social-001-embodied-information-flow-evidence.md), [Save rollback correction](../../raw/architecture/2026-08-09-social-001-save-load-rollback-correction.md)
 > Commit: 6e7f7a9
 > Updated: 2026-08-09
 
@@ -49,10 +49,20 @@ never invents a listener merely to fill the hop budget.
 
 Each actor saves its queue, handled revision keys and active message alongside
 the routine interruption. The global script saves handled dispatch IDs and the
-completed runtime state. After load, an in-flight approach resumes, duplicate
-physical receipts replay safely, and the companion converges the same Fork
-message revision. Companion post-commit crash and Fork process restart retain
+completed runtime state. Loading an older OpenMW save does **not** assume its
+social work is still current: every restored active or queued item waits while
+the global script checks the companion's current Fork projection. An exact live
+dispatch is re-authorized with fresh runtime object mappings; an absent terminal
+dispatch is suppressed without repeating speech, listener measurements or the
+player-journal entry. Invalid/unavailable projections fail closed and produce
+no invented result. Companion post-commit crash and Fork process restart retain
 the protocol-6 guarantees.
+
+This reconciliation is required because an OpenMW save can predate an external
+Fork commit. Reusing the old delivery ID with newly measured distance, signal
+or game time is divergent replay and must remain rejected. Fresh baseline
+runtime proofs therefore use a test-owned isolated Fork process and database,
+not accumulated development state.
 
 ## Proven capability and boundary
 
@@ -60,7 +70,10 @@ Direct proof covers private rejection, genuine overhearing, trust, distortion,
 typed memory, expiry, exact replay, retry and a full 0/1/2 chain. Real OpenMW
 proof covers physical movement/utterance, intended and overheard listeners,
 privacy rejects, native memory provenance, runtime budget and active save/load.
-The production database is `game-openmw-npc-v45`.
+The corrected isolated rollback proof restored 10/10 actor states, delivered
+both eligible messages, suppressed one terminal replay and ended with zero
+dead letters or engine/Lua errors. The historical production database is
+`game-openmw-npc-v45`; repeatable qualification uses a fresh isolated database.
 
 The system is deterministic and content-grounded. General player journal topic
 selection, contextual deterministic dialogue, leased LLM speech and voice

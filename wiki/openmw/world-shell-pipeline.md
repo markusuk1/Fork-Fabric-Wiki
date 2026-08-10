@@ -1,7 +1,7 @@
 # Replacement World-Shell Pipeline
 
-> Sources: SHELL-001 proof, SHELL-002 clean GOTY world, SPAWN-001 explorer launch, BRIDGE-002 greeting correction, NPC-001 idle correction, INTERACT-001 native-crime evidence and PERCEPT-001 combat evidence, 2026-08-09
-> Raw: SHELL-001 Proof, SHELL-002 Clean GOTY Evidence, Village Spawn Decision, Seyda Neen Launch Verification, Greeting Fault Diagnosis, Greeting Runtime Verification, NPC-001 Evidence, INTERACT-001 Evidence
+> Sources: SHELL-001 proof, SHELL-002 clean GOTY world, SPAWN-001 explorer launch, BRIDGE-002 greeting correction, NPC-001 idle correction, INTERACT-001 native-crime evidence, PERCEPT-001 combat evidence and PLAYER-001 native production evidence, 2026-08-09
+> Raw: [SHELL-001 Proof](../../raw/openmw/2026-08-07-shell-001-world-shell-proof.md), [SHELL-002 Clean GOTY Evidence](../../raw/openmw/2026-08-07-shell-002-clean-goty-world.md), [Village Spawn Decision](../../raw/openmw/2026-08-07-village-spawn-native-profile-decision.md), [Seyda Neen Launch Verification](../../raw/openmw/2026-08-07-seyda-neen-explorer-launch-verification.md), [Greeting Fault Diagnosis](../../raw/openmw/2026-08-07-bridge-002-greeting-fault-diagnosis.md), [Greeting Runtime Verification](../../raw/openmw/2026-08-07-bridge-002-greeting-runtime-verification.md), [NPC-001 Evidence](../../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md), [INTERACT-001 Evidence](../../raw/architecture/2026-08-08-interact-001-journal-interaction-evidence.md), [PLAYER-001 Evidence](../../raw/architecture/2026-08-09-player-001-native-character-production-evidence.md)
 > Commit: unknown
 > Updated: 2026-08-09
 
@@ -129,26 +129,27 @@ containers, and activators are unchanged.
 The clean load order is generated `Morrowind.esm`, generated `Tribunal.esm`,
 then generated `Bloodmoon.esm`, with `builtin.omwscripts` supplied by OpenMW.
 
-Once Bethesda's character-generation scripts are gone, `--new-game=1` is not a
-valid exact-cell acceptance path: it enters the removed new-game sequence and
-defaults the player to exterior `(0,0)`. Automated cell checks use an unquoted
-profile `start=<cell>` plus:
+Bethesda's character-generation scripts remain absent. The generated project
+`Main` now supplies a five-stage native Name/Race/Class/Birthsign/Review
+sequencer and ends at the configured direct village start. Automated fixtures
+that do not exercise identity use an explicit runtime-check bypass with an
+unquoted profile `start=<cell>` plus:
 
 ```text
 --skip-menu=1 --new-game=0
 ```
 
-This bypasses legacy chargen and dumps the player into the requested cell.
+This bypasses only project chargen for the declared fixture and places the
+player in the requested cell.
 SHELL-002 verified:
 
 - `Seyda Neen, Census and Excise Office`;
 - `Mournhold, Great Bazaar`; and
 - `Skaal Village, The Greathall`.
 
-The project must build its own character creation, initial spawn, gameplay
-scripts, NPCs, quests, dialogue content, and living-world behavior on this
-baseline. Project NPCs inherit the empty ambient and crime dialogue substrates
-safely.
+The project now owns character creation, initial spawn and all gameplay scripts,
+NPCs, quests, dialogue content and living-world behavior on this baseline.
+Project NPCs inherit the empty ambient and crime dialogue substrates safely.
 
 ## Default explorer launch
 
@@ -168,13 +169,19 @@ The launch keeps normal sound, input capture, the user's display/GUI settings,
 and conservative water baseline. It supplies clean Morrowind, Tribunal, and
 Bloodmoon in order and uses `--skip-menu=1 --new-game=0`.
 
+When the generated `current-player.json` manifest exists, the ordinary launcher
+uses Fork v178 and automatically selects the newest promoted production save.
+Without a promoted save—or with explicit `-NewCharacter`—the project native
+creation sequence runs and retains the direct Seyda Neen spawn.
+
 The verified result is exterior `Seyda Neen (-2, -9)`, followed by its
 neighboring Bitter Coast and Seyda Neen cells. The process remained healthy for
 15 seconds with no engine error, fatal, or missing-script log entry.
 
-Keep fixed explorer spawn policy in the native profile rather than adding a
-teleport to the inert Main. Replace it only when project-owned character
-creation and spawn selection are ready.
+Keep fixed new-character spawn policy in the native profile rather than adding
+a teleport. The generated `Main` owns only the native creation sequence; it
+does not move the player after confirmation. Existing promoted saves resume
+their serialized location.
 
 ## Validation policy
 

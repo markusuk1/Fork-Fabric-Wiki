@@ -1,7 +1,7 @@
 # Fork Capability Baseline
 
 > Sources: Fork build-36 release state, complete manual, source tree, maintained Fork wiki and LLM-002 runtime evidence, inspected 2026-08-09
-> Raw: Fork Build 36 Capability Inventory, LLM-002 Evidence
+> Raw: [Fork Build 36 Capability Inventory](../../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md)
 > Commit: 4cdd46b
 > Updated: 2026-08-09
 
@@ -73,6 +73,13 @@ Context/Fabric lease with only wait/initiate actions, retain rejected physical
 receipts, and deterministically settle changed-context, provider-exhausted and
 expired work. Actual Fork restart proof preserves the encounter, cooldown,
 receipt and conversation/routine causal history.
+
+VOICE-001 exercises the same boundary for presentation work. Domain tables bind
+validated speaker/text/profile/priority to a durable modulo-32 slot; native
+Fabric owns claim, retry, expiry, completion and dead-letter state; external
+workers return digest-checked audio; and exact OpenMW receipts close playback.
+Stale workers, companion restart and actual Fork restart cannot duplicate or
+lose ownership. Providers and audio decoding remain external to Fork.
 
 ## Performance and safety boundaries
 

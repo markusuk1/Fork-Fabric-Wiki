@@ -1,8 +1,8 @@
 # Derived Player Identity, Reputation and NPC Reactions
 
 > Sources: REPUTATION-001 research/evidence, NPC-002 evidence, NPC-003 inventory correction, 2026-08-09
-> Raw: REPUTATION-001 Research, REPUTATION-001 Evidence, NPC-002 Evidence, NPC-003 Inventory Correction
-> Commit: unknown
+> Raw: [REPUTATION-001 Research](../../raw/architecture/2026-08-09-reputation-001-derived-identity-research.md), [REPUTATION-001 Evidence](../../raw/architecture/2026-08-09-reputation-001-derived-identity-evidence.md), [NPC-002 Evidence](../../raw/architecture/2026-08-08-npc-002-contextual-appearance-evidence.md), [NPC-003 Inventory Correction](../../raw/openmw/2026-08-08-npc-003-active-preset-inventory-decision.md)
+> Commit: c0cea44
 > Updated: 2026-08-09
 
 ## Released boundary
@@ -109,9 +109,10 @@ OpenMW emits protocol-6/schema-10 physical and native events.
 
 ## Playable proof
 
-The normal clean-world launcher uses production database
-`game-openmw-npc-v64` and data generation
-`village-lab-data-reputation12`. Tavia Quill cycles four real loadouts:
+REPUTATION-001 was qualified on `game-openmw-npc-v64` with isolated data
+generation `village-lab-data-reputation12`. Current consolidated production is
+`game-openmw-npc-v203`. Tavia Quill's explicit regression fixture cycles four
+real loadouts:
 `civilian`, `false_guard`, `credentialed_guard` and `damaged_chitin`.
 
 The final live matrix created 20 physical observations, 20 derived appraisals,

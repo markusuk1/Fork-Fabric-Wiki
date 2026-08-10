@@ -1,9 +1,9 @@
 # OpenMW Display and Interface Scaling
 
-> Sources: Official OpenMW 0.51 video, GUI, window, path, FAQ, and source-default documentation, collected 2026-08-07
-> Raw: Display and Interface Scaling Prior Art, Local Installation Verification, NVIDIA Driver Crash Evidence, Water Recovery Verification
-> Commit: unknown
-> Updated: 2026-08-07
+> Sources: Official OpenMW 0.51 documentation and corrected local display/WGC evidence, 2026-08-07 to 2026-08-10
+> Raw: [Display and Interface Scaling Prior Art](../../raw/openmw/2026-08-07-openmw-display-ui-scaling-prior-art.md), [Local Installation Verification](../../raw/openmw/2026-08-07-openmw-local-install-verification.md), [NVIDIA Driver Crash Evidence](../../raw/openmw/2026-08-07-openmw-nvidia-driver-crash.md), [Water Recovery Verification](../../raw/openmw/2026-08-07-openmw-water-recovery-verification.md), [UWQHD 1.50 Preference](../../raw/openmw/2026-08-09-uwqhd-scale-150-preference.md), [GPU-Backed Capture Correction](../../raw/openmw/2026-08-09-player-001-wgc-capture-correction.md), [WGC Process Isolation](../../raw/architecture/2026-08-10-dialogue-002-wgc-process-isolation-research.md), [Borderless Exact Frame](../../raw/openmw/2026-08-10-dialogue-002-borderless-wgc-frame-research.md), [DPI-Aware Capture Sizing](../../raw/openmw/2026-08-10-dialogue-002-dpi-aware-capture-sizing-research.md), [Final Qualification](../../raw/architecture/2026-08-10-dialogue-002-final-qualification-evidence.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Decision
 
@@ -13,16 +13,17 @@ borderless fullscreen, resolution-relative window layout, and GUI scaling from
 0.5 to 8.0. Original-engine tools such as MGE XE, MWSE, and MCP do not apply to
 OpenMW.
 
-Use the private `config/openmw/display-presets.json` preset catalogue and
-`scripts/set-openmw-display.ps1` safe applicator. The applicator
+Use [the preset catalogue](../../config/openmw/display-presets.json) and
+[the safe applicator](../../scripts/set-openmw-display.ps1). The applicator
 detects the physical primary-display resolution in a DPI-aware process, updates
 only the relevant OpenMW user settings, preserves unrelated settings, and backs
 up an existing file.
 
 ## Scaling policy
 
-Scale primarily from vertical pixels. Aspect-ratio width should not inflate the
-interface: QHD, UWQHD, and dual-QHD all use the same comfortable 1.25 base scale.
+Scale primarily from vertical pixels. Aspect-ratio width does not normally
+inflate the interface. UWQHD is an explicit local usability override at 1.50;
+QHD and dual-QHD retain the general 1440p base of 1.25.
 
 | Display class | Resolution | Comfortable scale |
 |---|---:|---:|
@@ -30,7 +31,7 @@ interface: QHD, UWQHD, and dual-QHD all use the same comfortable 1.25 base scale
 | Full HD | 1920x1080 | 1.00 |
 | Ultrawide Full HD | 2560x1080 | 1.00 |
 | QHD | 2560x1440 | 1.25 |
-| UWQHD | 3440x1440 | 1.25 |
+| UWQHD | 3440x1440 | 1.50 |
 | Dual QHD | 5120x1440 | 1.25 |
 | Ultrawide 1600p | 3840x1600 | 1.40 |
 | 4K UHD | 3840x2160 | 1.75 |
@@ -43,7 +44,7 @@ to 0.05 and remain within OpenMW's documented range.
 
 ## Local UWQHD default
 
-The detected local primary display is 3440x1440. Its initial preset is:
+The detected local primary display is 3440x1440. Its preferred preset is:
 
 ```text
 [Video]
@@ -52,7 +53,7 @@ resolution y = 1440
 window mode = 1
 
 [GUI]
-scaling factor = 1.25
+scaling factor = 1.50
 font size = 16
 stretch menu background = false
 ```
@@ -62,7 +63,7 @@ background stretching off avoids distorting 4:3 artwork across 21:9.
 
 ## Local installation state
 
-OpenMW 0.51.0 is installed under `<OpenMW 0.51.0 installation>`. Its wizard
+OpenMW 0.51.0 is installed under `C:\Program Files\OpenMW 0.51.0`. Its wizard
 successfully registered the GOG GOTY data directory, all three official BSAs,
 and `Morrowind.esm`, `Tribunal.esm`, and `Bloodmoon.esm` in that order. The
 UWQHD preset above is applied to the user `settings.cfg`.
@@ -74,7 +75,7 @@ explicit OpenGL out-of-memory line. Treat this as a driver-path crash with the
 maximum water configuration as the leading trigger candidate, not as a proven
 VRAM OOM or a failure of UWQHD/UI scaling.
 
-The controlled recovery preset keeps 3440x1440 and GUI scale 1.25 unchanged,
+The controlled recovery test kept 3440x1440 and the then-current GUI scale 1.25 unchanged,
 while reducing water reflection detail from 5 to 2 and water RTT size from 2048
 to 1024. That baseline successfully loaded later exterior-world assets, produced
 no new OpenMW/NVIDIA Windows error event, and ended with `Quitting peacefully`.
@@ -89,7 +90,7 @@ After OpenMW is installed and its Morrowind data path is configured, run:
 powershell -ExecutionPolicy Bypass -File scripts\set-openmw-display.ps1
 ```
 
-Use `-UiSize Large` if 1.25 remains too small, or `-UiSize Compact` if it is too
+Use `-UiSize Large` if 1.50 remains too small, or `-UiSize Compact` if it is too
 large. Use `-ListPresets` to inspect explicit defaults. The script defaults to
 `Documents\My Games\OpenMW\settings.cfg`, the official Windows user path.
 
@@ -107,6 +108,39 @@ If text is readable but blurry, research and test the fully compatible TrueType
 font package before changing engine code. If layout clips, first compare
 `Comfortable` and `Large`; record any reproducible OpenMW 0.51 defect before
 considering a UI modification.
+
+## Non-intrusive automated evidence
+
+Automated visual proofs use `launch-clean-world.ps1 -NonIntrusiveCapture`. This
+uses a separate borderless capture profile at the requested physical pixel
+dimensions without activating it and keeps it at the bottom of the desktop
+stack behind the user's current application. Placement temporarily applies a
+thread-scoped per-monitor-aware-v2 context so a 150% desktop scale cannot turn
+3440x1440 into 5160x2160. The previous DPI context is restored immediately.
+A no-activate `CreateProcessW` startup contract and exact foreground-handle
+invariant fail the run if OpenMW takes focus.
+
+The capture profile is never the playable explorer profile. Runtime proofs
+therefore cannot overwrite the owner's 3440x1440/1.50 settings. The normal
+desktop launcher re-applies that UWQHD default before starting.
+
+`capture-openmw-window.ps1` captures the exact HWND through
+`Windows.Graphics.Capture`, copies the GPU frame through Direct3D 11, rejects
+blank content and writes PNG without copying the visible desktop. There is no
+`PrintWindow`, activation, foreground-restoration or desktop-copy fallback.
+Failure deletes the candidate image and fails the proof.
+
+Historical POP-002 evidence used an OpenMW-native `SCRN` renderer preview after
+WGC returned `0x80070424`. Current repository policy is stricter: new automated
+visual acceptance must pass `capture-openmw-window.ps1`; renderer previews may
+diagnose rendering but cannot replace WGC or direct owner observation.
+
+Completely off-screen placement is deliberately not used: OpenGL was observed
+to leave a cached loading frame in the compositor even while simulation ticks
+continued. The bottom-stacked window keeps the renderer live while remaining
+behind the foreground application. The final DIALOGUE-002 proof preserved the
+foreground handle and produced a visually inspected exact 3440x1440 live
+dialogue frame at GUI scale 1.50.
 
 ## See Also
 

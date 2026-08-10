@@ -1,7 +1,7 @@
 # OpenMW Capability Baseline
 
 > Sources: Official OpenMW 0.51.0 release, documentation, FAQ, OpenMW-CS manual, GitLab source composition, DISC-001 ecosystem survey and LLM-002 runtime evidence, collected 2026-08-09
-> Raw: OpenMW 0.51 Capability Inventory, Ecosystem Survey, LLM-002 Evidence
+> Raw: [OpenMW 0.51 Capability Inventory](../../raw/openmw/2026-08-07-openmw-0.51-capability-inventory.md), [Ecosystem Survey](../../raw/openmw/2026-08-07-openmw-ecosystem-prior-art-survey.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md)
 > Commit: 6e7f7a9
 > Updated: 2026-08-09
 
@@ -61,6 +61,15 @@ measures same-cell, distance, collision-ray line of sight and signal. Before a
 validated initiation is shown, it rechecks actor availability and the same
 physical facts. Saved counters and handled-action IDs prevent reload duplicates;
 the normal dialogue path owns interruption, UI and exact receipt.
+
+VOICE-001 proves the native actor-attached audio surface under production
+constraints. The launcher pre-indexes 32 allow-listed VFS WAV paths; actor-local
+Lua starts, observes and stops `say` playback, binds the exact subtitle and
+returns physical started/completed/interrupted/busy/failure receipts. One live
+process decoded different audio from slot 00 after allocator wrap. Active speech
+resumes safely after save/load without duplicating its durable start receipt.
+OpenMW still owns only presentation; Fork text and mechanics remain
+authoritative.
 
 Lua is the correct layer for observing semantic game events and applying
 high-level intentions. Global scripts can modify the wider world; local scripts

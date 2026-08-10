@@ -1,9 +1,9 @@
 # Profile-Driven NPC Cognition and Social Knowledge
 
-> Sources: NPC-001 research/evidence, PROFILE-001 unified-model evidence and LLM-002 proactive-cognition evidence, 2026-08-09
-> Raw: NPC-001 Research, NPC-001 Evidence, PROFILE-001 Evidence, LLM-002 Evidence
-> Commit: 6e7f7a9
-> Updated: 2026-08-09
+> Sources: NPC-001 research/evidence, PROFILE-001 unified-model evidence, LLM-002 proactive-cognition evidence and AUDIT-001 closure reconciliation, 2026-08-09 to 2026-08-10
+> Raw: [NPC-001 Research](../../raw/architecture/2026-08-08-npc-001-profile-driven-witness-research.md), [NPC-001 Evidence](../../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md), [PROFILE-001 Evidence](../../raw/architecture/2026-08-09-profile-001-unified-npc-model-evidence.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [Programme Closure Audit](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Overview
 
@@ -109,10 +109,12 @@ the original observation.
 
 ## Operation and proof
 
-The desktop `OpenMW - Empty Seyda Neen` launch uses the current playable local
-Fork database `game-openmw-npc-v9`. Ralen and the three physical witnesses appear
-near the explorer. Activating Ralen for the first time in a session starts the
-labelled witness drill; normal baseline routines remain available when the
+NPC-001's labelled witness regression was originally qualified on
+`game-openmw-npc-v9`. Current consolidated production is
+`game-openmw-npc-v203`; the ordinary playable launch uses authored population
+anchors and does not automatically stage the drill. The explicit regression
+harness places Ralen and the three witnesses near the explorer and activates
+the labelled incident; normal baseline routines remain available when the
 companion is offline.
 
 The live OpenMW proof observed four physical actors, three witness observations,
@@ -124,13 +126,15 @@ fresh client process.
 
 ## Boundaries and next work
 
-- The trigger is staged; general combat/death/crime recognition remains work.
+- The NPC-001 trigger remains a labelled regression fixture. PERCEPT-001 now
+  supplies generalized observer-local attack, death, native-crime, stance and
+  embodied-speech recognition for production paths.
 - Lysa remains a durable profile without embodiment. NPC-002 now embodies Guard
   Sera as a presentation observer; she is still only a social recipient in the
   NPC-001 staged incident.
-- The first policy still has fixed candidate functions. Complete profiles and
-  revisioned needs/affect now exist; time-driven routines and generalized goal
-  arbitration remain ROUTINE-001 and DECIDE-001.
+- The first witness policy still has fixed candidate functions. Complete
+  profiles, revisioned needs/affect, time-driven routines and generalized goal
+  arbitration are now delivered by PROFILE-001, ROUTINE-001 and DECIDE-001.
 - Bounded conversation, terminal-repair and proactive-attention LLM leases now
   consume allow-listed context, propose typed actions and never directly resolve
   physical truth. A deterministic fixture proves the contract; language quality
@@ -140,7 +144,7 @@ fresh client process.
 
 ## See Also
 
-- [Forkâ€“OpenMW Integration Architecture](integration-architecture.md)
+- [Fork–OpenMW Integration Architecture](integration-architecture.md)
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
 - [Remembering Villager Vertical Slice](remembering-villager-vertical-slice.md)
 - [Contextual Player Presentation and NPC Reactions](contextual-presentation-reactions.md)

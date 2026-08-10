@@ -1,9 +1,9 @@
 # Repository Continuity and Knowledge Workflow
 
-> Sources: Repository continuity and knowledge system; Codex Stop continuation gate, 2026-08-07
-> Raw: Repository Continuity and Knowledge System, Codex Stop Continuation Gate
-> Commit: 4cdd46b
-> Updated: 2026-08-07
+> Sources: Repository continuity and knowledge system; Codex Stop continuation gate; WIKI-002 staleness/publication reconciliation, 2026-08-07 to 2026-08-10
+> Raw: [Repository Continuity and Knowledge System](../../raw/workflow/2026-08-07-repository-continuity-system.md), [Codex Stop Continuation Gate](../../raw/workflow/2026-08-07-codex-stop-continuation-gate.md), [WIKI-002 Reconciliation](../../raw/workflow/2026-08-10-wiki-002-staleness-publication-reconciliation.md)
+> Commit: c0cea44
+> Updated: 2026-08-10
 
 ## Overview
 
@@ -14,13 +14,13 @@ depending on chat history or copying stale narratives between files.
 
 ## Information ownership
 
-- `TRACKING.md` answers which stable task exists and whether
+- [`TRACKING.md`](../../TRACKING.md) answers which stable task exists and whether
   it is Backlog, In Progress, Blocked, or Done.
-- `MEMORY.md` answers what is true now, which task is active,
+- [`MEMORY.md`](../../MEMORY.md) answers what is true now, which task is active,
   what constraints matter, and where the next session should resume.
-- `NOTICEBOARD.yml` records append-only discoveries,
+- [`NOTICEBOARD.yml`](../../NOTICEBOARD.yml) records append-only discoveries,
   warnings, blockers, corrections, completions, and required actions.
-- `CHANGELOG.md` summarizes completed outcomes, while
+- [`CHANGELOG.md`](../../CHANGELOG.md) summarizes completed outcomes, while
   `docs/completions/` preserves exact commands, observed results, limitations,
   and next actions.
 - `raw/` preserves immutable sources. `wiki/` turns those sources into maintained
@@ -52,6 +52,15 @@ Every article links its raw source, records the repository commit it reflects
 (`unknown` before the first commit), and carries an Updated date. Material
 changes cascade to related articles and the index; operation history is appended
 to `wiki/log.md`.
+
+The authoritative knowledge remains the local `wiki/` tree plus every linked
+immutable `raw/` source. `markusuk1/Fork-Fabric-Wiki` mirrors the maintained
+wiki, not the internal raw evidence tree, and is not a competing source of
+truth. When a completed task materially changes the wiki, its completion gate
+includes synchronizing that tree and the governed mirror README, verifying the
+resulting GitHub commit/ref and recording the observation. Raw evidence,
+generated game content, credentials, private evidence media and Bethesda assets
+never enter the mirror.
 
 ## Validation boundary
 
