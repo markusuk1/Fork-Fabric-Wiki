@@ -64,7 +64,7 @@ community ecosystem and Fork integration boundaries.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native actors, packages, furniture, scenes, commerce, construction, SKSE/CommonLib extension stack, tooling, ecosystem and authority boundaries. | 2026-08-10 |
+| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, extension tooling, Steam-first SKSE bootstrap validation, isolated MO2 lifecycle, restart-safe transport throughput and a real loaded-actor action receipt. | 2026-08-10 |
 
 ## workflow
 

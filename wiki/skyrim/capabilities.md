@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -17,6 +17,61 @@ eat, sleep, sandbox, patrol, guard, travel, use items and furniture, participate
 in scenes, trade, own property and react to crime through native engine systems.
 That does not provide the desired complete simulation by itself; it provides a
 far richer executor for Fork's decisions.
+
+## Observed local validation baseline
+
+SKYRIM-001 directly verified the installed Steam game as runtime `1.6.1170.0`.
+The Steam `Skyrim Script Extender` app initially present was classic 32-bit
+SKSE `1.7.3` in a separate classic Skyrim directory, not SKSE64. The matching
+official SKSE64 `2.2.6` loader, runtime DLL and 62 compiled Papyrus files are
+now installed in Skyrim Special Edition with source-to-destination hash
+equality.
+
+Steam must already be running before `skse64_loader.exe` is invoked. A local
+attempt started the loader at 16:28:05, Steam at 16:28:06 and the surviving
+game at 16:28:28. Although the loader reported `hook thread complete`, the
+surviving process contained no SKSE/Fork modules, its current SKSE log was empty
+and it emitted no receipts. This is consistent with Steam bootstrap replacing
+the initially hooked process. Accept a launch only after inspecting the
+surviving modules and current non-empty SKSE log; a loader log alone is not
+proof of injection.
+
+Two same-BOM minimized launches reached the exact SKSE lifecycle through
+`data_loaded` with zero logged error markers. A project-owned native plugin and
+50 ms background file bridge produced allow-listed applied, idempotent replay,
+deadline-obsolete and unallow-listed rejected receipts without doing polling
+work on Skyrim's game thread. A two-launch recovery test restored the byte
+checkpoint and receipt ledger, retained the original exact-replay terminal,
+and rejected divergent command-ID reuse. A 5,000-command run returned 5,000
+applied terminals in an `812 ms` bridge span; this proves transport capacity,
+not actor simulation scale.
+
+A repository-local portable Mod Organizer 2 `2.5.2` profile owns separate
+INIs/saves and an isolated `Fork Fabric Runtime` mod. A direct-file-absent VFS
+run loaded both project probes and reached `data_loaded` in `7,382 ms` with no
+SKSE error markers. CommonLibSSE-NG `v3.7.0` is pinned and the actor adapter
+compiles and loads. Its live actor/package/action receipt still needs one
+ordinary Continue/save-load operation because unattended world entry from the
+Main Menu did not succeed. Native save-manager requests, process-local input,
+the SKSE UI queue, Scaleform delegate invocation and both registered Start Menu
+native callbacks were tested without producing `post_load_game`. The installed
+Start Menu SWF was locally extracted and decompiled to verify the callback
+names; that Bethesda-derived diagnostic evidence remains local-only. The
+platform pivot therefore remains conditional, but runtime, isolation,
+transport recovery and transport throughput are proven.
+
+The corrected Steam-first launch then loaded both Fork plugins and an actual
+save with zero SKSE error markers. The actor adapter observed player form `20`
+in cell `384548`, inspected a living high-process Frostbite Spider (form
+`595547`) and active package `607371`, invoked package evaluation and emitted an
+`applied` terminal receipt. Its optional default-state animation was rejected,
+so no visible animation is claimed. This proves real loaded-actor access and an
+engine-thread action/receipt path; it does not yet prove a Fork-command-routed
+humanoid action or embodied routine.
+
+Evidence: [SKYRIM-001 runtime/toolchain observation](../../raw/skyrim/2026-08-10-skyrim-runtime-toolchain-observation.md),
+[runtime/bridge feasibility evidence](../../raw/skyrim/2026-08-10-skyrim-runtime-bridge-feasibility-evidence.md)
+and [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md).
 
 ## Native capability catalogue
 
@@ -51,7 +106,9 @@ embedding work on Skyrim's game thread.
 
 ## Authoring and reproducibility
 
-- Mod Organizer 2 isolates the project profile and virtualizes game data.
+- Mod Organizer 2 `2.5.2` isolates the project profile and virtualizes game
+  data. The portable profile requires `game_edition=Steam` and a current
+  `version=2.5.2` field to avoid first-run setup/migration prompts.
 - Creation Kit authors cells, navmesh, actors, packages, scenes and dialogue.
 - xEdit audits records, masters and conflicts.
 - Mutagen generates repeatable plugins and suppression patches from code.
@@ -106,4 +163,3 @@ applied/rejected/obsolete receipts.
 - [Fork Capability Baseline](../fork/capabilities.md)
 - [OpenMW Capability Baseline](../openmw/capabilities.md)
 - [Fork and OpenMW Capability Matrix](../architecture/capability-matrix.md)
-

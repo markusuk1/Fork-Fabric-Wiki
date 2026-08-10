@@ -1,5 +1,64 @@
 # Wiki Log
 
+## [2026-08-10] ingest | SKYRIM-001 live actor receipt @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+  and [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md`
+- Proven: current SKSE injection, save load, real player/cell observation,
+  living high-process actor/package inspection, package-evaluation invocation
+  and an applied terminal receipt with zero SKSE error markers.
+- Boundary: animation was rejected and the action was not external-command
+  routed; humanoid visible action remains the next S2 gate.
+
+## [2026-08-10] correction | SKYRIM-001 Steam-first SKSE bootstrap @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Raw: `raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md`
+- Observed: starting SKSE before Steam produced a later surviving game process
+  with no SKSE/Fork modules, an empty current SKSE log and no receipts despite
+  the loader reporting a completed hook thread.
+- Procedure: start and settle Steam first; accept a launch only when the
+  surviving game has SKSE/Fork modules and a current non-empty SKSE log.
+
+## [2026-08-10] correction | SKYRIM-001 Main Menu activation boundary @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-runtime-bridge-feasibility-evidence.md`
+- Observed: save-manager requests, queued and immediate process-local input,
+  the SKSE UI task queue, Scaleform delegate calls and both registered native
+  Continue callbacks failed to produce `post_load_game`.
+- Boundary: one ordinary Continue/save-load operation remains necessary before
+  live actor, visible routine, physical recovery and actor-scale claims can run.
+
+## [2026-08-10] ingest | SKYRIM-001 isolation, recovery and transport scale @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+  and [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-runtime-bridge-feasibility-evidence.md`
+- Proven: a direct-file-absent MO2 VFS launch, restart-safe receipt replay and
+  conflict rejection, and 5,000 applied command terminals in an 812 ms bridge
+  span. Actor execution, embodied/unloaded scale and suppression remain open.
+
+## [2026-08-10] ingest | SKYRIM-001 installed runtime baseline @ working tree
+## [2026-08-10] ingest | SKYRIM-001 runtime bridge boundary @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-runtime-bridge-feasibility-evidence.md`
+- Proven: two same-BOM lifecycle runs, a warnings-as-errors native plugin and
+  applied/replay/obsolete/rejected command receipts with zero SKSE log errors.
+- Boundary: the CommonLib actor adapter builds and loads, but its live
+  player/NPC/package/action receipt requires one normal Continue/save-load
+  operation to produce `post_load_game`.
+
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Source: [Runtime/toolchain observation](../raw/skyrim/2026-08-10-skyrim-runtime-toolchain-observation.md)
+- Result: Steam Skyrim SE `1.6.1170` now has official matching SKSE64 `2.2.6`
+  and 62 required compiled Papyrus files with post-install hash equality.
+- Boundary: no launch/profile/native-plugin proof has passed; SKYRIM-001 and
+  the platform pivot remain In Progress and conditional.
+
 ## [2026-08-10] ingest | OpenMW versus Skyrim platform decision @ working tree
 
 - Added: [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)

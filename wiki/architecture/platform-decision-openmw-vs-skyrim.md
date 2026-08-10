@@ -115,11 +115,11 @@ one-shot deletion of interconnected records.
 
 | Spike | Proof | Go gate |
 |---|---|---|
-| S1 Runtime/toolchain | Pinned runtime, SKSE stack and reproducible text-to-plugin build | Two clean launches from the same bill of materials |
-| S2 Fork bridge | Identity/time/package/equipment observation plus one receipt-bound command | No game-thread blocking; duplicate/stale/outage cases pass |
+| S1 Runtime/toolchain | Pinned runtime, SKSE stack and reproducible text-to-plugin build | Runtime and isolated MO2 VFS launches pass; official Address Library provenance and generated plugin build remain |
+| S2 Fork bridge | Identity/time/package/equipment observation plus one receipt-bound command | Transport duplicate/stale/restart/throughput and direct loaded-actor access/action pass; the combined Fork-command-to-humanoid action path remains |
 | S3 Embodied day | Three NPCs sleep, eat, work, trade and patrol across cells | Activity is visibly enacted without routine teleport fallback |
-| S4 Recovery | Save/load, older-save rollback and all process restarts | No duplicated or obsolete durable/physical effects |
-| S5 Scale | 20 embodied + 200 abstract actors | Predeclared frame-time, memory and bridge budgets pass |
+| S4 Recovery | Save/load, older-save rollback and all process restarts | Bridge restart passes; save/load, rollback and physical-effect recovery remain |
+| S5 Scale | 20 embodied + 200 abstract actors | 5,000-command transport passes; embodied and abstract actor budgets remain |
 | S6 Suppression | Reversible clean target region and system allowlist | No vanilla actor/quest leakage and no lost engine machinery |
 
 If S2, S3 or S4 fails after bounded remediation, retain OpenMW and implement the
@@ -145,4 +145,3 @@ smallest missing OpenMW smart-object/activity executor informed by this audit.
 - [Fork Capability Baseline](../fork/capabilities.md)
 - [Fork and OpenMW Capability Matrix](capability-matrix.md)
 - [OpenMW Ecosystem Reuse Matrix](ecosystem-reuse-matrix.md)
-
