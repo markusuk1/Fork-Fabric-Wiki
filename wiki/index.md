@@ -12,7 +12,7 @@ boundaries.
 | Article | Summary | Updated |
 |---|---|---|
 | [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md) | Side-by-side ownership matrix showing what each platform supplies, what their combination delivers, and its integrated QA maturity. | 2026-08-10 |
-| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Weighted platform comparison, conditional Skyrim pivot, first living-village contract, authority boundary, world-suppression strategy and validation gates. | 2026-08-10 |
+| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Weighted platform comparison, conditional Skyrim pivot, first living-village contract, authority boundary, world-suppression strategy and S1-S3 validation results. | 2026-08-10 |
 | [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md) | Companion and conditional native-bridge topology, contracts, failure behaviour, staged delivery, and reliable protocol-6 lifecycle. | 2026-08-10 |
 | [Reliable OpenMW/Fork Bridge Protocol](architecture/reliable-bridge-protocol.md) | Protocol-6 identity, ordering, applied/obsolete/dead-letter terminals, atomic projection, acknowledgement, bounds and restart behavior. | 2026-08-10 |
 | [Player Identity and Save Lineage](architecture/player-identity-and-save-lineage.md) | Released native five-screen creation, opaque project identity/lineage, ACK gating, save/load/restart proof, and promoted automatic desktop resume. | 2026-08-09 |
@@ -64,7 +64,7 @@ community ecosystem and Fork integration boundaries.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, pinned extension stack, isolated MO2 lifecycle and a live same-cell humanoid command/receipt path with replay, rejection and restart idempotency. | 2026-08-10 |
+| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, pinned extension stack, durable humanoid bridge and an observed three-actor embodied day with interruption/recovery and background visual proof. | 2026-08-10 |
 
 ## workflow
 

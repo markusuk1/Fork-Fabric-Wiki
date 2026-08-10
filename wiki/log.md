@@ -1,5 +1,18 @@
 # Wiki Log
 
+## [2026-08-10] ingest | SKYRIM-003 embodied day @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+  and [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md`
+- Proven: exact authored work/home/sleep/patrol/social package identities,
+  three named actors crossing seven cells, furniture/sit-sleep observation,
+  native interruption with authored-package recovery, invalid-destination
+  retention and three non-foreground UWQHD captures without routine actor
+  teleport or SKSE error markers.
+- Boundary: save rollback/process recovery, 20+200 actor scale and reversible
+  target-region suppression remain SKYRIM-004 through SKYRIM-006.
+
 ## [2026-08-10] ingest | SKYRIM-002 live humanoid bridge @ working tree
 
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)

@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -76,6 +76,37 @@ Evidence: [SKYRIM-001 runtime/toolchain observation](../../raw/skyrim/2026-08-10
 [runtime/bridge feasibility evidence](../../raw/skyrim/2026-08-10-skyrim-runtime-bridge-feasibility-evidence.md)
 and [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md),
 plus the [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md).
+
+SKYRIM-003 closes the embodied-day gate. The installed `Skyrim.esm` was parsed
+read-only to bind 15 package Form IDs to authored Editor IDs rather than
+inferring activities from generic package type `18`. Adrianne's catalogue
+contains forge work, house sandbox, city walk and sleep; Idolaf's contains the
+Bannered Mare, sleep, city patrol and home; Jon's contains repairs, patrol, the
+Bannered Mare and fallback sleep.
+
+A final 148,482 ms live run drove 10:00, 18:00 and 01:00 phases through the
+durable bridge. Adrianne, Idolaf and Jon crossed at least three cells each and
+moved more than 1,100 comparable same-cell units; seven distinct cells included
+the Bannered Mare interior. The run recorded 109 furniture or sit/sleep samples.
+These are observed engine states, not background schedule claims.
+
+A same-cell native flee interruption displaced Adrianne by 1,733.87 units.
+Ending the interruption selected authored forge package `228542`, which
+remained stable through the recovery window. A missing destination rejected as
+`destination_not_loaded` with `retain_current_package`; the package remained
+unchanged. Twenty-one test-only observer relocations moved only the player so
+otherwise unloaded interiors could be inspected; every receipt explicitly
+reported no routine-actor teleport.
+
+Three 3440x1440 frames were captured through Windows Graphics Capture. Failed
+attempts were rejected when Skyrim owned foreground or exposed only its
+minimized title bar. The accepted harness asks Skyrim to minimize itself, waits
+for Windows to transfer focus naturally and uses only no-activate/bottom window
+operations with DPI-correct sizing. The run had
+zero SKSE error markers. Save rollback, full process recovery, actor scale and
+regional suppression remain S4-S6.
+
+Evidence: [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md).
 
 ## Native capability catalogue
 

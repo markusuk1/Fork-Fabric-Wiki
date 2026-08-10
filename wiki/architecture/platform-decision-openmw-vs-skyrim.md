@@ -1,7 +1,7 @@
 # OpenMW versus Skyrim Platform Decision
 
 > Sources: PLATFORM-001 research plus delivered GAME-OPENMW completion evidence, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKYRIM-002 live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKYRIM-002 live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [SKYRIM-003 embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -117,7 +117,7 @@ one-shot deletion of interconnected records.
 |---|---|---|
 | S1 Runtime/toolchain | Pinned runtime, SKSE stack and reproducible text-to-plugin build | Runtime and isolated MO2 VFS launches pass; official Address Library provenance and generated plugin build remain |
 | S2 Fork bridge | Identity/time/package/equipment observation plus one receipt-bound command | **Pass:** Lydia shared the player cell; draw/restore, replay/conflict/expiry/target rejection and post-restart no-duplicate-effect receipts pass with zero SKSE errors |
-| S3 Embodied day | Three NPCs sleep, eat, work, trade and patrol across cells | Activity is visibly enacted without routine teleport fallback |
+| S3 Embodied day | Three NPCs cover home/sleep, work/trade, patrol and social packages across cells | **Pass:** exact authored records, seven live cells, >1,100 comparable same-cell units per actor, furniture/sit-sleep state, native interruption/recovery, invalid-destination retention and guarded UWQHD capture pass with zero routine-actor teleports |
 | S4 Recovery | Save/load, older-save rollback and all process restarts | Bridge restart passes; save/load, rollback and physical-effect recovery remain |
 | S5 Scale | 20 embodied + 200 abstract actors | 5,000-command transport passes; embodied and abstract actor budgets remain |
 | S6 Suppression | Reversible clean target region and system allowlist | No vanilla actor/quest leakage and no lost engine machinery |
