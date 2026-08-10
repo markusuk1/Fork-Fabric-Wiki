@@ -1,5 +1,17 @@
 # Wiki Log
 
+## [2026-08-10] ingest | OpenMW versus Skyrim platform decision @ working tree
+
+- Added: [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)
+- Added: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Source: [PLATFORM-001 Platform Audit](../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md)
+- Decision: conditionally combine Skyrim SE/AE's native AI packages, furniture,
+  scenes, animation and physical systems with Fork as the sole durable
+  simulation authority, using a thin SKSE/CommonLibSSE-NG bridge.
+- Gate: preserve the proven OpenMW implementation and require six Skyrim
+  runtime, bridge, embodiment, recovery, scale and world-suppression spikes
+  before accepting the pivot or performing a whole-world transformation.
+
 ## [2026-08-10] correction | Current production wording and publication mirror @ working tree
 
 - Updated: routine, population, journal, reputation, profile cognition, player

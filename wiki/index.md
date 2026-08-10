@@ -12,6 +12,7 @@ boundaries.
 | Article | Summary | Updated |
 |---|---|---|
 | [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md) | Side-by-side ownership matrix showing what each platform supplies, what their combination delivers, and its integrated QA maturity. | 2026-08-10 |
+| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Weighted platform comparison, conditional Skyrim pivot, first living-village contract, authority boundary, world-suppression strategy and validation gates. | 2026-08-10 |
 | [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md) | Companion and conditional native-bridge topology, contracts, failure behaviour, staged delivery, and reliable protocol-6 lifecycle. | 2026-08-10 |
 | [Reliable OpenMW/Fork Bridge Protocol](architecture/reliable-bridge-protocol.md) | Protocol-6 identity, ordering, applied/obsolete/dead-letter terminals, atomic projection, acknowledgement, bounds and restart behavior. | 2026-08-10 |
 | [Player Identity and Save Lineage](architecture/player-identity-and-save-lineage.md) | Released native five-screen creation, opaque project identity/lineage, ACK gating, save/load/restart proof, and promoted automatic desktop resume. | 2026-08-09 |
@@ -55,6 +56,15 @@ Released OpenMW engine, content, scripting, gameplay, and extension behavior.
 | [OpenMW Capability Baseline](openmw/capabilities.md) | OpenMW 0.51 engine and Lua capabilities, identity model, assets/licensing boundary, native-integration constraint and actor-local physical evidence surfaces. | 2026-08-09 |
 | [OpenMW Display and Interface Scaling](openmw/display-and-interface.md) | Native resolution, HUD/menu scaling defaults, DPI-correct physical sizing and strict focus-safe WGC verification. | 2026-08-10 |
 | [Replacement World-Shell Pipeline](openmw/world-shell-pipeline.md) | Clean GOTY transformation, minimal engine bootstrap/ambient/crime/combat dialogue keys, round-trip audit, and runtime validation. | 2026-08-09 |
+
+## skyrim
+
+64-bit Skyrim SE/AE engine, SKSE extension stack, native simulation machinery,
+community ecosystem and Fork integration boundaries.
+
+| Article | Summary | Updated |
+|---|---|---|
+| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native actors, packages, furniture, scenes, commerce, construction, SKSE/CommonLib extension stack, tooling, ecosystem and authority boundaries. | 2026-08-10 |
 
 ## workflow
 
