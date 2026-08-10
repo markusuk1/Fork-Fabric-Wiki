@@ -1,5 +1,17 @@
 # Wiki Log
 
+## [2026-08-10] ingest | SKYRIM-002 live humanoid bridge @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+  and [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md)
+- Raw: `raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md`
+- Proven: same-cell Lydia observation, external durable command through the
+  Skyrim task queue, visible draw/restore receipts, replay/conflict/expiry/
+  absent-target/allowlist terminals and no duplicate physical effect after a
+  second Skyrim launch, with zero SKSE error markers.
+- Boundary: native multi-location packages, furniture occupancy, interruption
+  and resumption remain SKYRIM-003.
+
 ## [2026-08-10] ingest | SKYRIM-001 live actor receipt @ working tree
 
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)

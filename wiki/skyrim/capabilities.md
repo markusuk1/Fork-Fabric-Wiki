@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-10
 
@@ -49,29 +49,33 @@ not actor simulation scale.
 A repository-local portable Mod Organizer 2 `2.5.2` profile owns separate
 INIs/saves and an isolated `Fork Fabric Runtime` mod. A direct-file-absent VFS
 run loaded both project probes and reached `data_loaded` in `7,382 ms` with no
-SKSE error markers. CommonLibSSE-NG `v3.7.0` is pinned and the actor adapter
-compiles and loads. Its live actor/package/action receipt still needs one
-ordinary Continue/save-load operation because unattended world entry from the
-Main Menu did not succeed. Native save-manager requests, process-local input,
-the SKSE UI queue, Scaleform delegate invocation and both registered Start Menu
-native callbacks were tested without producing `post_load_game`. The installed
-Start Menu SWF was locally extracted and decompiled to verify the callback
-names; that Bethesda-derived diagnostic evidence remains local-only. The
-platform pivot therefore remains conditional, but runtime, isolation,
-transport recovery and transport throughput are proven.
+SKSE error markers. CommonLibSSE-NG `v3.7.0` is pinned and both project plugins
+compile with warnings treated as errors.
 
-The corrected Steam-first launch then loaded both Fork plugins and an actual
-save with zero SKSE error markers. The actor adapter observed player form `20`
-in cell `384548`, inspected a living high-process Frostbite Spider (form
-`595547`) and active package `607371`, invoked package evaluation and emitted an
-`applied` terminal receipt. Its optional default-state animation was rejected,
-so no visible animation is claimed. This proves real loaded-actor access and an
-engine-thread action/receipt path; it does not yet prove a Fork-command-routed
-humanoid action or embodied routine.
+SKYRIM-002 closes the live humanoid bridge gate. A two-launch harness loaded a
+Whiterun save and observed 12 humanoids per run. Lydia (form `666772`) shared
+the player's cell `107121`, had package `378955` and two equipped forms. An
+external durable command passed deadline, command-ID, fingerprint, allowlist
+and loaded-target validation, entered Skyrim only through its task queue, and
+changed her weapon state from sheathed to drawn after seven bounded polls. A
+separate command restored the original state after twelve polls; neither action
+used teleport.
+
+Exact replay retained the applied terminal, divergent reuse of the same ID
+conflicted, an expired command became obsolete, and missing-target and
+unallow-listed commands rejected precisely. After a clean Skyrim restart Lydia
+was again observed in her original saved state; replaying the original draw
+command returned its retained terminal without physically drawing the weapon.
+The run produced 10 terminal receipts in 33,882 ms with zero SKSE error
+markers. The direct actor/restart harness requires the independently qualified
+MO2 profile to contain the identical current plugin hashes, preserving the
+isolated deployment contract while avoiding nondeterministic refresh behavior
+from a long-lived protected MO2 command receiver.
 
 Evidence: [SKYRIM-001 runtime/toolchain observation](../../raw/skyrim/2026-08-10-skyrim-runtime-toolchain-observation.md),
 [runtime/bridge feasibility evidence](../../raw/skyrim/2026-08-10-skyrim-runtime-bridge-feasibility-evidence.md)
-and [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md).
+and [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md),
+plus the [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md).
 
 ## Native capability catalogue
 
