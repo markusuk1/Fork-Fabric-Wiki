@@ -74,6 +74,7 @@ community ecosystem and Fork integration boundaries.
 | Article | Summary | Updated |
 |---|---|---|
 | [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, durable bridge, embodied day, recovery, bounded scale and verified reversible Whiterun suppression. | 2026-08-11 |
+| [Frontier Companion System](skyrim/frontier-companion-system.md) | Lydia-first reusable observation, tactics, burden, honest combat care, physical collection, voice, receipts and remaining Fork integration boundary. | 2026-08-11 |
 
 ## workflow
 

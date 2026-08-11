@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md); [companion requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [companion prior art](../../raw/skyrim/2026-08-11-companion-prior-art.md)
 > Commit: 3098f74
 > Updated: 2026-08-11
 
@@ -174,6 +174,22 @@ patch proves the approach for Whiterun, not an already-complete global clean
 world. Expansion remains fail-closed and region-by-region.
 
 Evidence: [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md).
+
+COMPANION-001 adds an installed Lydia-first native companion slice without
+clearing or replacing the existing world. It samples grounded player health,
+combat, burden and idle state plus Lydia's capacity and nearby lawful targets;
+provides persistent F10 tactics; safely transfers only ordinary eligible
+items; consumes real medicine for close-range emergency care or truthfully
+falls back to native guard behavior; and activates one bounded nearby loose or
+harvestable target. Eight licensed authored barks have matching subtitles.
+
+The plug-in builds with warnings as errors and its deterministic policy tests
+pass. `companion-live-18` then proved Lydia form `666772`, licensed voice start,
+real medicine-backed `140 -> 120 -> 140` healing, physical `0 -> 1` pickup,
+three periodic ObservePlayer samples, zero SKSE errors and clean process state
+against the owner's current save. See
+[Frontier Companion System](frontier-companion-system.md) for the precise
+shipped/proven boundary.
 
 ## Native capability catalogue
 

@@ -1,5 +1,22 @@
 # Wiki Log
 
+## [2026-08-11] ingest | COMPANION-001 frontier companion implementation @ working tree
+
+- Added: [Frontier Companion System](skyrim/frontier-companion-system.md).
+- Raw: `raw/skyrim/2026-08-11-frontier-companion-requirements.md` and
+  `raw/skyrim/2026-08-11-companion-prior-art.md`.
+- Implemented: data-driven Lydia selection, bounded ObservePlayer sampling,
+  typed persistent tactics, safe burden transfer, real medicine-backed healing
+  with truthful guard fallback, lawful close-range collection, licensed barks
+  and append-only native evidence.
+- Verified: warnings-as-errors native build, deterministic policy tests and
+  `companion-live-18` against the real Lydia save: voice, potion-backed heal,
+  physical pickup, three periodic observations, zero SKSE errors and cleanup.
+- Voice: the owner's ElevenLabs heal MP3 is now decoded to an identical
+  deployed mono PCM WAV in both runtime locations; the source remains local.
+- Boundary: spatial WAV/FUZ, natural-language policy, deeper resource logistics
+  and the production Fork projection adapter remain later work.
+
 ## [2026-08-11] ingest | SKYRIM-006 reversible suppression and final platform decision @ working tree
 
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md),
