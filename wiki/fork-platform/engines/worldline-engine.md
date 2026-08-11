@@ -35,7 +35,9 @@
   correction is closed by [AUD-WLD-035](../../docs/audits/AUD-WLD-035.md), and
   broader [AUD-WLD-036](../../docs/audits/AUD-WLD-036.md) is closed by
   exhaustive [AUD-WLD-037](../../docs/audits/AUD-WLD-037.md) at final CHML
-  `0/0/0/0`. P6-INTEGRATION grounding is active.
+  `0/0/0/0`. The
+  [P6-INTEGRATION contract](../../docs/evidence/WLD-001-phase6-integration-grounding.md)
+  is frozen and implementation is active.
   This article does not describe a shipped capability; production remains
   accepted build 36 and WLD-001 remains incomplete.
 - **Updated:** 2026-08-11
@@ -1133,9 +1135,10 @@ and [completion report](../../docs/completions/COMP-P6-APP-001.md). Report-only
 [AUD-WLD-032](../../docs/audits/AUD-WLD-032.md) repeats the complete affected
 suites, consumer ladder, boundary inspection and knowledge/release gates and
 accepts the exact source at CHML `0/0/0/0`. P6-CTRL is accepted internally by
-[AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) at CHML `0/0/0/0`, and
-P6-INTEGRATION is active for source grounding. Production remains accepted
-build 36 and Worldline remains unshipped.
+[AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) at CHML `0/0/0/0`; the
+[P6-INTEGRATION proof contract](../../docs/evidence/WLD-001-phase6-integration-grounding.md)
+is now frozen and implementation is active. Production remains accepted build
+36 and Worldline remains unshipped.
 
 ## Phase 6 unified control accepted internal increment
 
@@ -1180,6 +1183,28 @@ historical observations while reconciling current truth, and report-only
 additional clauses; [REM-AUD-WLD-036](../../docs/remediations/REM-AUD-WLD-036.md)
 is closed by exhaustive report-only
 [AUD-WLD-037](../../docs/audits/AUD-WLD-037.md) at CHML `0/0/0/0`.
+
+## P6-INTEGRATION-001 frozen complete proof
+
+The [source-grounded integration contract](../../docs/evidence/WLD-001-phase6-integration-grounding.md)
+does not infer integration from separately green components. One native
+candidate must carry real SQL state, graph and vector dependencies and a
+speculative executable effect through exact CMT evaluation, a durable bounded
+Fabric tournament, Memory/Context evidence, signed approval, restart and atomic
+promotion. A second restart must reproduce the authoritative data, eligible
+effect, promotion-only evidence lineage and idempotent receipt.
+
+The host boundary proof uses real Construct events and the node ES256 signer and
+routes operation closures through the atomic Worldline control runtime. It must
+observe every independent toggle, emergency stop, monotonic hot tightening,
+explicit rollback, startup-only storage adoption and disabled-path zero work.
+Telemetry remains content-free. The proof reuses the accepted engine owners;
+it introduces no second coordinator and does not pull Phase 7 distribution or
+Phase 8 public transport forward.
+
+Fresh neutral grounding passes 197 Worldline tests with one intentional
+compatibility ignore. Implementation is active. This remains internal proof,
+not a shipped capability; production remains accepted build 36.
 
 ## Promotion is not merging
 
