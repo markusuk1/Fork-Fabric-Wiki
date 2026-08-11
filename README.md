@@ -14,6 +14,7 @@ with the [wiki index](wiki/index.md). Useful entry points are:
 - [Integrated qualification](wiki/architecture/integrated-living-village-qualification.md)
 - [Programme closure and explicit remaining boundaries](wiki/architecture/programme-closure-reconciliation.md)
 - [Knowledge-base change log](wiki/log.md)
+- [Complete Fork platform wiki](wiki/fork-platform/index.md)
 
 ## Repository scope
 
@@ -22,6 +23,10 @@ repository. It intentionally excludes raw internal evidence, game assets,
 credentials, local runtime state, generated databases, evidence media, build
 products and implementation source. Raw provenance links and implementation
 filenames document the grounded source boundary but may not resolve publicly.
+
+The complete Fork platform wiki is published additively under
+[`wiki/fork-platform/`](wiki/fork-platform/README.md). It has its own index and
+change log and does not replace the GAME-OPENMW articles in `wiki/`.
 
 Capability documents distinguish released/configured behaviour, historical
 qualification revisions, explicit unaccepted expansions and separate future
