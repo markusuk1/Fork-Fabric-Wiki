@@ -1,9 +1,9 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md)
 > Commit: 3098f74
-> Updated: 2026-08-10
+> Updated: 2026-08-11
 
 ## Overview
 
@@ -149,6 +149,31 @@ restart passed. This qualifies the loaded/off-screen ownership split on the
 observed machine; it is not a claim that 220 actors were rendered at once.
 
 Evidence: [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md).
+
+SKYRIM-006 closes the reversible target-region suppression gate and makes the
+platform decision final. A fail-closed manifest classifies 163 placed Whiterun
+actors and 31 relevant start-game quest dependencies: 26 narrative controllers
+are suppressed and five engine/system quests are preserved. The generated
+plugin retains 83 navmeshes, 177 doors, 524 furniture references, 585
+containers and 216 activators.
+
+The final enabled run loaded the unchanged Whiterun save, disabled all 163
+actor references, disabled and explicitly stopped all 26 narrative quests,
+observed all five preserved system quests running, and ended with zero loaded
+humanoids. The disabled control loaded the identical save hash and exposed 31
+humanoids with 31 valid native AI packages. Both phases exited through Skyrim's
+own shutdown path, reported zero SKSE error markers, and restored the original
+DLL, plugin list and `Skyrim.ini` hashes. The independent verifier passed the
+two-phase evidence.
+
+The blocking modded-save confirmation was removed by reusing the MIT-licensed
+Achievements Mods Enabler `v1.2` only inside the isolated proof. Production
+packaging must provision that or an equivalently qualified maintained solution;
+the binary is not redistributed by this repository. The generated suppression
+patch proves the approach for Whiterun, not an already-complete global clean
+world. Expansion remains fail-closed and region-by-region.
+
+Evidence: [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md).
 
 ## Native capability catalogue
 

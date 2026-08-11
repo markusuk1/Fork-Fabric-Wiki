@@ -1,9 +1,9 @@
-# Fork and OpenMW Capability Matrix
+# Fork, OpenMW, and Skyrim Capability Matrix
 
 > Sources: Fork build-36 and OpenMW 0.51 capability inventories, ARCH-001 integration analysis, NPC/interaction/commerce evidence, PROGRAM-001 audit, BRIDGE-003 transport evidence, PROFILE-001 model evidence, ROUTINE-001 scheduler evidence, PERCEPT-001 observation evidence, MEMORY-001 epistemic-memory evidence, DECIDE-001 arbitration evidence, SOCIAL-001 embodied-flow evidence, JOURNAL-002 general-journal evidence, REPUTATION-001 derived-identity evidence, ECONOMY-001 causal-supply evidence, DIALOGUE-001 contextual-session evidence, LLM-002 proactive-cognition evidence, POP-002 exact lifecycle evidence and QA-001 integrated qualification, 2026-08-09 to 2026-08-10
 > Raw: [Fork Inventory](../../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [OpenMW Inventory](../../raw/openmw/2026-08-07-openmw-0.51-capability-inventory.md), [Integration Analysis](../../raw/architecture/2026-08-07-fork-openmw-integration-analysis.md), [Ecosystem Survey](../../raw/openmw/2026-08-07-openmw-ecosystem-prior-art-survey.md), [NPC-001 Evidence](../../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md), [NPC-002 Evidence](../../raw/architecture/2026-08-08-npc-002-contextual-appearance-evidence.md), [VILLAGE-001 Evidence](../../raw/openmw/2026-08-08-village-001-spatial-commerce-evidence.md), [INTERACT-001 Evidence](../../raw/architecture/2026-08-08-interact-001-journal-interaction-evidence.md), [INTERACT-003 Evidence](../../raw/architecture/2026-08-08-interact-003-usable-interactions-evidence.md), [PROGRAM-001 Audit](../../raw/architecture/2026-08-08-program-001-system-gap-audit-research.md), [COMMERCE-001 Evidence](../../raw/architecture/2026-08-08-commerce-001-negotiated-trade-evidence.md), [BRIDGE-003 Evidence](../../raw/architecture/2026-08-09-bridge-003-reliable-transport-evidence.md), [PROFILE-001 Evidence](../../raw/architecture/2026-08-09-profile-001-unified-npc-model-evidence.md), [ROUTINE-001 Evidence](../../raw/architecture/2026-08-09-routine-001-daily-scheduler-evidence.md), [MEMORY-001 Evidence](../../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-evidence.md), [DECIDE-001 Evidence](../../raw/architecture/2026-08-09-decide-001-explainable-goal-arbitration-evidence.md), [SOCIAL-001 Evidence](../../raw/architecture/2026-08-09-social-001-embodied-information-flow-evidence.md), [SOCIAL-001 Rollback Correction](../../raw/architecture/2026-08-09-social-001-save-load-rollback-correction.md), [JOURNAL-002 Evidence](../../raw/architecture/2026-08-09-journal-002-general-player-journal-evidence.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [PLAYER-001 Native Production Evidence](../../raw/architecture/2026-08-09-player-001-native-character-production-evidence.md), [POP-002 Exact Lifecycle Evidence](../../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md), [QA-001 Evidence](../../raw/architecture/2026-08-10-qa-001-integrated-living-village-evidence.md), [DIALOGUE-002 Final Qualification](../../raw/architecture/2026-08-10-dialogue-002-final-qualification-evidence.md)
 > Commit: c0cea44
-> Updated: 2026-08-10
+> Updated: 2026-08-11
 > Reconciliation: [AUDIT-001 Programme Closure](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
 
 ## Overview
@@ -13,6 +13,21 @@ Fork is a transactional memory, reasoning-evidence and orchestration substrate.
 The bridge converts physical game events into semantic durable observations and
 converts validated high-level intentions back into locally executed game
 actions.
+
+## Executor selection overlay
+
+The delivered OpenMW rows below remain the authoritative record of that
+implementation. SKYRIM-001 through SKYRIM-006 subsequently qualified Skyrim
+SE/AE+SKSE as the physical executor for the next build without changing Fork's
+ownership. The decisive additions are a receipt-bound native bridge, visible
+multi-location native routines, rollback/restart recovery, 29-33 loaded actors
+beside 200 transactional Fork actors, and a reversible same-save Whiterun test:
+zero loaded actors with 163 actor/26 narrative-quest suppressions versus 31
+actors with 31 packages when restored. Whole-world suppression and the first
+Fork-owned Skyrim village remain production work, not delivered capability.
+
+Evidence: [Skyrim suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md)
+and [final platform decision](platform-decision-openmw-vs-skyrim.md).
 
 ## Ownership matrix
 

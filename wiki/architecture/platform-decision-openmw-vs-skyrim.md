@@ -1,23 +1,26 @@
 # OpenMW versus Skyrim Platform Decision
 
 > Sources: PLATFORM-001 research plus delivered GAME-OPENMW completion evidence, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKYRIM-002 live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [SKYRIM-003 embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [SKYRIM-004 recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [SKYRIM-005 scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKYRIM-002 live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [SKYRIM-003 embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [SKYRIM-004 recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [SKYRIM-005 scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [SKYRIM-006 suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md)
 > Commit: 3098f74
-> Updated: 2026-08-10
+> Updated: 2026-08-11
 
 ## Decision
 
-Use a conditional `Combine` decision: validate Skyrim SE/AE+SKSE as the new
-embodiment layer while preserving Fork as the sole simulation brain and durable
-authority. Freeze further OpenMW-specific feature expansion during the spikes;
-do not discard the proven OpenMW implementation.
+Use the now-qualified `Combine` decision: Skyrim SE/AE+SKSE is the physical
+executor for the next build, while Fork remains the sole simulation brain and
+durable authority. S1-S6 all pass. Preserve the proven OpenMW implementation as
+a fallback and behavioral reference, but do not continue OpenMW-specific
+feature expansion on the selected product path.
 
 Skyrim leads the directional weighted comparison 72.4 to 68.2 because visible
 daily life is now a primary requirement and Skyrim already has native packages,
 smart furniture, scenes, relationships, factions, ownership, crime and a large
-action/animation ecosystem. The lead is deliberately treated as conditional:
-OpenMW remains materially stronger in source control, deterministic testing,
-runtime stability and the already-proven clean-world/Fork integration.
+action/animation ecosystem. OpenMW remains materially stronger in source
+control, deterministic testing and runtime stability. Skyrim's earlier
+clean-world uncertainty is now bounded by an independently verified Whiterun
+suppression/control pair; whole-world expansion is still required and must
+retain the same fail-closed method.
 
 ## Platform comparison
 
@@ -25,9 +28,9 @@ runtime stability and the already-proven clean-world/Fork integration.
 |---|---|---|---|
 | Visible routine primitives | Travel/Wander plus custom Lua/animation composition | Native Eat, Sleep, Sandbox, Patrol, Guard, Use Item At and furniture | Skyrim removes a major custom executor programme |
 | Physical interactions | Growing Lua animation API and several narrow mods | Havok behaviors, furniture, scenes, OAR/Pandora ecosystem | Skyrim has broader mature embodiment |
-| Fork integration | Delivered companion/VFS protocol, deterministic and safe | Native SKSE C++ plugin is possible but unproven here | Skyrim must pass bridge/recovery spikes |
+| Fork integration | Delivered companion/VFS protocol, deterministic and safe | Native receipt-bound SKSE/CommonLib bridge passes command, replay, rollback, restart and scale gates | Skyrim bridge is qualified; productionize the test-gated surfaces |
 | Engine ownership | GPLv3 source and editor | Proprietary executable, reverse-engineered native interfaces | OpenMW can be fixed deeply; Skyrim must be wrapped defensively |
-| World cleaning | Delivered dependency-safe three-master transformation | Hidden quest/alias/scene dependencies; generated override strategy required | Do not strip Skyrim globally first |
+| World cleaning | Delivered dependency-safe three-master transformation | Generated Whiterun override passes 163-actor/26-quest suppression and 31-actor restoration control | Expand region by region; do not strip globally without the same audit |
 | Tools | OpenMW-CS, DeltaPlugin, Lua | CK, xEdit, Mutagen/Synthesis, Spriggit, MO2, SKSE/CommonLib | Skyrim has the stronger content/tool ecosystem |
 | Simulation mods | Smaller, fragmented and often overlapping | Large ecosystem across AI, economy, survival, factions and building | Reuse patterns selectively; Fork remains authority |
 | Stability | Project can pin/build engine source | Game updates can break native DLLs | Immutable runtime bill of materials is mandatory |
@@ -120,10 +123,12 @@ one-shot deletion of interconnected records.
 | S3 Embodied day | Three NPCs cover home/sleep, work/trade, patrol and social packages across cells | **Pass:** exact authored records, seven live cells, >1,100 comparable same-cell units per actor, furniture/sit-sleep state, native interruption/recovery, invalid-destination retention and guarded UWQHD capture pass with zero routine-actor teleports |
 | S4 Recovery | Save/load, older-save rollback and all process restarts | **Pass:** named save/load, genuine older-save rollback, immutable old terminals, context-bound repair, worker outage/restart, two game processes and fresh owned Fork restart pass with zero SKSE errors |
 | S5 Scale | 20 embodied + 200 abstract actors | **Pass:** 100 samples held 29-33 loaded humanoids with at least 29 native packages and 22 progressing actors at 16.667 ms frame p95/p99; separately, 200 Fork actors completed 60 atomic ticks/12,000 updates at 5.916 ms p95 with replay, stale/divergent and restart-fingerprint safety |
-| S6 Suppression | Reversible clean target region and system allowlist | No vanilla actor/quest leakage and no lost engine machinery |
+| S6 Suppression | Reversible clean target region and system allowlist | **Pass:** 163 actors disabled, 26 narrative quests disabled/stopped, five system quests preserved, zero loaded actors enabled versus 31 actors/31 packages restored on the identical save; two clean exits and exact restoration |
 
-If S2, S3 or S4 fails after bounded remediation, retain OpenMW and implement the
-smallest missing OpenMW smart-object/activity executor informed by this audit.
+All six gates pass. The remaining work is product implementation: expand the
+suppression manifest beyond Whiterun, provision the pinned runtime/profile,
+replace test-only migration actions with a production bootstrap/reconciliation
+adapter, and build the first Fork-owned population and content slice.
 
 ## Reuse policy
 

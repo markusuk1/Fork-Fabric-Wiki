@@ -11,9 +11,9 @@ boundaries.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Fork and OpenMW Capability Matrix](architecture/capability-matrix.md) | Side-by-side ownership matrix showing what each platform supplies, what their combination delivers, and its integrated QA maturity. | 2026-08-10 |
-| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Weighted platform comparison, conditional Skyrim pivot, first living-village contract, authority boundary, world-suppression strategy and S1-S5 validation results. | 2026-08-10 |
-| [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md) | Companion and conditional native-bridge topology, contracts, failure behaviour, staged delivery, and reliable protocol-6 lifecycle. | 2026-08-10 |
+| [Fork, OpenMW, and Skyrim Capability Matrix](architecture/capability-matrix.md) | Delivered OpenMW/Fork capability matrix plus the qualified Skyrim executor overlay and remaining production boundary. | 2026-08-11 |
+| [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md) | Final Skyrim-as-executor decision, first living-village contract, authority boundary, reversible world-suppression strategy and S1-S6 evidence. | 2026-08-11 |
+| [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md) | Delivered OpenMW topology and the post-SKYRIM-006 transition to a thin receipt-bound Skyrim executor bridge. | 2026-08-11 |
 | [Reliable OpenMW/Fork Bridge Protocol](architecture/reliable-bridge-protocol.md) | Protocol-6 identity, ordering, applied/obsolete/dead-letter terminals, atomic projection, acknowledgement, bounds and restart behavior. | 2026-08-10 |
 | [Player Identity and Save Lineage](architecture/player-identity-and-save-lineage.md) | Released native five-screen creation, opaque project identity/lineage, ACK gating, save/load/restart proof, and promoted automatic desktop resume. | 2026-08-09 |
 | [Unified NPC Profile and State](architecture/unified-npc-profile-and-state.md) | Canonical eleven-person profiles, revisioned needs/affect, economy projection, exact upgrades and fail-closed companion sync. | 2026-08-09 |
@@ -73,7 +73,7 @@ community ecosystem and Fork integration boundaries.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, durable humanoid bridge, embodied day, rollback/process recovery and measured 29-33 loaded actor scale beside 200 Fork actors. | 2026-08-10 |
+| [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, durable bridge, embodied day, recovery, bounded scale and verified reversible Whiterun suppression. | 2026-08-11 |
 
 ## workflow
 

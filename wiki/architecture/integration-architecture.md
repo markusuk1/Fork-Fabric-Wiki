@@ -3,10 +3,23 @@
 > Sources: Fork build-36 and OpenMW 0.51 capability inventories, ARCH-001 integration analysis, DISC-001 ecosystem survey, NPC/interaction runtime evidence, BRIDGE-003 transport evidence, PERCEPT-001 observation evidence, MEMORY-001 epistemic-memory evidence, DECIDE-001 arbitration evidence, LLM-002 proactive-cognition evidence and POP-002 exact lifecycle evidence, 2026-08-09
 > Raw: [Integration Analysis](../../raw/architecture/2026-08-07-fork-openmw-integration-analysis.md), [Fork Inventory](../../raw/fork/2026-08-07-fork-build36-capability-inventory.md), [OpenMW Inventory](../../raw/openmw/2026-08-07-openmw-0.51-capability-inventory.md), [Ecosystem Survey](../../raw/openmw/2026-08-07-openmw-ecosystem-prior-art-survey.md), [NPC-001 Evidence](../../raw/architecture/2026-08-08-npc-001-profile-driven-witness-evidence.md), [NPC-002 Evidence](../../raw/architecture/2026-08-08-npc-002-contextual-appearance-evidence.md), [INTERACT-003 Evidence](../../raw/architecture/2026-08-08-interact-003-usable-interactions-evidence.md), [BRIDGE-003 Evidence](../../raw/architecture/2026-08-09-bridge-003-reliable-transport-evidence.md), [ROUTINE-001 Evidence](../../raw/architecture/2026-08-09-routine-001-daily-scheduler-evidence.md), [MEMORY-001 Evidence](../../raw/architecture/2026-08-09-memory-001-epistemic-lifecycle-evidence.md), [DECIDE-001 Evidence](../../raw/architecture/2026-08-09-decide-001-explainable-goal-arbitration-evidence.md), [SOCIAL-001 Rollback Correction](../../raw/architecture/2026-08-09-social-001-save-load-rollback-correction.md), [LLM-002 Evidence](../../raw/architecture/2026-08-09-llm-002-proactive-observation-evidence.md), [PLAYER-001 Native Production Evidence](../../raw/architecture/2026-08-09-player-001-native-character-production-evidence.md), [POP-002 Exact Lifecycle Evidence](../../raw/architecture/2026-08-09-pop-002-exact-lifecycle-reconciliation-evidence.md)
 > Commit: c0cea44
-> Updated: 2026-08-10
+> Updated: 2026-08-11
 > Reconciliation: [AUDIT-001 Programme Closure](../../raw/architecture/2026-08-10-audit-001-programme-closure-reconciliation.md)
 
 ## Decision
+
+### Selected product direction after SKYRIM-006
+
+This article remains the as-built architecture of the delivered OpenMW stack.
+After the S1-S6 validation programme, Skyrim SE/AE+SKSE is selected as the
+physical executor for the next combined build. Fork's authority boundary is
+unchanged: identity, memory, goals, economy, schedules and causal state remain
+durable in Fork; a thin native bridge projects validated intent into loaded
+Skyrim actors/packages and returns explicit physical receipts. OpenMW remains a
+proven fallback and behavioral reference rather than the active embodiment
+target. See the [final platform decision](platform-decision-openmw-vs-skyrim.md).
+
+### Delivered OpenMW baseline
 
 Build a hybrid runtime with a deliberate split:
 

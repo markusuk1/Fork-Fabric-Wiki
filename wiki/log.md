@@ -1,5 +1,22 @@
 # Wiki Log
 
+## [2026-08-11] ingest | SKYRIM-006 reversible suppression and final platform decision @ working tree
+
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md),
+  [OpenMW versus Skyrim Platform Decision](architecture/platform-decision-openmw-vs-skyrim.md),
+  [Fork, OpenMW, and Skyrim Capability Matrix](architecture/capability-matrix.md)
+  and [Fork–OpenMW Integration Architecture](architecture/integration-architecture.md).
+- Raw: `raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md` and
+  `raw/skyrim/2026-08-11-skyrim-suppression-proof.md`.
+- Proven: identical-save enabled/control pair; 163 actors disabled, 26
+  narrative quests disabled/stopped, five system quests preserved, zero loaded
+  actors enabled versus 31 actors/31 packages restored, two clean exits and
+  byte-exact restoration.
+- Decision: select Skyrim SE/AE+SKSE as the next build's physical executor,
+  retain Fork authority and preserve OpenMW as the proven fallback/reference.
+- Boundary: Whiterun is qualified; whole-world fail-closed expansion and the
+  first Fork-owned Skyrim village remain production work.
+
 ## [2026-08-10] ingest | SKYRIM-005 loaded/off-screen scale @ working tree
 
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md),
