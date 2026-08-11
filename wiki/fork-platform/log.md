@@ -1,3 +1,31 @@
+## [2026-08-11] resolution | Worldline P6-CTRL semantic re-audit
+
+- Finding: post-acceptance [AUD-WLD-034](../docs/audits/AUD-WLD-034.md) found
+  one Low stale dependency-state class across four live clauses.
+- Resolution: [REM-AUD-WLD-034](../docs/remediations/REM-AUD-WLD-034.md)
+  reconciles current truth without rewriting append-only history; report-only
+  [AUD-WLD-035](../docs/audits/AUD-WLD-035.md) passes at CHML `0/0/0/0`.
+- Boundary: P6-INTEGRATION source grounding may proceed; Worldline remains
+  unshipped and production remains accepted build 36.
+
+## [2026-08-11] acceptance | Worldline P6-CTRL native host controls
+
+- Audit: report-only [AUD-WLD-033](../docs/audits/AUD-WLD-033.md) accepts exact
+  product source `97dca8fee` (tree `4bfd027d4`) at CHML `0/0/0/0`.
+- Verification: neutral Worldline 197 plus one intentional ignore, datastore
+  221/221, core 369/369, standalone 265/265, seven affected serial compile
+  checks, strict task-owned lint and all knowledge/release gates pass.
+- Boundary: P6-INTEGRATION is active for source grounding; Worldline remains
+  unshipped and production remains accepted build 36.
+
+## [2026-08-11] ingest | Worldline P6-CTRL host-control candidate
+
+- Exact product source: `97dca8fee1c8f0183b99b40fa05181f886bfba37`
+  (tree `4bfd027d42119dc5c4f5c8f230c8b15ac02bc756`).
+- Updated: [Worldline Engine](engines/worldline-engine.md) with the implemented atomic admission owner, complete deny-by-default unified configuration, monotonic hot apply/rollback, seven declarative UCR kinds and content-free status/metrics/Security Centre evidence.
+- Verification: exhaustive host-control/config tests, all seven UCR kinds across restart, unified-config projection/apply/rollback and complete standalone 265/265 pass; task-owned strict lint is clean.
+- Boundary: report-only P6-CTRL audit remains mandatory; P6-INTEGRATION is blocked, Worldline remains unshipped and production remains accepted build 36.
+
 ## [2026-08-11] acceptance | Worldline P6-APP signed Construct approval
 - Audit: report-only [AUD-WLD-032](../docs/audits/AUD-WLD-032.md) accepts exact product source `0d34accaa` (tree `daf81e4cc`) and synchronized candidate `5f074d3c8` (tree `e89e8da44`) at CHML `0/0/0/0`.
 - Verification: clean exact candidate repeats neutral Worldline 197 plus one intentional ignore, core Worldline 78 plus one intentional ignore, standalone Constructs 27/27, datastore 221/221, strict task-owned lint, nine serial consumers, production-boundary inspection and all knowledge/release gates.
