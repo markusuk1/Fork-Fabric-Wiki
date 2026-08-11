@@ -1,3 +1,15 @@
+## [2026-08-11] grounding | Freeze complete Phase 6 integration proof
+
+- Contract: [P6-INTEGRATION grounding](../docs/evidence/WLD-001-phase6-integration-grounding.md)
+  binds one SQL/graph/vector/effect candidate through CMT, Fabric,
+  Memory/Context, signed approval, restart and promotion.
+- Host boundary: real Construct transport and Worldline admission must prove
+  independent toggles, emergency stop, hot tightening, rollback, startup-only
+  storage adoption and zero-work denial with content-free telemetry.
+- Evidence: fresh neutral Worldline baseline passes 197 plus one intentional
+  compatibility ignore. Implementation is active; Worldline remains unshipped
+  and production remains accepted build 36.
+
 ## [2026-08-11] resolution | Complete Phase 6 live-state semantics
 
 - Finding: broad [AUD-WLD-036](../docs/audits/AUD-WLD-036.md) found one Low
