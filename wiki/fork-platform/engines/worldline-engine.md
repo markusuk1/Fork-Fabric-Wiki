@@ -31,9 +31,11 @@
   [fixed host-control contract](../../docs/evidence/WLD-001-phase6-control-grounding.md)
   and exact
   [implementation candidate](../../docs/evidence/WLD-001-phase6-control-increment.md)
-  at product source `97dca8fee` (tree `4bfd027d4`). Post-acceptance semantic
-  drift is closed by [AUD-WLD-035](../../docs/audits/AUD-WLD-035.md) at final
-  CHML `0/0/0/0`; P6-INTEGRATION is active for source grounding.
+  at product source `97dca8fee` (tree `4bfd027d4`). The four-file semantic
+  correction is closed by [AUD-WLD-035](../../docs/audits/AUD-WLD-035.md), and
+  broader [AUD-WLD-036](../../docs/audits/AUD-WLD-036.md) is closed by
+  exhaustive [AUD-WLD-037](../../docs/audits/AUD-WLD-037.md) at final CHML
+  `0/0/0/0`. P6-INTEGRATION grounding is active.
   This article does not describe a shipped capability; production remains
   accepted build 36 and WLD-001 remains incomplete.
 - **Updated:** 2026-08-11
@@ -1090,9 +1092,11 @@ current/prior-host compatibility drill. The
 [completion report](../../docs/completions/COMP-P6-MC-001.md) and report-only
 [AUD-WLD-030](../../docs/audits/AUD-WLD-030.md) accept the exact source at CHML
 `0/0/0/0` without a fix. Post-acceptance
-[AUD-WLD-031](../../docs/audits/AUD-WLD-031.md) also passes. P6-APP is active
-under the fixed contract below; production remains accepted build 36 and
-Worldline remains unshipped.
+[AUD-WLD-031](../../docs/audits/AUD-WLD-031.md) also passes. That checkpoint
+activated P6-APP under the fixed contract below. P6-APP and P6-CTRL were
+subsequently accepted, and the current P6-INTEGRATION state is recorded at the
+top of this article. Production remains accepted build 36 and Worldline remains
+unshipped.
 
 ## P6-APP-001 accepted signed Construct approval
 
@@ -1171,7 +1175,11 @@ documentation-transition class across four live clauses. The bounded
 [REM-AUD-WLD-034](../../docs/remediations/REM-AUD-WLD-034.md) preserves
 historical observations while reconciling current truth, and report-only
 [AUD-WLD-035](../../docs/audits/AUD-WLD-035.md) closes the loop at CHML
-`0/0/0/0`.
+`0/0/0/0` for that four-file scope. Broader live-state
+[AUD-WLD-036](../../docs/audits/AUD-WLD-036.md) found one Low class across ten
+additional clauses; [REM-AUD-WLD-036](../../docs/remediations/REM-AUD-WLD-036.md)
+is closed by exhaustive report-only
+[AUD-WLD-037](../../docs/audits/AUD-WLD-037.md) at CHML `0/0/0/0`.
 
 ## Promotion is not merging
 

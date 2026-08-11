@@ -1,3 +1,13 @@
+## [2026-08-11] resolution | Complete Phase 6 live-state semantics
+
+- Finding: broad [AUD-WLD-036](../docs/audits/AUD-WLD-036.md) found one Low
+  stale-transition class across ten clauses in the 422-file live corpus.
+- Resolution: [REM-AUD-WLD-036](../docs/remediations/REM-AUD-WLD-036.md)
+  reconciles all ten without rewriting append-only history; exhaustive
+  [AUD-WLD-037](../docs/audits/AUD-WLD-037.md) passes at CHML `0/0/0/0`.
+- Boundary: P6-INTEGRATION source grounding resumes; Worldline remains
+  unshipped and production remains accepted build 36.
+
 ## [2026-08-11] resolution | Worldline P6-CTRL semantic re-audit
 
 - Finding: post-acceptance [AUD-WLD-034](../docs/audits/AUD-WLD-034.md) found
