@@ -795,3 +795,16 @@
 
 - Verified article structure, index coverage, source provenance, metadata, and
   local Markdown links.
+
+## [2026-08-11] correction | Frontier Companion System @ 3098f74
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md)
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Corrected the initial short companion proof after the owner's normal session
+  exposed the unsafe idle-second-60 global scan. Recorded capped same-cell
+  handle staging and the real-save soak through idle second 78.
+
+## [2026-08-11] lint | 0 issues found
+
+- Verified corrected companion provenance, article/index coverage and the
+  absence of stale second-60 safety claims in the maintained public pages.

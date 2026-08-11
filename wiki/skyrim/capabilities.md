@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md); [companion requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [companion prior art](../../raw/skyrim/2026-08-11-companion-prior-art.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md); [companion requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [companion prior art](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-11
 
@@ -184,10 +184,14 @@ falls back to native guard behavior; and activates one bounded nearby loose or
 harvestable target. Eight licensed authored barks have matching subtitles.
 
 The plug-in builds with warnings as errors and its deterministic policy tests
-pass. `companion-live-18` then proved Lydia form `666772`, licensed voice start,
-real medicine-backed `140 -> 120 -> 140` healing, physical `0 -> 1` pickup,
-three periodic ObservePlayer samples, zero SKSE errors and clean process state
-against the owner's current save. See
+pass. The owner's first ordinary idle playtest corrected the initial short
+proof by reproducing a process termination at the second-60 resource scan.
+COMPANION-002 replaced the global attached-cell/raw-pointer path with a capped
+same-cell iterator that stages engine handles and validates them after the cell
+lock and again before activation. `companion-idle-soak-03` then proved Lydia
+form `666772`, licensed voice start, medicine-backed `140 -> 120 -> 140`
+healing, physical `0 -> 1` pickup and 79 ordinary samples through idle second
+78, with zero SKSE errors and clean process state. See
 [Frontier Companion System](frontier-companion-system.md) for the precise
 shipped/proven boundary.
 

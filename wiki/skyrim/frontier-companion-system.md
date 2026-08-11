@@ -1,7 +1,7 @@
 # Frontier Companion System
 
-> Sources: owner requirements, COMPANION-001 implementation and primary prior-art repositories, collected 2026-08-11
-> Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md)
+> Sources: owner requirements, COMPANION-001 implementation, COMPANION-002 crash correction and primary prior-art repositories, collected 2026-08-11
+> Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-11
 
@@ -53,8 +53,9 @@ through `config/skyrim/companion-lydia.json` and currently provides:
   from Lydia's real inventory; if no valid resource exists she truthfully
   announces and requests native guard/combat behavior instead;
 - bounded same-cell collection of lawful flora/tree activators or loose items,
-  requiring the target to be within 220 game units and verifying Lydia's
-  inventory change;
+  staging at most 64 engine handles under the cell lock, resolving and
+  validating them afterward, requiring the selected target to be within 220
+  game units and revalidating it immediately before activation;
 - eight licensed Piper `en_GB-alba-medium` authored barks with exact Skyrim
   notification subtitles, plus append-only observations and action receipts.
 
@@ -79,6 +80,13 @@ open menus, combat-inappropriate gathering, owned targets, insufficient
 capacity, changed targets and missing resources result in no action or an
 explicit rejected receipt.
 
+The ordinary owner playtest exposed an unsafe first implementation at the
+idle-second-60 boundary: it globally walked attached cells, ran gameplay checks
+under cell spin locks and retained a raw reference. COMPANION-002 replaced that
+path with capped parent-cell enumeration and `ObjectRefHandle` staging. No
+gameplay or ownership query runs inside the iterator callback, and every handle
+is resolved and checked again outside the lock and before activation.
+
 Policy writes use a temporary file followed by an operating-system replace and
 write-through operation. A failed write rolls the menu toggle back and reports
 failure rather than claiming persistence. Test-only mutation is guarded by an
@@ -87,15 +95,16 @@ saving and is cleaned by the harness.
 
 ## Evidence status
 
-The final build compiles with warnings as errors and its deterministic tests
+The corrected build compiles with warnings as errors and its deterministic tests
 cover arbitration priority, truthful no-resource guard fallback, cross-cell
 rejection, idle collection selection, transfer exclusions/order and empty
-post-transfer replay. Final run `companion-live-18` loaded the owner's real
-Lydia save and passed in `21,178 ms`: pair identity, licensed voice start, real
-medicine-backed health change `140 -> 120 -> 140`, physical pickup `0 -> 1`,
-three periodic ObservePlayer samples, zero SKSE error markers and zero remaining
-game processes. The installed DLL SHA-256 is
-`1FB85F8D2F819F7716D5F811B241D991FCEB2FAF3C5D99243E257A889648B585`.
+post-transfer replay. Run `companion-idle-soak-03` loaded the owner's real
+Lydia save and passed in `100,673 ms`: pair identity, licensed voice start,
+medicine-backed health change `140 -> 120 -> 140`, physical pickup `0 -> 1`, 79
+consecutive ObservePlayer samples through idle second 78, zero SKSE error
+markers and zero remaining game processes. That crosses 19 ordinary scan ticks
+beyond the former second-60 crash boundary. The installed DLL SHA-256 is
+`3441135AD3997D6A212193748905CF1B54778C55888D110435757ADF85FD3C86`.
 
 Skyrim's minimized main menu still requires one genuine DirectInput Continue
 selection on launches where its save-list event is delayed. The harness does
