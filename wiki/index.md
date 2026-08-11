@@ -47,6 +47,15 @@ Released and planned capabilities of the forked SpacetimeDB platform.
 |---|---|---|
 | [Fork Capability Baseline](fork/capabilities.md) | Build-36 transactional, memory, graph, causal, context, work, perception, web and operational capabilities plus the qualified 200-actor off-screen module boundary. | 2026-08-10 |
 
+### complete Fork platform knowledge base
+
+The complete maintained Fork wiki is preserved in its own additive namespace;
+the GAME-OPENMW capability baseline above remains unchanged.
+
+| Collection | Summary | Updated |
+|---|---|---|
+| [Complete Fork platform wiki](fork-platform/index.md) | Full architecture, engine, vector, embedding, web, operations, research and workflow knowledge base with its own append-only ingest log. | 2026-08-11 |
+
 ## openmw
 
 Released OpenMW engine, content, scripting, gameplay, and extension behavior.
