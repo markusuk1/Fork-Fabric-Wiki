@@ -26,9 +26,14 @@
   [fixed signed-approval contract](../../docs/evidence/WLD-001-phase6-approval-grounding.md)
   and is accepted internally by report-only
   [AUD-WLD-032](../../docs/audits/AUD-WLD-032.md) at CHML `0/0/0/0`. P6-CTRL is
-  source-grounded by its
+  accepted internally by report-only
+  [AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) from its
   [fixed host-control contract](../../docs/evidence/WLD-001-phase6-control-grounding.md)
-  and active for implementation.
+  and exact
+  [implementation candidate](../../docs/evidence/WLD-001-phase6-control-increment.md)
+  at product source `97dca8fee` (tree `4bfd027d4`). Post-acceptance semantic
+  drift is closed by [AUD-WLD-035](../../docs/audits/AUD-WLD-035.md) at final
+  CHML `0/0/0/0`; P6-INTEGRATION is active for source grounding.
   This article does not describe a shipped capability; production remains
   accepted build 36 and WLD-001 remains incomplete.
 - **Updated:** 2026-08-11
@@ -1123,22 +1128,23 @@ serial downstream proof. See the
 and [completion report](../../docs/completions/COMP-P6-APP-001.md). Report-only
 [AUD-WLD-032](../../docs/audits/AUD-WLD-032.md) repeats the complete affected
 suites, consumer ladder, boundary inspection and knowledge/release gates and
-accepts the exact source at CHML `0/0/0/0`. P6-CTRL is source-grounded and
-active for implementation. Production remains accepted build 36 and Worldline
-remains unshipped.
+accepts the exact source at CHML `0/0/0/0`. P6-CTRL is accepted internally by
+[AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) at CHML `0/0/0/0`, and
+P6-INTEGRATION is active for source grounding. Production remains accepted
+build 36 and Worldline remains unshipped.
 
-## Phase 6 unified control contract
+## Phase 6 unified control accepted internal increment
 
 The [P6-CTRL grounding record](../../docs/evidence/WLD-001-phase6-control-grounding.md)
 fixes one host-owned admission boundary in front of later public Worldline
-surfaces. It will atomically own a versioned deny-by-default `[worldlines]`
+surfaces. The implemented runtime atomically owns a versioned deny-by-default `[worldlines]`
 policy, independently gate create/execute/evaluate/approve/promote/effect/
 nesting/federation, authenticate and filter four allowlists before resource
-lookup, and map configured ceilings back into the real Worldline engine limit
+lookup, and maps configured ceilings back into the real Worldline engine limit
 types. Inspect, completion, reconciliation and recovery remain available during
 an emergency stop so accepted work and audit evidence cannot be stranded.
 
-Ordinary hot applies may only tighten rights. The unified-config manager must
+Ordinary hot applies may only tighten rights. The unified-config manager now
 reject invalid or widening adoption before replacing `config.toml`; explicit
 rollback may restore the prior snapshot, while storage-root and journal/
 manifest/codec storage ceilings remain restart-bound. Seven immutable UCR kinds
@@ -1149,9 +1155,23 @@ or process launch/trust decisions.
 Observation is deliberately content-free: fixed-label counters, lazy bounded
 Security Centre events, and request-time status expose operation/reason classes,
 revision/digest and aggregate ceilings, not SQL, rows, vectors, prompts, model
-output, effect bodies, credentials or keys. This is a fixed implementation
-contract, not a shipped configuration claim; build 36 still has no Worldline
-toggle or consumer endpoint.
+output, effect bodies, credentials or keys. Exhaustive tests mutate every
+numeric ceiling to zero and past its hard cap, violate every cross-field rule,
+attempt every hot numeric widening, restart all seven UCR kinds and exercise
+the complete standalone library at 265/265. Report-only
+[AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) independently repeats the full
+neutral Worldline, datastore, core and standalone suites, affected serial checks,
+strict task-owned lint and source/knowledge boundaries and accepts exact product
+source `97dca8fee` (tree `4bfd027d4`) at CHML `0/0/0/0`. P6-INTEGRATION is active
+for source grounding. This is not a shipped configuration claim; build 36 still
+has no Worldline toggle or consumer endpoint.
+
+Post-acceptance [AUD-WLD-034](../../docs/audits/AUD-WLD-034.md) found one Low
+documentation-transition class across four live clauses. The bounded
+[REM-AUD-WLD-034](../../docs/remediations/REM-AUD-WLD-034.md) preserves
+historical observations while reconciling current truth, and report-only
+[AUD-WLD-035](../../docs/audits/AUD-WLD-035.md) closes the loop at CHML
+`0/0/0/0`.
 
 ## Promotion is not merging
 
