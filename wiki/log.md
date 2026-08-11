@@ -808,3 +808,10 @@
 
 - Verified corrected companion provenance, article/index coverage and the
   absence of stale second-60 safety claims in the maintained public pages.
+
+## [2026-08-11] correction | Frontier Companion manual status @ 3098f74
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md)
+- Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Withdrew the playable tactics and burden-acceptance claims after the first
+  owner F10 test terminated Skyrim before any interaction receipt.

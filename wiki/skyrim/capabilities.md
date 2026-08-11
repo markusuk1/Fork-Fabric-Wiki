@@ -1,7 +1,7 @@
 # Skyrim SE/AE + SKSE Capability Baseline
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
-> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md); [companion requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [companion prior art](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md)
+> Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md); [companion requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [companion prior art](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md); [F10 manual crash correction](../../raw/skyrim/2026-08-11-companion-f10-manual-crash.md)
 > Commit: 3098f74
 > Updated: 2026-08-11
 
@@ -194,6 +194,11 @@ healing, physical `0 -> 1` pickup and 79 ordinary samples through idle second
 78, with zero SKSE errors and clean process state. See
 [Frontier Companion System](frontier-companion-system.md) for the precise
 shipped/proven boundary.
+
+The first owner F10 test then terminated Skyrim before any tactics receipt.
+This withdraws the claimed playable tactics and burden-acceptance surface even
+though observation and test-gated engine probes remain real. COMPANION-001 is
+reopened until a replacement UI and every claimed manual path are proven.
 
 ## Native capability catalogue
 

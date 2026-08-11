@@ -1,7 +1,7 @@
 # Frontier Companion System
 
 > Sources: owner requirements, COMPANION-001 implementation, COMPANION-002 crash correction and primary prior-art repositories, collected 2026-08-11
-> Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md)
+> Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md); [F10 manual crash correction](../../raw/skyrim/2026-08-11-companion-f10-manual-crash.md)
 > Commit: 3098f74
 > Updated: 2026-08-11
 
@@ -94,6 +94,13 @@ unshipped flag, restores health and temporary inventory changes, quits without
 saving and is cleaned by the harness.
 
 ## Evidence status
+
+**Manual status correction:** this slice is not currently playable. The first
+owner F10 test terminated Skyrim after four valid observer samples and before
+any tactics or policy receipt. Evidence narrows the failure to the F10
+`show_policy_menu` path at its native message-box boundary, but does not yet
+prove the exact ABI, lifetime or callback-ownership cause. Do not treat the
+binary tactics UI, burden acceptance or subsequent manual checklist as shipped.
 
 The corrected build compiles with warnings as errors and its deterministic tests
 cover arbitration priority, truthful no-resource guard fallback, cross-cell
