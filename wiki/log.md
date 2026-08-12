@@ -1,5 +1,17 @@
 # Wiki Log
 
+## [2026-08-12] correction | Custom Lydia implementation withdrawn @ working tree
+
+- Removed the project-owned Lydia SKSE DLL, generated dialogue ESP/SEQ/Papyrus
+  and voice content, configuration, source, companion-only build/deploy/test
+  tooling, generated builds and both installed deployment copies.
+- Corrected the capability boundary: no Fork adapter and no LLM integration
+  were implemented; the removed code was a local Skyrim behaviour layer.
+- Retained owner failures, requirements, receipts and prior-art research as
+  historical evidence. Rejected the custom CommonLib-first selection rather
+  than presenting it as a current architecture.
+- No replacement companion implementation was selected in this cleanup.
+
 ## [2026-08-12] correction | Lydia gather accepted and Say branch repaired @ working tree
 
 - Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),

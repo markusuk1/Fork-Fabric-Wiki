@@ -1,12 +1,21 @@
 # Frontier Companion System
 
+> **Withdrawn implementation:** the custom Lydia SKSE/dialogue runtime described
+> in this article has been removed. It is not installed, released or ready for
+> player testing. It never implemented a Fork adapter or an LLM integration.
+> The article is retained as historical requirements, prior-art research,
+> observed partial behaviours and failure evidence. Its former ownership table
+> and “implemented” sections describe intent/history, not current capability.
+
 > Sources: owner requirements, COMPANION-001 implementation, COMPANION-002 crash correction and primary prior-art repositories, collected 2026-08-11
 > Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md); [F10 manual crash correction](../../raw/skyrim/2026-08-11-companion-f10-manual-crash.md); [interaction replacement proof](../../raw/skyrim/2026-08-11-companion-interaction-replacement-proof.md); [foreground lockout correction](../../raw/skyrim/2026-08-11-skyrim-foreground-lockout-correction.md); [native handoff correction](../../raw/skyrim/2026-08-11-companion-native-handoff-correction.md); [exact-hash qualification](../../raw/skyrim/2026-08-11-companion-exact-hash-qualification.md); [player-path gap research](../../raw/skyrim/2026-08-11-companion-player-path-gap-research.md); [production-path re-entry research](../../raw/skyrim/2026-08-11-companion-production-path-reentry-research.md); [discovery static preflight](../../raw/skyrim/2026-08-11-companion-discovery-static-preflight.md); [critical dependency closure](../../raw/skyrim/2026-08-11-companion-critical-dependency-closure.md)
-> Correction raw: [container-looting qualification](../../raw/skyrim/2026-08-12-companion-container-looting-qualification.md); [corpse-looting qualification](../../raw/skyrim/2026-08-12-companion-corpse-looting-qualification.md); [chatter/callout qualification](../../raw/skyrim/2026-08-12-companion-chatter-callout-qualification.md); [final Orders/shortcut qualification](../../raw/skyrim/2026-08-12-companion-orders-shortcuts-qualification.md); [burden repair evidence](../../raw/skyrim/2026-08-12-companion-burden-repair-evidence.md); [owner programme](../../raw/skyrim/2026-08-12-companion-orders-burden-llm-owner-requirements.md); [owner gather pass/voice failure](../../raw/skyrim/2026-08-12-companion-owner-gather-pass-voice-failure.md); [Say branch repair evidence](../../raw/skyrim/2026-08-12-companion-say-branch-repair-evidence.md)
+> Correction raw: [container-looting qualification](../../raw/skyrim/2026-08-12-companion-container-looting-qualification.md); [corpse-looting qualification](../../raw/skyrim/2026-08-12-companion-corpse-looting-qualification.md); [event-ledger production correction](../../raw/skyrim/2026-08-12-event-ledger-production-correction.md); [chatter/callout qualification](../../raw/skyrim/2026-08-12-companion-chatter-callout-qualification.md); [final Orders/shortcut qualification](../../raw/skyrim/2026-08-12-companion-orders-shortcuts-qualification.md); [burden repair evidence](../../raw/skyrim/2026-08-12-companion-burden-repair-evidence.md); [owner programme](../../raw/skyrim/2026-08-12-companion-orders-burden-llm-owner-requirements.md); [owner gather pass/voice failure](../../raw/skyrim/2026-08-12-companion-owner-gather-pass-voice-failure.md); [Say branch repair evidence](../../raw/skyrim/2026-08-12-companion-say-branch-repair-evidence.md); [focused-activity suspension requirements](../../raw/skyrim/2026-08-12-companion-focused-activity-suspension-requirements.md); [owner combat-heal acceptance](../../raw/skyrim/2026-08-12-companion-owner-combat-heal-acceptance.md)
 > Commit: 3098f74
 > Updated: 2026-08-12
+> Rescue correction: [package-safe Lydia save rescue](../../raw/skyrim/2026-08-12-lydia-save-rescue-package-correction.md)
+> Rescue acceptance: [owner-observed follower restoration](../../raw/skyrim/2026-08-12-lydia-save-rescue-owner-acceptance.md)
 
-## Purpose
+## Historical purpose
 
 The companion system turns Skyrim followers into grounded, configurable
 assistants while retaining Skyrim's physical execution and Fork's durable
@@ -33,17 +42,22 @@ The intended loop is `observe -> normalize -> arbitrate -> announce -> execute -
 verify -> receipt -> reconcile`. Combat reflexes remain local and deterministic;
 longer planning, memory and optional LLM work remain asynchronous.
 
+The emergency ranged combat heal is **owner accepted**. In ordinary combat
+Lydia spoke, wound up and released the healing arrow from 570.30 units; the
+correlated terminal records a hit, player health `36.91 -> 64.86` and Lydia's
+valid healing potion `1 -> 0`. This acceptance is limited to that one grounded
+heal type and does not advance the unrelated failed companion claims.
+
 ## Implemented COMPANION-001 components and proof boundary
 
-The exact installed 2026-08-12 baseline is DLL
-`291121CBC7FB1C5DE4F832CD974E204B0A4A19B73118D94E1F68F17611B5ED58`,
-ESP `17703BAADEABD36BD69A8ECC56D2E4A8805517DDE3E729E3E68CE2ECEEFC6C31`
+The exact installed baseline is DLL
+`515D5B8B1945E3A7931D4B17249E2F9BD4A37A370347806BEE338BD7E3F7B5BE`,
+ESP `FFF409006E608DFD5F0A90A960072B509B16F90DC8C8CB49D5F72F34620C0583`
 and SEQ `A0E1269E459333A5D0486163DDA2B66EC35EB9B902DC42FA9931EAEC025407F6`.
-The corpse and container production runs plus exact-hash regressions qualify
-lawful discovery/search/transfer for both target types, the full baseline, native Orders,
-conflict-checked shortcuts, chatter/callouts and burden failure boundaries.
-Owner acceptance of the final combined surface is deferred because the owner
-is unavailable.
+The full companion, native Orders, event-admitted three-corpse, container and
+continuous-ore production routes pass on that exact hash. COMPANION-008 is
+`ready_for_owner`; the parent COMPANION-001 remains failed at its independent
+semantic loot-policy/UI and focused-activity suspension requirements.
 
 Orders is a voiced top-level native branch parallel to Config. It exposes
 continuous lawful gathering, Stop Gathering, immediate pack help, Stop All,
@@ -62,15 +76,41 @@ visible movement/animation/delta/HUD/return terminal. Generic-object visibility
 uses loaded 3D and a Havok LOS-layer ray beyond the maintained 300-unit
 close-collision floor; actor LOS is retained for actor-to-actor healing.
 
+Owner evidence withdraws the current callout usefulness and loose-item content
+policy. The live stream proves a named `Bucket` callout was accepted and the
+continuous gather path then collected two bucket references. The scanner treats
+all loose `Misc` as resource candidates, while corpse/container selection
+accepts `Misc` by value. Skyrim's `Misc` is not a semantic resource category.
+The required replacement is one shared semantic policy with category defaults,
+stable per-base-item overrides, immediate-need/value priority, explicit item
+destination and an in-game Loot Policy surface. See the
+[loot-policy/UI requirements](../../raw/skyrim/2026-08-12-companion-loot-policy-and-ui-requirements.md).
+
+An owner lockpicking session exposed a separate focus-arbitration failure:
+Lydia initiated an unsolicited junk callout while the lockpicking menu owned the
+player's attention. The current source tracks `DialogueMenu` for callout and
+chatter but does not apply one complete focus check to the whole automation
+loop. The required native-menu adaptation suspends all companion scanning,
+decisions, new/chained target work, speech and prompts during focused activity,
+while preserving durable Orders. Closing the last nested focused menu starts a
+three-second grace, discards stale candidates, rescans the current area and
+then resumes the preserved Order.
+
 Corpse looting uses the same native Orders route, bounded natural same-cell
-discovery and legality/visibility gates. Lydia announces before movement, a
+discovery and legality/visibility gates. The current implementation adds the
+shared event-driven activity window, bounded typed candidate ledger and
+persistent work schedule: attributed deaths enter once, empty scans wait,
+new deaths resume an armed Order, nearby targets chain directly and Lydia
+regroups once when the route exhausts. Lydia announces before movement, a
 temporary navigable marker supplies the Travel package while the dead actor
 remains the independently revalidated animation/inventory target, and native
 `IdleSearchBody` supplies a credible three-second search. Only conservative
 capacity-safe items move, every source decrement must equal Lydia's increment,
 the HUD names bounded items/counts, and ordinary follower control is restored.
-The qualified run observed 66.74 units of Lydia movement, exact corpse `-3` /
-Lydia `+3`, capacity-full no-transfer and target-invalidated no-transfer.
+The exact final event route proved three attributed corpses against 40 unrelated
+living actors, one route bark, three body searches, exact paired transfers,
+armed waiting, a fresh-death resume, one regroup, capacity-full no-transfer and
+target-invalidated no-transfer. Ordinary moving-route owner acceptance remains.
 
 The container adapter adds loaded visible unlocked unowned non-criminal world
 container discovery, a collision-aware approach stand-off, targeted native
@@ -142,6 +182,16 @@ write-through operation. A failed write rolls the menu toggle back and reports
 failure rather than claiming persistence. Test-only mutation is guarded by an
 unshipped flag, restores health and temporary inventory changes, quits without
 saving and is cleaned by the harness.
+
+Companion save rescue must release action ownership, not merely change actor
+position. The project travel package is owned by a forced alias on the
+dedicated companion action quest and can continue to outrank ordinary follower
+behaviour after a teleport. The rescue helper therefore stops that quest,
+ends the interrupted package, reevaluates Lydia, moves her at a safe stand-off,
+waits for a non-project package, saves, reloads and requires the same released
+package after reload. The corrected named save passes that structural gate;
+the owner subsequently confirmed Lydia is unstuck and follows over ordinary
+terrain. This accepts the rescue only, not the persistent work-order route.
 
 ## Evidence status
 

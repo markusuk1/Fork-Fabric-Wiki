@@ -74,8 +74,8 @@ community ecosystem and Fork integration boundaries.
 | Article | Summary | Updated |
 |---|---|---|
 | [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, durable bridge, embodied day, recovery, bounded scale and verified reversible Whiterun suppression. | 2026-08-11 |
-| [Frontier Companion System](skyrim/frontier-companion-system.md) | Lydia's grounded architecture and exact regression-qualified burden, Orders, shortcuts, chatter/callouts, gather, lawful corpse/container looting, heal, voice and configuration baseline. | 2026-08-12 |
-| [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md) | Mechanism catalogue and admission gate, including qualified Orders/corpse/container systems, developer-proven ore mining, and the remaining continuous-ore, logistics, Fork and cognition boundaries. | 2026-08-12 |
+| [Frontier Companion System](skyrim/frontier-companion-system.md) | Historical requirements, prior art, partial observations and failures for the removed custom Lydia runtime; no Fork adapter or LLM integration exists. | 2026-08-12 |
+| [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md) | Withdrawn custom-runtime history and candidate integration matrix; no custom Lydia capability is installed or released. | 2026-08-12 |
 
 ## workflow
 
