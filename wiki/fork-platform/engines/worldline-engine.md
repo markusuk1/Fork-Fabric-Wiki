@@ -1,46 +1,15 @@
 # Worldline Engine
 
-- **Status:** Accepted end goal; Phases 0-5 are accepted internal dependencies
-  at CHML `0/0/0/0`. Complete-Phase-5 report-only
-  [AUD-WLD-022](../../docs/audits/AUD-WLD-022.md) accepts P5-COMPAT source
-  `9295b729a` after initial [AUD-WLD-021](../../docs/audits/AUD-WLD-021.md) and
-  [REM-AUD-WLD-021](../../docs/remediations/REM-AUD-WLD-021.md). Phase 6 is
-  active. P6-CMT-001 remediation is implemented at `0c6e29aa8`; report-only
-  [AUD-WLD-023](../../docs/audits/AUD-WLD-023.md) failed at CHML `0/4/1/0` and
-  [REM-AUD-WLD-023](../../docs/remediations/REM-AUD-WLD-023.md) closed those
-  functional findings, but [AUD-WLD-024](../../docs/audits/AUD-WLD-024.md)
-  failed at CHML `0/1/0/0` because abandoned attempts bypass the durable
-  record bound. [REM-AUD-WLD-024](../../docs/remediations/REM-AUD-WLD-024.md)
-  is implemented, and report-only
-  [AUD-WLD-025](../../docs/audits/AUD-WLD-025.md) accepts P6-CMT-001 at CHML
-  `0/0/0/0`. Initial P6-FAB report-only
-  [AUD-WLD-026](../../docs/audits/AUD-WLD-026.md) rejects the candidate at
-  CHML `0/2/2/1`; [REM-AUD-WLD-026](../../docs/remediations/REM-AUD-WLD-026.md)
-  is implemented at exact source `732ef6e26` (tree `ef7eac116`), and
-  report-only [AUD-WLD-027](../../docs/audits/AUD-WLD-027.md) closes every
-  finding at CHML `0/0/0/0`. P6-FAB-001 is accepted internally. P6-MC-001
-  exact source `c790628e9` is accepted internally by report-only
-  [AUD-WLD-030](../../docs/audits/AUD-WLD-030.md) at CHML `0/0/0/0`, and
-  post-acceptance [AUD-WLD-031](../../docs/audits/AUD-WLD-031.md) also passes.
-  P6-APP-001 product source `0d34accaa` (tree `daf81e4cc`) implements its
-  [fixed signed-approval contract](../../docs/evidence/WLD-001-phase6-approval-grounding.md)
-  and is accepted internally by report-only
-  [AUD-WLD-032](../../docs/audits/AUD-WLD-032.md) at CHML `0/0/0/0`. P6-CTRL is
-  accepted internally by report-only
-  [AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) from its
-  [fixed host-control contract](../../docs/evidence/WLD-001-phase6-control-grounding.md)
-  and exact
-  [implementation candidate](../../docs/evidence/WLD-001-phase6-control-increment.md)
-  at product source `97dca8fee` (tree `4bfd027d4`). The four-file semantic
-  correction is closed by [AUD-WLD-035](../../docs/audits/AUD-WLD-035.md), and
-  broader [AUD-WLD-036](../../docs/audits/AUD-WLD-036.md) is closed by
-  exhaustive [AUD-WLD-037](../../docs/audits/AUD-WLD-037.md) at final CHML
-  `0/0/0/0`. The
-  [P6-INTEGRATION contract](../../docs/evidence/WLD-001-phase6-integration-grounding.md)
-  is frozen and implementation is active.
-  This article does not describe a shipped capability; production remains
-  accepted build 36 and WLD-001 remains incomplete.
-- **Updated:** 2026-08-11
+- **Status:** Accepted end goal; Phases 0-6 are accepted internal dependencies
+  at CHML `0/0/0/0`. Report-only
+  [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts complete Phase 6.
+  The [complete Phase 7 source contract](../../docs/evidence/WLD-001-phase7-grounding.md)
+  is frozen at `c5696700f`. Report-only
+  [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts P7-NEST-001 at
+  CHML `0/0/0/0` and P7-DIST-001 is active. Neither is an independently
+  usable or shipped slice. Production remains accepted build 36 and WLD-001
+  remains incomplete.
+- **Updated:** 2026-08-12
 - **Plan:**
   [complete native Worldline Engine plan](../../docs/plans/WLD-001-native-worldline-engine.md)
 - **Tracking:** [WLD-001 tracking](../../TRACKING.md)
@@ -910,8 +879,11 @@ gate retains the same format-1 seal digest. The [implementation evidence](../../
 and [completion report](../../docs/completions/COMP-P5-COMPAT-001.md) record
 C1-C12 and the initial-audit remediation. Report-only
 [AUD-WLD-022](../../docs/audits/AUD-WLD-022.md) accepts complete Phase 5 at
-CHML `0/0/0/0`; Phase 6 is active. Production remains accepted build 36 and
-Worldline remains unshipped.
+CHML `0/0/0/0`; complete Phase 6 later passes
+[AUD-WLD-038](../../docs/audits/AUD-WLD-038.md). Phase 7 is grounded and
+P7-NEST is accepted internally by
+[AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) and P7-DIST is active.
+Production remains accepted build 36 and Worldline remains unshipped.
 
 ## P6-CMT-001 exact-source candidate
 
@@ -1137,8 +1109,12 @@ suites, consumer ladder, boundary inspection and knowledge/release gates and
 accepts the exact source at CHML `0/0/0/0`. P6-CTRL is accepted internally by
 [AUD-WLD-033](../../docs/audits/AUD-WLD-033.md) at CHML `0/0/0/0`; the
 [P6-INTEGRATION proof contract](../../docs/evidence/WLD-001-phase6-integration-grounding.md)
-is now frozen and implementation is active. Production remains accepted build
-36 and Worldline remains unshipped.
+is implemented at exact source `c34fcfa6b2` (tree `71cfba112c`) as a green
+[I1-I14 candidate](../../docs/evidence/WLD-001-phase6-integration-increment.md),
+with its [completion report](../../docs/completions/COMP-P6-INTEGRATION-001.md)
+recorded. Report-only [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts
+complete Phase 6 at CHML `0/0/0/0` and unlocks Phase 7 source grounding.
+Production remains accepted build 36 and Worldline remains unshipped.
 
 ## Phase 6 unified control accepted internal increment
 
@@ -1184,27 +1160,102 @@ additional clauses; [REM-AUD-WLD-036](../../docs/remediations/REM-AUD-WLD-036.md
 is closed by exhaustive report-only
 [AUD-WLD-037](../../docs/audits/AUD-WLD-037.md) at CHML `0/0/0/0`.
 
-## P6-INTEGRATION-001 frozen complete proof
+## P6-INTEGRATION-001 accepted complete-proof increment
 
 The [source-grounded integration contract](../../docs/evidence/WLD-001-phase6-integration-grounding.md)
-does not infer integration from separately green components. One native
-candidate must carry real SQL state, graph and vector dependencies and a
-speculative executable effect through exact CMT evaluation, a durable bounded
-Fabric tournament, Memory/Context evidence, signed approval, restart and atomic
-promotion. A second restart must reproduce the authoritative data, eligible
-effect, promotion-only evidence lineage and idempotent receipt.
+is now implemented without inferring integration from separately green
+components. One native candidate carries real SQL state, graph and vector
+dependencies and a speculative executable effect through exact CMT evaluation,
+a durable bounded Fabric tournament, Memory/Context evidence, approval
+recovery, restart and atomic promotion. A second restart reproduces the
+authoritative SQL/graph/vector data, eligible effect, promotion-only evidence
+lineage and idempotent receipt.
 
-The host boundary proof uses real Construct events and the node ES256 signer and
-routes operation closures through the atomic Worldline control runtime. It must
-observe every independent toggle, emergency stop, monotonic hot tightening,
-explicit rollback, startup-only storage adoption and disabled-path zero work.
-Telemetry remains content-free. The proof reuses the accepted engine owners;
-it introduces no second coordinator and does not pull Phase 7 distribution or
-Phase 8 public transport forward.
+The host proof uses a real Construct room, authenticated members, durable events
+and the node ES256 signer. Create, execute, evaluate, approve, promote and
+effect closures run through the atomic Worldline control runtime. All eight
+operation gates deny only their own closure, emergency/disabled paths execute
+zero work, ordinary hot adoption can only tighten, rollback is explicit,
+restart-only storage changes only on a newly built runtime and status remains
+content-free. Construct event delivery alone is explicitly proven unable to
+grant authority.
 
-Fresh neutral grounding passes 197 Worldline tests with one intentional
-compatibility ignore. Implementation is active. This remains internal proof,
-not a shipped capability; production remains accepted build 36.
+The [implementation evidence](../../docs/evidence/WLD-001-phase6-integration-increment.md)
+maps every I1-I14 requirement to executed assertions. Fresh serial gates pass
+Worldline 197 plus one intentional ignore, core Worldline 93 plus one
+intentional ignore, tournament 5/5, datastore 221/221, Fabric 214/214, Memory
+160/160, Context 88/88, standalone Worldline 25/25 and all seven compile checks.
+Exact changed ranges have zero strict Clippy diagnostics; inherited crate debt
+is disclosed. Exact implementation source `c34fcfa6b258831c2a0aa95f0bf725a49bda61a7`
+(tree `71cfba112c82f8a8e51440da7e5fe1014317d859`) and the
+[completion report](../../docs/completions/COMP-P6-INTEGRATION-001.md) are
+recorded. Report-only [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts
+complete Phase 6 at CHML `0/0/0/0`. This is internal proof, not a shipped
+capability; the complete Phase 7 contract is frozen, P7-NEST-001 is pinned at
+`d198b1de5` pending audit and production remains accepted build 36.
+
+## Phase 7 frozen nested/distributed contract
+
+The [complete Phase 7 grounding record](../../docs/evidence/WLD-001-phase7-grounding.md)
+fixes one non-terminal candidate at exact source `c5696700f`:
+
+- P7-NEST-001 atomically folds a complete child transaction bundle into one
+  parent journal step, validates the pinned parent and every SQL/graph/vector/
+  schema/module/config dependency, transfers effect and lineage commitments,
+  recovers exact replay and releases lineage GC roots only when safe.
+- P7-DIST-001 turns the pre-seeded participant journal kind and authority
+  receipt table into an authenticated ES256/Fabric protocol with append-only
+  coordinator decisions, participant prepare/apply/abort states, recoverable
+  resource fences and effects held until signed global completion.
+- P7-INTEGRATION-001 proves the complete three-authority crash, partition,
+  replay, security, bounds, restart and compatibility matrix through unified
+  configuration/UCR controls and a newly numbered immutable host stage.
+
+### P7-NEST implementation candidate
+
+Exact source `d198b1de5f823b28ec5ceea7c724958185ce86a6` (tree
+`800c6e3f116d1377a82eaf7586bb97d8820fe856`) implements the complete N1-N10
+native nesting boundary:
+
+- a versioned canonical child-promotion bundle binds the exact child, parent,
+  dependency, transaction, overlay, effect, approval and lineage commitments;
+- one durable parent `ChildPromotion` step publishes the complete detached
+  result while authority remains unchanged;
+- row/range/negative, graph-frontier, vector-crossover and parent-advance
+  conflicts reject without partial application;
+- recursive descendants, sequences, schema/module evolution and effect intents
+  flatten exactly once and later promote atomically to authority;
+- exact retry, mutated reuse, every durable crash boundary and accepted-lineage
+  GC recovery are deterministic;
+- owner, caller, database, ancestor, sibling and capability mismatches fail
+  closed, and depth/fanout/record/step/byte limits reject before
+  materialization;
+- durable lineage format 4 distinguishes nested children from re-execution
+  descendants while retaining v2/v3 history compatibility.
+
+The [N1-N10 evidence](../../docs/evidence/WLD-001-phase7-nested-increment.md)
+records Worldline 201 plus one intentional ignore, core Worldline 93 plus one
+intentional ignore, detached-authority precision 1/1 and real compiled-WASM
+nested evolution 1/1. The
+[completion report](../../docs/completions/COMP-P7-NEST-001.md) closes the
+implementation work package, and report-only
+[AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts it at CHML
+`0/0/0/0`. P7-DIST is active; P7-INTEGRATION, the combined immutable Host
+stage and complete Phase 7 audit remain mandatory.
+
+Grounding found real incomplete substrate rather than an existing hidden
+feature: participant records can currently be encoded, but branch recovery
+rejects participant journal kind 10; Fabric's authorization digest is policy
+binding rather than a cryptographic signature; and no coordinator, prepare
+fence or distributed apply path exists. The implementation therefore has to
+close journal recovery, native promotion factoring, authority fencing,
+participant trust and effect eligibility together. A table-only coordinator,
+SQL-only demo or independently accepted nesting slice is explicitly rejected.
+
+Phase 7 remains unshipped. Its combined diff is Host-impacting and cannot be
+accepted from source tests alone: a new immutable stage, executable stamps and
+hashes, smoke, restart and rollback/restore plus report-only CRAFTESB audit at
+CHML `0/0/0/0` are required before Phase 8 begins.
 
 ## Promotion is not merging
 

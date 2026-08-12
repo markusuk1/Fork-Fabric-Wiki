@@ -8,7 +8,9 @@ knowledge base. Start with the [Fork wiki index](index.md); its append-only
 
 - The surrounding repository's GAME-OPENMW wiki is preserved unchanged.
 - This subtree contains all 46 files from the Fork wiki at publication source
-  `e24b49f91` on 2026-08-11, plus this publication-boundary README.
+  `4773f3ec4` on 2026-08-12, plus this publication-boundary README. That source
+  includes the accepted internal nested-Worldline checkpoint; Worldline remains
+  unshipped until the complete release gate passes.
 - The mirror intentionally contains documentation only: no credentials,
   generated databases, build products, implementation source, or private raw
   evidence is published.

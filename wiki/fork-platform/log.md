@@ -1,3 +1,87 @@
+## [2026-08-12] acceptance | Worldline P7-NEST native child promotion
+
+- Accepted: report-only [AUD-WLD-040](../docs/audits/AUD-WLD-040.md) passes
+  exact evidence candidate `64cbb30d2` and implementation source
+  `d198b1de5` at CHML `0/0/0/0` without remediation.
+- Verified: N1-N10, v2/v3-to-v4 compatibility, security, bounds, crash
+  recovery, accepted-lineage GC, real compiled-WASM, manual, canonical wiki,
+  documents, workflow and live release truth.
+- Boundary: P7-DIST is active. Complete Phase 7, the combined immutable Host
+  stage, public surfaces, release and production remain open; build 36 remains
+  accepted.
+
+## [2026-08-12] implementation | Worldline P7-NEST native child promotion
+
+- Source: `d198b1de5f823b28ec5ceea7c724958185ce86a6` (tree
+  `800c6e3f116d1377a82eaf7586bb97d8820fe856`).
+- Implemented: canonical one-step child-to-parent promotion, complete
+  SQL/graph/vector/schema/module/sequence/effect propagation, exact conflicts,
+  crash repair, recursive lineage, hard pre-materialization bounds and
+  accepted-lineage GC.
+- Compatibility: durable lineage format 4 distinguishes nested and
+  re-execution descendants while preserving v2/v3 history.
+- Evidence: [N1-N10 implementation record](../docs/evidence/WLD-001-phase7-nested-increment.md)
+  and [completion report](../docs/completions/COMP-P7-NEST-001.md).
+- Verified: Worldline 201 plus one intentional ignore, core Worldline 93 plus
+  one intentional ignore, detached-authority precision 1/1 and real
+  compiled-WASM nested evolution 1/1.
+- Boundary: report-only P7-NEST audit remains mandatory; P7-DIST,
+  P7-INTEGRATION and the combined immutable Host stage remain open. Worldline
+  is unshipped and production remains accepted build 36.
+
+## [2026-08-11] grounding | Freeze complete native Worldline Phase 7 contract
+
+- Source: `c5696700f27eb2b9f7c3112e8344c2bf983b3296` (tree
+  `8ef318a27d672aa1b1fb7030dd36636a3670a121`).
+- Contract: [Phase 7 nested/distributed grounding](../docs/evidence/WLD-001-phase7-grounding.md)
+  fixes atomic child-to-parent promotion, accepted-lineage GC, authenticated
+  Fabric participants, durable coordinator decisions, prepared resource fences,
+  globally held effects, recovery and a complete three-authority matrix.
+- Discovery: participant journal kind 10 and authority receipt table 83 are
+  pre-seeded, but participant recovery, coordinator, fencing and apply are not
+  implemented; Fabric authorization digests are not cryptographic signatures.
+- Boundary: P7-NEST-001 is active inside one non-terminal Phase 7 candidate.
+  Phase 7 requires a new immutable Host stage and CHML-zero audit; Worldline
+  remains unshipped and production remains accepted build 36.
+
+## [2026-08-11] acceptance | Complete native Worldline Phase 6
+
+- Accepted: report-only [AUD-WLD-038](../docs/audits/AUD-WLD-038.md) certifies
+  the exact complete Phase 6 product and integration evidence at CHML
+  `0/0/0/0` without remediation.
+- Verified: Worldline, core, datastore, Fabric, Memory, Context and standalone
+  host suites; seven serial checks; strict task-owned lint; manual, canonical
+  wiki, document, workflow, phase and release-truth gates.
+- Boundary: Phase 7 nested/distributed source grounding is active. Worldline
+  remains unshipped and production remains accepted build 36.
+
+## [2026-08-11] evidence | Pin Worldline complete Phase 6 integration candidate
+
+- Exact source: `c34fcfa6b258831c2a0aa95f0bf725a49bda61a7` (tree
+  `71cfba112c82f8a8e51440da7e5fe1014317d859`), mirrored to
+  `context/feature/WLD-001-phase6-fab`.
+- Evidence: [I1-I14 implementation](../docs/evidence/WLD-001-phase6-integration-increment.md)
+  and [completion report](../docs/completions/COMP-P6-INTEGRATION-001.md).
+- Boundary: the independent complete Phase 6 audit remains mandatory. Phase 7
+  is blocked, Worldline remains unshipped and production remains accepted
+  build 36.
+
+## [2026-08-11] ingest | Worldline complete Phase 6 integration candidate
+
+- Updated: [Worldline Engine](engines/worldline-engine.md) with one executable
+  SQL/graph/vector/effect candidate crossing CMT, Fabric, Memory/Context,
+  Construct approval, restart, atomic promotion and idempotent replay.
+- Host proof: real Construct/ES256 events cross atomic admission; all eight
+  operation toggles are closure-proven independent, disabled/emergency paths
+  execute zero work and restart-only configuration stays restart-bound.
+- Verification: Worldline 197 plus one intentional ignore, core Worldline 93
+  plus one intentional ignore, tournament 5/5, datastore 221/221, Fabric
+  214/214, Memory 160/160, Context 88/88, standalone Worldline 25/25, all seven
+  compile checks and task-owned strict lint pass.
+- Boundary: exact source pinning, completion and the independent complete Phase
+  6 audit remain pending. Phase 7 is blocked, Worldline remains unshipped and
+  production remains accepted build 36.
+
 ## [2026-08-11] grounding | Freeze complete Phase 6 integration proof
 
 - Contract: [P6-INTEGRATION grounding](../docs/evidence/WLD-001-phase6-integration-grounding.md)
