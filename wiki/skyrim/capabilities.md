@@ -2,6 +2,7 @@
 
 > Sources: official SKSE/runtime pages, Creation Kit reference and primary community repositories, collected 2026-08-10
 > Raw: [PLATFORM-001 platform audit](../../raw/architecture/2026-08-10-openmw-skyrim-platform-audit.md); [SKSE Steam-bootstrap observation](../../raw/skyrim/2026-08-10-skse-steam-bootstrap-observation.md); [live actor receipt](../../raw/skyrim/2026-08-10-skyrim-live-actor-receipt.md); [live humanoid bridge proof](../../raw/skyrim/2026-08-10-skyrim-live-humanoid-bridge-proof.md); [embodied-day prior art](../../raw/skyrim/2026-08-10-skyrim-embodied-day-prior-art.md); [embodied-day proof](../../raw/skyrim/2026-08-10-skyrim-embodied-day-proof.md); [recovery prior art](../../raw/skyrim/2026-08-10-skyrim-recovery-prior-art.md); [recovery proof](../../raw/skyrim/2026-08-10-skyrim-recovery-proof.md); [scale prior art](../../raw/skyrim/2026-08-10-skyrim-scale-prior-art.md); [scale proof](../../raw/skyrim/2026-08-10-skyrim-scale-proof.md); [modded-save confirmation prior art](../../raw/skyrim/2026-08-11-modded-save-confirmation-prior-art.md); [suppression proof](../../raw/skyrim/2026-08-11-skyrim-suppression-proof.md); [companion requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [companion prior art](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md); [F10 manual crash correction](../../raw/skyrim/2026-08-11-companion-f10-manual-crash.md)
+> Companion correction raw: [ordinary dialogue production proof](../../raw/skyrim/2026-08-11-companion-ordinary-dialogue-production-proof.md)
 > Commit: 3098f74
 > Updated: 2026-08-11
 
@@ -199,6 +200,39 @@ The first owner F10 test then terminated Skyrim before any tactics receipt.
 This withdraws the claimed playable tactics and burden-acceptance surface even
 though observation and test-gated engine probes remain real. COMPANION-001 is
 reopened until a replacement UI and every claimed manual path are proven.
+
+The installed replacement removes the crashing message callback and uses a
+task-queued non-modal key state. Run `companion-interaction-05` passed tactics
+open/close, persistent policy roundtrip, F9 burden acceptance, resource
+activation, healing and voice with zero SKSE errors. Physical owner F10 and one
+selection remain required before the manual surface is accepted.
+
+The exact current source rebuild passed native policy tests and DLL
+`F1EE9DBA...D3D6D7` is installed in both runtime paths with eight voice files.
+Skyrim is configured as 3440x1440 borderless-windowed. After an unattended proof
+restored Skyrim and monopolized the desktop, all unattended companion runs are
+fail-closed: `-NonIntrusiveCapture` is mandatory, the window is never restored,
+and foreground acquisition aborts and cleans only the owned process. See the
+[foreground lockout correction](../../raw/skyrim/2026-08-11-skyrim-foreground-lockout-correction.md).
+
+The chronology above records superseded failures. The current authoritative
+production run is `companion-production-full-27`: ordinary Lydia dialogue with
+no forced project INFO exposed the visible top-level project entry; vanilla
+root/policy selection reached TIF/Papyrus and persisted policy; native Yes moved a safe item; a
+temporary Travel package visibly moved Lydia to a lawful loose target before
+pickup/activation and follower return; real combat produced a Lydia-owned
+healing-arrow hit, health delta and one consumed potion; and Skyrim-owned speech
+was observed. It passed in `75,336 ms` with zero SKSE errors and zero leftover
+game processes. That historical run did not establish the current owner-facing
+voice claim. The owner has since accepted the physical natural-flora gather
+(Purple Mountain Flower `0 -> 1`, natural crouch, HUD result and return) but
+heard no autonomous bark. COMPANION-001 is therefore `failed` at audible voice;
+`QSpeakingDone` is not audio proof. A missing bark dialogue-branch relationship
+was found through native comparison, then built, verified and deployed for the
+next owner check. The
+[Lydia and reusable companion matrix](lydia-companion-capability-matrix.md)
+separates these proven mechanisms from Fork systems still awaiting integration
+and feature categories needing new native adapters.
 
 ## Native capability catalogue
 

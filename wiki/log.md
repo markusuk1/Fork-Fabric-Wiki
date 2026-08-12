@@ -1,5 +1,117 @@
 # Wiki Log
 
+## [2026-08-12] correction | Lydia gather accepted and Say branch repaired @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),
+  [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md),
+  [Skyrim Capability Baseline](skyrim/capabilities.md) and [Wiki Index](index.md).
+- Sources: [owner gather pass/voice failure](../raw/skyrim/2026-08-12-companion-owner-gather-pass-voice-failure.md)
+  [Say branch research](../raw/skyrim/2026-08-12-companion-say-branch-binding-research.md)
+  and [Say branch repair evidence](../raw/skyrim/2026-08-12-companion-say-branch-repair-evidence.md).
+- Recorded owner acceptance of the physical Purple Mountain Flower gather and
+  the natural roughly one-second crouch; withdrew the forced three-second
+  visible-pose requirement.
+- Kept autonomous voice failed because no bark was audible, rejected
+  `QSpeakingDone` as audio proof, and documented the built/deployed native DLBR
+  repair as awaiting one owner-audible check.
+
+## [2026-08-11] correction | Ordinary Lydia dialogue entry proof @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),
+  [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md)
+  and [Skyrim Capability Baseline](skyrim/capabilities.md).
+- Source: [ordinary dialogue production proof](../raw/skyrim/2026-08-11-companion-ordinary-dialogue-production-proof.md).
+- Withdrew the forced-project-root handoff, rejected unreliable lower-level
+  activation calls, and qualified ordinary Lydia dialogue with no forced INFO,
+  visible project-root selection and the complete downstream slice in
+  `companion-production-full-27`.
+
+## [2026-08-11] lint | 0 issues found
+
+- Verified the Lydia companion matrix, updated companion capability boundary,
+  index coverage, provenance, article metadata and local links.
+
+## [2026-08-11] ingest | Lydia and reusable companion capability matrix @ working tree
+
+- Added: [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md).
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),
+  [Skyrim Capability Baseline](skyrim/capabilities.md) and the wiki index.
+- Source: [production capability evidence](../raw/skyrim/2026-08-11-lydia-companion-capability-matrix-evidence.md).
+- Recorded `companion-production-full-24` as the developer/regression production
+  boundary and advanced the feature record to `ready_for_owner` without
+  claiming owner acceptance.
+- Separated proven native mechanisms, reusable companion core, released Fork
+  systems awaiting Skyrim integration, bounded adapter work and unsupported
+  claims; added a twelve-question admission checklist for every future feature.
+
+## [2026-08-11] ingest | Companion critical dependency closure @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md).
+- Source: [companion critical dependency closure](../raw/skyrim/2026-08-11-companion-critical-dependency-closure.md).
+- Recorded exact xEdit-equivalent SEQ generation and independent fixed-FormID
+  verification, with ESP/SEQ hashes bound into deployment qualification.
+- Grounded the real vanilla dialogue-selection route, restart-safe policy
+  validation, embodied gather/heal terminals and Lydia-owned INFO/FUZ speech.
+- Advanced the feature record to `ready_for_implementation`; every
+  player-facing claim remains unproven and owner testing remains suspended.
+
+## [2026-08-11] correction | Unattended GUI isolation boundary @ working tree
+
+- Updated: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md).
+- Source: [unattended GUI isolation correction](../raw/workflow/2026-08-11-unattended-gui-isolation-correction.md).
+- Observed that xEdit 4.1.5f ignored the effective containment intent of
+  `-WindowStyle Hidden` and surfaced its first-run window on the owner's desktop.
+- Rejected the empty SEQ-generation attempt and required isolated non-input
+  desktop execution for all unattended GUI tools, not only game runtimes.
+
+## [2026-08-11] correction | Critical dependency closure and companion discovery re-entry @ working tree
+
+- Updated: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md)
+  and [Frontier Companion System](skyrim/frontier-companion-system.md).
+- Sources: [critical dependency closure gate](../raw/workflow/2026-08-11-critical-dependency-closure-gate.md)
+  [companion production-path re-entry research](../raw/skyrim/2026-08-11-companion-production-path-reentry-research.md),
+  and [companion discovery static preflight](../raw/skyrim/2026-08-11-companion-discovery-static-preflight.md).
+- Corrected the no-code gate so a merely assigned critical dependency cannot
+  authorize implementation; recorded the mandatory requirements -> prior art
+  -> existing-system analysis -> dependency closure -> design -> implementation
+  -> production proof -> regression -> owner-test sequence.
+- Returned COMPANION-001 to discovery with every claim unproven, added native
+  actor-owned voice as an explicit requirement, and selected adaptation of
+  Skyrim's real `DialogueMenu`/TIF, path/activation, magic and FUZ paths.
+- Fresh build, policy, plugin, Papyrus and package-record preflights pass, but
+  remain explicitly insufficient for any player-facing claim.
+
+## [2026-08-11] ingest | Exact DLL/ESP native qualification @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md) and
+  [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md).
+- Source: [exact-hash qualification](../raw/skyrim/2026-08-11-companion-exact-hash-qualification.md).
+- Recorded the final real-save gate with exact DLL and ESP hash binding, fresh
+  DataLoaded/world-loaded receipts, zero SKSE errors and exact cleanup.
+
+## [2026-08-11] correction | Native Skyrim handoff and dialogue metadata @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md) and
+  [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md).
+- Source: [companion native handoff correction](../raw/skyrim/2026-08-11-companion-native-handoff-correction.md).
+- Withdrew the static-only readiness claim, recorded the missing `CUST` topic
+  metadata root cause, and added the isolated real-save exact-DLL/ESP-hash gate.
+
+## [2026-08-11] correction | Skyrim foreground lockout and current companion build @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md) and
+  [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md).
+- Source: [foreground lockout correction](../raw/skyrim/2026-08-11-skyrim-foreground-lockout-correction.md).
+- Corrected: the unattended persistence harness restored Skyrim after ten
+  seconds and allowed it to monopolize the desktop. The restore path is removed;
+  non-intrusive mode is mandatory and foreground acquisition fails closed.
+- Verified without launching Skyrim: unsafe invocation refused before process
+  creation, no restore call remains, native companion build/tests pass, current
+  DLL `F1EE9DBA...D3D6D7` and eight WAV files are installed in both runtime
+  paths, and SkyrimPrefs is 3440x1440 borderless-windowed.
+- Boundary: COMPANION-001 remains In Progress pending the explicitly approved
+  owner F10/F6/F6/F10 stability, selection and voice gate.
+
 ## [2026-08-11] ingest | COMPANION-001 frontier companion implementation @ working tree
 
 - Added: [Frontier Companion System](skyrim/frontier-companion-system.md).
@@ -800,18 +912,148 @@
 
 - Updated: [Frontier Companion System](skyrim/frontier-companion-system.md)
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Sources: [idle-gather investigation](../raw/skyrim/2026-08-11-companion-idle-gather-crash.md) and [correction proof](../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md)
 - Corrected the initial short companion proof after the owner's normal session
   exposed the unsafe idle-second-60 global scan. Recorded capped same-cell
   handle staging and the real-save soak through idle second 78.
 
 ## [2026-08-11] lint | 0 issues found
 
-- Verified corrected companion provenance, article/index coverage and the
-  absence of stale second-60 safety claims in the maintained public pages.
+- Verified corrected companion provenance, article/index coverage, local links
+  and the absence of stale second-60 safety claims.
 
 ## [2026-08-11] correction | Frontier Companion manual status @ 3098f74
 
 - Updated: [Frontier Companion System](skyrim/frontier-companion-system.md)
 - Updated: [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md)
+- Source: [F10 manual crash correction](../raw/skyrim/2026-08-11-companion-f10-manual-crash.md)
 - Withdrew the playable tactics and burden-acceptance claims after the first
   owner F10 test terminated Skyrim before any interaction receipt.
+
+## [2026-08-11] ingest | Companion interaction replacement @ 3098f74
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md)
+- Source: [interaction replacement proof](../raw/skyrim/2026-08-11-companion-interaction-replacement-proof.md)
+- Recorded the Adapt decision, complete removal of the crashing callback and
+  real-save production-function proof while retaining owner keyboard input as
+  an explicit open acceptance gate.
+
+## [2026-08-11] correction | COMPANION-001 player path @ 3098f74
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md)
+- Source: [player-path gap research](../raw/skyrim/2026-08-11-companion-player-path-gap-research.md)
+- Withdrew the remaining burden, configuration, gathering and healing readiness
+  claims after owner testing proved that automation bypassed native dialogue and
+  full embodied action paths.
+
+## [2026-08-11] ingest | Evidence-gated feature delivery @ 3098f74
+
+- Updated: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md)
+- Source: [feature delivery lifecycle](../raw/workflow/2026-08-11-feature-delivery-lifecycle.md)
+- Added a machine-readable no-code/readiness gate from grounded requirements and
+  prior art through dependency closure, production proof, regression and owner
+  acceptance, including fail/re-entry semantics.
+
+## [2026-08-11] correction | Feature analysis/design ownership @ 3098f74
+
+- Updated: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md)
+- Source: [analysis and design ownership gate](../raw/workflow/2026-08-11-feature-delivery-design-gate.md)
+- Closed the remaining research-to-code shortcut by requiring current-behavior
+  analysis and complete requirement/dependency ownership by named design
+  components before implementation readiness.
+
+## [2026-08-11] correction | Noticeboard actionable state @ 3098f74
+
+- Updated: [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md)
+- Source: [noticeboard action supersession](../raw/workflow/2026-08-11-noticeboard-action-supersession.md)
+- Added append-only supersession so withdrawn instructions remain historical but
+  cannot reappear in the session-start actionable view.
+
+## [2026-08-11] correction | Lydia natural gathering and audible voice @ 3098f74
+
+- Updated: [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md)
+- Source: [owner gather and voice failure](../raw/skyrim/2026-08-11-companion-owner-gather-voice-failure.md)
+- Withdrew owner readiness after the ordinary-save test and live receipts showed
+  two natural-flora arrivals followed by `pickup_idle_rejected`, with no harvest
+  terminal, HUD item confirmation or audible Lydia line. Staged loose-item and
+  `Say` dispatch receipts are now explicitly insufficient for those claims.
+
+## [2026-08-12] ingest | Lydia natural-flora re-entry design @ 3098f74
+
+- Updated: [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md)
+- Source: [natural-flora re-entry research](../raw/skyrim/2026-08-12-companion-natural-flora-reentry-research.md)
+- Corrected the carryable-only idle assumption and selected an Adapt boundary:
+  unconditional native ground-pick, three-second herb action with interruption
+  safety, exact produce/HUD terminal, and speech lifecycle plus subtitle/process-
+  audio evidence. Community animation frameworks remain deferred alternatives.
+## [2026-08-12] correction | Burden, Orders and shortcut qualification @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),
+  [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md),
+  and [Wiki Index](index.md).
+- Sources: [burden repair evidence](../raw/skyrim/2026-08-12-companion-burden-repair-evidence.md)
+  and [Orders/shortcut qualification](../raw/skyrim/2026-08-12-companion-orders-shortcuts-qualification.md).
+- Qualified exact DLL `A3E0D6...BACE` across the full companion baseline,
+  voiced native Orders, live-control-map-checked shortcuts and all burden
+  boundaries. Owner acceptance of the combined surface remains deferred.
+
+## [2026-08-12] correction | Companion chatter and grounded resource callouts @ working tree
+
+- Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),
+  [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md),
+  and [Wiki Index](index.md).
+- Source: [chatter/callout qualification](../raw/skyrim/2026-08-12-companion-chatter-callout-qualification.md).
+- Qualified exact DLL `0E30B8...3D78` across grounded native-consent resource
+  callouts, physical gather terminals, three non-repeating actor-owned chatter
+  variants, the full baseline, Orders, shortcuts and all burden boundaries.
+  Owner experiential acceptance remains deferred.
+## [2026-08-12] ingest | COMPANION-001 lawful corpse looting @ working tree
+
+- Added native Orders entries for continuous corpse looting and Stop Looting,
+  an actor-owned Lydia intent line, natural bounded dead-actor discovery,
+  navigable-marker travel with an independently revalidated corpse target,
+  native targeted body-search animation, conservative capacity-safe transfer,
+  paired source/destination verification, itemised HUD and follower return.
+- Exact DLL `68355BF2BB33A62F063073599CEC2DEAAF9047F728EB4AA68D8652F921D04535`
+  passed `companion-corpse-natural-discovery-01`: 66.74 units of Lydia movement,
+  native `IdleSearchBody`, exact corpse `-3` / Lydia `+3`, capacity-full
+  no-transfer and target-invalidated no-transfer.
+- Full, Orders, shortcuts, chatter/callout and all six burden boundary suites
+  passed on the same DLL/ESP/SEQ hashes with zero remaining game processes;
+  the full suite found zero SKSE error markers.
+- Owner acceptance and corpse-specific player cancellation remain future gates;
+  container, ore and logistics remain separate adapters.
+- Source: [corpse-looting qualification](../raw/skyrim/2026-08-12-companion-corpse-looting-qualification.md).
+
+## [2026-08-12] ingest | COMPANION-001 lawful world-container looting @ working tree
+
+- Added native Orders entries for continuous lawful container looting and its
+  stop command, actor-owned intent speech, capped same-cell lawful discovery,
+  collision-aware native travel, targeted `IdleSearchingChest`, conservative
+  capacity-safe paired transfer, itemised HUD and follower return.
+- Exact DLL `291121CBC7FB1C5DE4F832CD974E204B0A4A19B73118D94E1F68F17611B5ED58`
+  passed `companion-container-qualification-06`: 196.44 units of Lydia
+  movement, native chest-search acceptance, exact container `-3` / Lydia `+3`,
+  real locked no-action and mid-search invalidation no-transfer.
+- Exact-hash full, Orders, corpse, chatter/callout, shortcuts and all six burden
+  boundary suites passed with zero remaining game processes; the full suite
+  found zero SKSE error markers.
+- Private-desktop screenshot attempts were rejected because
+  Windows.Graphics.Capture exposed a `0x0` capture item; no visual artifact is
+  claimed. Owner experiential acceptance remains deferred.
+- Source: [container-looting qualification](../raw/skyrim/2026-08-12-companion-container-looting-qualification.md).
+
+## [2026-08-12] ingest | COMPANION-001 ore-mining development boundary @ working tree
+
+- Recorded the generated installed taxonomy of 581 ore bases, 1,735 authored
+  references and 10 mining-furniture families plus native Start/Stop Orders,
+  tool/legality/capacity gates, movement, actor-owned speech, Bethesda pickaxe
+  graph events, Lydia-only inventory, per-reference depletion, HUD and return.
+- `companion-ore-qualified-18` developer-proved one complete strike. Current
+  build `A62FB03E...60FA` subsequently produced two continuous complete strikes,
+  but `companion-ore-final-19` timed out because the focused checker still
+  expects the old one-strike idle terminal.
+- The matrix therefore classifies one strike as developer-proven while keeping
+  continuous mining, broad current-build regressions and owner inspection
+  explicitly unqualified.
+- Source: [ore-mining development boundary](../raw/skyrim/2026-08-12-companion-ore-mining-development-boundary.md).

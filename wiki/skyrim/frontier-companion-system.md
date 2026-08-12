@@ -1,9 +1,10 @@
 # Frontier Companion System
 
 > Sources: owner requirements, COMPANION-001 implementation, COMPANION-002 crash correction and primary prior-art repositories, collected 2026-08-11
-> Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md); [F10 manual crash correction](../../raw/skyrim/2026-08-11-companion-f10-manual-crash.md)
+> Raw: [frontier requirements](../../raw/skyrim/2026-08-11-frontier-companion-requirements.md); [prior-art decision](../../raw/skyrim/2026-08-11-companion-prior-art.md); [idle-gather investigation](../../raw/skyrim/2026-08-11-companion-idle-gather-crash.md); [idle-gather correction proof](../../raw/skyrim/2026-08-11-companion-idle-gather-correction-proof.md); [F10 manual crash correction](../../raw/skyrim/2026-08-11-companion-f10-manual-crash.md); [interaction replacement proof](../../raw/skyrim/2026-08-11-companion-interaction-replacement-proof.md); [foreground lockout correction](../../raw/skyrim/2026-08-11-skyrim-foreground-lockout-correction.md); [native handoff correction](../../raw/skyrim/2026-08-11-companion-native-handoff-correction.md); [exact-hash qualification](../../raw/skyrim/2026-08-11-companion-exact-hash-qualification.md); [player-path gap research](../../raw/skyrim/2026-08-11-companion-player-path-gap-research.md); [production-path re-entry research](../../raw/skyrim/2026-08-11-companion-production-path-reentry-research.md); [discovery static preflight](../../raw/skyrim/2026-08-11-companion-discovery-static-preflight.md); [critical dependency closure](../../raw/skyrim/2026-08-11-companion-critical-dependency-closure.md)
+> Correction raw: [container-looting qualification](../../raw/skyrim/2026-08-12-companion-container-looting-qualification.md); [corpse-looting qualification](../../raw/skyrim/2026-08-12-companion-corpse-looting-qualification.md); [chatter/callout qualification](../../raw/skyrim/2026-08-12-companion-chatter-callout-qualification.md); [final Orders/shortcut qualification](../../raw/skyrim/2026-08-12-companion-orders-shortcuts-qualification.md); [burden repair evidence](../../raw/skyrim/2026-08-12-companion-burden-repair-evidence.md); [owner programme](../../raw/skyrim/2026-08-12-companion-orders-burden-llm-owner-requirements.md); [owner gather pass/voice failure](../../raw/skyrim/2026-08-12-companion-owner-gather-pass-voice-failure.md); [Say branch repair evidence](../../raw/skyrim/2026-08-12-companion-say-branch-repair-evidence.md)
 > Commit: 3098f74
-> Updated: 2026-08-11
+> Updated: 2026-08-12
 
 ## Purpose
 
@@ -32,19 +33,66 @@ The intended loop is `observe -> normalize -> arbitrate -> announce -> execute -
 verify -> receipt -> reconcile`. Combat reflexes remain local and deterministic;
 longer planning, memory and optional LLM work remain asynchronous.
 
-## Implemented COMPANION-001 slice
+## Implemented COMPANION-001 components and proof boundary
+
+The exact installed 2026-08-12 baseline is DLL
+`291121CBC7FB1C5DE4F832CD974E204B0A4A19B73118D94E1F68F17611B5ED58`,
+ESP `17703BAADEABD36BD69A8ECC56D2E4A8805517DDE3E729E3E68CE2ECEEFC6C31`
+and SEQ `A0E1269E459333A5D0486163DDA2B66EC35EB9B902DC42FA9931EAEC025407F6`.
+The corpse and container production runs plus exact-hash regressions qualify
+lawful discovery/search/transfer for both target types, the full baseline, native Orders,
+conflict-checked shortcuts, chatter/callouts and burden failure boundaries.
+Owner acceptance of the final combined surface is deferred because the owner
+is unavailable.
+
+Orders is a voiced top-level native branch parallel to Config. It exposes
+continuous lawful gathering, Stop Gathering, immediate pack help, Stop All,
+lawful continuous corpse looting/Stop Looting, lawful continuous world-
+container looting/Stop Container Looting and a no-order exit. Optional
+`Ctrl+Shift+O/K/Y/N` chords are enabled only when the
+base key is unmapped in the live gameplay control map; they open or select the
+same vanilla topics and cannot call an executor directly.
+
+The speech layer now rotates three variants for gathering, pickup, healing,
+guarding and idle chatter without immediate repetition. Idle speech is
+suppressed by combat, dialogue, an embodied action, pending consent or another
+speech lease. A resource callout names a loaded lawful target in the HUD,
+speaks before opening native Yes/No, and commits an accepted target to the same
+visible movement/animation/delta/HUD/return terminal. Generic-object visibility
+uses loaded 3D and a Havok LOS-layer ray beyond the maintained 300-unit
+close-collision floor; actor LOS is retained for actor-to-actor healing.
+
+Corpse looting uses the same native Orders route, bounded natural same-cell
+discovery and legality/visibility gates. Lydia announces before movement, a
+temporary navigable marker supplies the Travel package while the dead actor
+remains the independently revalidated animation/inventory target, and native
+`IdleSearchBody` supplies a credible three-second search. Only conservative
+capacity-safe items move, every source decrement must equal Lydia's increment,
+the HUD names bounded items/counts, and ordinary follower control is restored.
+The qualified run observed 66.74 units of Lydia movement, exact corpse `-3` /
+Lydia `+3`, capacity-full no-transfer and target-invalidated no-transfer.
+
+The container adapter adds loaded visible unlocked unowned non-criminal world
+container discovery, a collision-aware approach stand-off, targeted native
+`IdleSearchingChest`, conservative item policy, paired container/Lydia deltas,
+itemised HUD, follower return and continuous exhaustion. Exact qualification
+observed 196.44 units of Lydia movement and container `-3` / Lydia `+3`; a real
+locked reference and mid-search invalidation both mutated nothing. Owner visual
+acceptance remains deferred.
 
 The CommonLibSSE-NG plug-in at
 `src/skyrim/fork_fabric_companion` is pinned to Skyrim `1.6.1170.0`, SKSE64
 `2.2.6` and the project's CommonLib baseline. The Lydia profile is data-driven
-through `config/skyrim/companion-lydia.json` and currently provides:
+through `config/skyrim/companion-lydia.json`. The following components exist in
+source. Their individual evidence status is recorded in the capability matrix;
+the overall slice is not qualified while autonomous voice is failed:
 
 - one-second bounded observation of player health, combat, inventory
   weight/capacity, movement/idle time, Lydia's capacity and nearby lawful
   harvest or loose-loot candidates;
 - deterministic priority of emergency combat care over burden assistance and
   idle gathering, with separate cooldowns;
-- a binary F10 tactics conversation that toggles burden help, emergency care,
+- native clickable follower dialogue that toggles burden help, emergency care,
   loose loot and idle resource gathering, persisted with replace-safe writes;
 - near-capacity offers which move only ordinary eligible inventory after player
   consent, excluding equipped, favourited, quest, protected, enchanted and
@@ -53,16 +101,18 @@ through `config/skyrim/companion-lydia.json` and currently provides:
   from Lydia's real inventory; if no valid resource exists she truthfully
   announces and requests native guard/combat behavior instead;
 - bounded same-cell collection of lawful flora/tree activators or loose items,
-  staging at most 64 engine handles under the cell lock, resolving and
-  validating them afterward, requiring the selected target to be within 220
-  game units and revalidating it immediately before activation;
-- eight licensed Piper `en_GB-alba-medium` authored barks with exact Skyrim
-  notification subtitles, plus append-only observations and action receipts.
+  staging engine handles under the cell lock, resolving and validating them
+  afterward, then using native pathing, arrival validation, a pickup animation,
+  close-range activation, outcome verification and follower-package return;
+- generated Skyrim INFO/FUZ actor-owned barks with matching subtitles, plus
+  append-only observations and action receipts. The assets and dispatch exist,
+  but audible owner playback has failed.
 
-The authored WAV path is audible but currently non-spatial Windows playback.
-It does not clone or redistribute Lydia's original performer. Spatial
-actor-attached playback, facial animation and unrestricted dynamic conversation
-remain later presentation work.
+The intended production voice path is spatial and actor-owned through Skyrim's
+`ObjectReference.Say`. It does not clone or redistribute Lydia's original
+performer. `QSpeakingDone` is not accepted as audible proof. Unrestricted
+runtime-generated conversation and its lip, latency, cache and provider-failure
+contract remain later work.
 
 MP3 is supported as voice-pipeline input, not as this deterministic player's
 runtime format. The owner's ElevenLabs “Sending a heal your way” MP3 is decoded
@@ -95,27 +145,114 @@ saving and is cleaned by the harness.
 
 ## Evidence status
 
-**Manual status correction:** this slice is not currently playable. The first
-owner F10 test terminated Skyrim after four valid observer samples and before
-any tactics or policy receipt. Evidence narrows the failure to the F10
-`show_policy_menu` path at its native message-box boundary, but does not yet
-prove the exact ABI, lifetime or callback-ownership cause. Do not treat the
-binary tactics UI, burden acceptance or subsequent manual checklist as shipped.
+**Feature state: Failed at autonomous voice; physical natural gathering is
+owner accepted.** Historical production run `companion-production-full-27` loaded the real Lydia save and
+drove the installed Skyrim route. It opened Lydia's ordinary dialogue with no
+forced project INFO, selected the visible top-level project entry and policy
+through `DialogueMenu_mc.onSelectionClick -> TopicClicked -> TIF -> Papyrus`, observed
+the policy round-trip, moved one safe item only after native Yes, walked Lydia
+to a lawful loose target through a native temporary Travel package, played a
+pickup idle, activated it, verified the inventory delta and restored ordinary
+follower range. In real combat it positioned Lydia for line of sight without
+teleporting, released a visible Lydia-owned healing arrow, observed the exact
+effect and health delta, consumed one real potion and used actor-owned speech.
 
-The corrected build compiles with warnings as errors and its deterministic tests
-cover arbitration priority, truthful no-resource guard fallback, cross-cell
-rejection, idle collection selection, transfer exclusions/order and empty
-post-transfer replay. Run `companion-idle-soak-03` loaded the owner's real
-Lydia save and passed in `100,673 ms`: pair identity, licensed voice start,
-medicine-backed health change `140 -> 120 -> 140`, physical pickup `0 -> 1`, 79
-consecutive ObservePlayer samples through idle second 78, zero SKSE error
-markers and zero remaining game processes. That crosses 19 ordinary scan ticks
-beyond the former second-60 crash boundary. The installed DLL SHA-256 is
-`3441135AD3997D6A212193748905CF1B54778C55888D110435757ADF85FD3C86`.
+That run passed in `75,336 ms`, found zero SKSE error markers and left zero game
+processes. Its DLL SHA-256 was
+`955ADD080B8D3E7133EAB3339A7911AAF362A3E3B9EFA217D16402DD5D41935A`.
 
-Skyrim's minimized main menu still requires one genuine DirectInput Continue
-selection on launches where its save-list event is delayed. The harness does
-not steal focus or claim background window messages are equivalent input.
+The subsequent owner run is authoritative for the experiential boundary:
+Lydia moved to a Purple Mountain Flower, performed a natural crouch, gained the
+exact ingredient `0 -> 1`, showed the HUD result and returned. The owner
+accepted the roughly one-second animation. No gathering bark was audible.
+Native comparison found the generated bark topics were missing the dialogue
+branch used by sampled shipped Papyrus `Say` topics. The repaired current
+dialogue ESP is
+`BD18793CDBC7E318C9D27DB2776327F1B38AE917CB11BC7490128F546A008392`;
+the two-entry SEQ was
+`A0E1269E459333A5D0486163DDA2B66EC35EB9B902DC42FA9931EAEC025407F6`.
+
+The lifecycle record is `failed` with only `CLAIM-VOICE` failed. The branch
+repair is built, round-trip verified and deployed, but only an owner-audible
+ordinary-save run can advance the voice claim. See the
+[companion capability matrix](lydia-companion-capability-matrix.md) for reusable
+mechanisms and feature-category limits.
+
+### Superseded discovery and preflight record
+
+The following chronology is retained to explain the rejected approaches and
+why compilation, preflight or direct-executor calls are never capability proof.
+
+**Historical state: Ready for implementation; superseded by the production run above.**
+The owner-established failure remains preserved in immutable evidence: the
+that the burden offer did not open a native Yes/No choice, activating Lydia
+exposed no project configuration topics, gathering announced intent but ended
+at path/arrival failure without activation, and healing had only spell/resource
+preflight rather than release, exact effect, health gain and resource
+consumption in one production run.
+
+The generator now emits and verifies the missing metadata. Full qualification
+run `companion-native-gate-06` rebuilt and deployed the DLL/ESP pair, started
+SKSE on an isolated desktop, reached DataLoaded, loaded the real Lydia save,
+recorded `world_loaded`, found zero SKSE error markers and left zero owned game
+processes. Its installed DLL SHA-256 was
+`475FD1D69DFDF9468F90B56A8B89C057514F464C9252E29349C656675812FE78`; its
+dialogue ESP SHA-256 was
+`666404BB9961FA506DD1EC8C9D413D089E42A5FDDCB779BA82A1291CF9E5E257`.
+
+This remains useful startup and real-save compatibility evidence, not feature
+proof. Automated burden checks invoked the transfer executor directly;
+gathering preflight found a candidate without executing the complete action;
+healing preflight found a resource/effect without establishing release and
+impact. Those shortcuts cannot support a capability claim.
+
+`docs/features/COMPANION-001.feature.json` governs re-entry. The verified
+prior-art decision is to adapt Skyrim's native DialogueMenu, TIF/Papyrus,
+pathing, activation, magic, inventory and FUZ voice systems. The former direct
+self-test is explicitly invalid: vanilla `DialogueMenu.as` exposes a real
+`onSelectionClick -> TopicClicked` route that automated proof can exercise
+without synthetic input or direct action calls. Autonomous global
+`PlaySoundW` barks are also unproven and must move to Lydia-owned native
+voice/subtitle records.
+
+The former discovery record treated dialogue quest startup, native topic
+selection, embodied path/idle/activation/return, correlated healing outcomes,
+actor-owned voice, failure recovery and production-route regression coverage
+as critical unresolved dependencies.
+All critical dependencies must be evidence-backed known or rejected—not merely
+assigned—before implementation. Developer production proof and
+regression qualification must pass before another owner test is requested.
+
+Those dependencies are now evidence-backed `known`, with explicit validation
+methods, so the lifecycle record passes `ready_for_implementation`. The
+startup-data dependency was closed without automating xEdit's GUI: the
+generator applies xEdit 4.1.5f's exact SEQ algorithm to the serialized
+Start-Game-Enabled QUST and independently verifies fixed FormID `0x01000800`.
+The generated ESP SHA-256 is
+`666404BB9961FA506DD1EC8C9D413D089E42A5FDDCB779BA82A1291CF9E5E257`; the
+four-byte SEQ SHA-256 is
+`004BE5580012EFCDEC118FCE2444CF2DAB6A4709D71924066ED03B59A19969DE`.
+Deployment and qualification must bind both hashes. This proves construction,
+not live topic availability.
+
+Implementation must drive the shipped vanilla
+`DialogueMenu_mc.onSelectionClick -> TopicClicked -> TIF -> Papyrus` route,
+persist selected policy across process restart, complete embodied
+path/arrival/animation/activation/return, correlate heal release/effect/health
+and resource consumption, and replace global playback with dedicated INFO/FUZ
+topics spoken by Lydia through `ObjectReference.Say` under a non-overlapping
+speech lease. These are implementation requirements, not current capabilities.
+
+The current discovery build also passes warnings-as-errors DLL compilation,
+policy unit tests, generated ESP verification, all 11 official Papyrus
+assemblies and 15 native package-record checks. Those results are explicitly
+static preflight and do not close any player-facing runtime dependency.
+
+Unattended Skyrim proof is fail-closed and owner-safe. The harness uses an
+isolated non-input Windows desktop and requires `-NonIntrusiveCapture`; the
+handoff gate binds fresh lifecycle evidence to exact built/direct/MO2 DLL and
+ESP hashes. Compilation or plugin round-trip parsing alone can never qualify a
+native Skyrim handoff.
 
 ## Explicit next boundaries
 
@@ -123,9 +260,10 @@ not steal focus or claim background window messages are equivalent input.
   tables and reconcile policy revisions in both directions;
 - replace the binary tactics surface with typed natural conversation while
   retaining deterministic confirmation and authorization;
-- use a spatial actor-attached voice route and optional provider adapter;
-- add path-complete search, mining furniture, corpse/container permissions and
-  bounded return-to-follow behavior;
+- add runtime-generated spatial speech only behind a provider/cache/lip and
+  failure contract; the deterministic actor-owned route is already proven;
+- add mining furniture and ore-specific resource/animation/accounting proof
+  with bounded return-to-follow behavior;
 - add physical owned-container and horse/cart logistics, including walk,
   transfer, verification and return;
 - generalize traits, relationship, role and memory into volunteering, refusal,

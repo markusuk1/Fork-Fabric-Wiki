@@ -74,7 +74,8 @@ community ecosystem and Fork integration boundaries.
 | Article | Summary | Updated |
 |---|---|---|
 | [Skyrim SE/AE + SKSE Capability Baseline](skyrim/capabilities.md) | Native simulation machinery, durable bridge, embodied day, recovery, bounded scale and verified reversible Whiterun suppression. | 2026-08-11 |
-| [Frontier Companion System](skyrim/frontier-companion-system.md) | Lydia observer and engine probes, corrected idle scan, and withdrawn manual status after the first F10 test terminated Skyrim. | 2026-08-11 |
+| [Frontier Companion System](skyrim/frontier-companion-system.md) | Lydia's grounded architecture and exact regression-qualified burden, Orders, shortcuts, chatter/callouts, gather, lawful corpse/container looting, heal, voice and configuration baseline. | 2026-08-12 |
+| [Lydia and Reusable Companion Capability Matrix](skyrim/lydia-companion-capability-matrix.md) | Mechanism catalogue and admission gate, including qualified Orders/corpse/container systems, developer-proven ore mining, and the remaining continuous-ore, logistics, Fork and cognition boundaries. | 2026-08-12 |
 
 ## workflow
 
@@ -82,5 +83,5 @@ Agent continuity, knowledge ownership, completion gates, and drift prevention.
 
 | Article | Summary | Updated |
 |---|---|---|
-| [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md) | How tracking, memory, noticeboards, evidence, local knowledge, external wiki publication, validators, and the no-false-continuation Stop hook stay synchronized. | 2026-08-10 |
+| [Repository Continuity and Knowledge Workflow](workflow/repository-continuity-system.md) | Tracking, evidence and Stop-hook continuity plus machine-gated delivery and isolated-desktop containment for unattended GUI tools. | 2026-08-11 |
 | [Owned Fork Regression Isolation](workflow/owned-fork-regression-isolation.md) | Released current-module process-per-test ownership, safe restart/cleanup, explicit exceptions, and immutable-production matrix proof. | 2026-08-10 |
