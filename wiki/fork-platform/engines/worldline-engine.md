@@ -5,10 +5,11 @@
   [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts complete Phase 6.
   The [complete Phase 7 source contract](../../docs/evidence/WLD-001-phase7-grounding.md)
   is frozen at `c5696700f`. Report-only
-  [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts P7-NEST-001 at
-  CHML `0/0/0/0` and P7-DIST-001 is active. Neither is an independently
-  usable or shipped slice. Production remains accepted build 36 and WLD-001
-  remains incomplete.
+  [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts P7-NEST-001 and
+  [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md) accepts P7-DIST-001 at
+  CHML `0/0/0/0`. P7-INTEGRATION-001 is active. Neither accepted dependency is
+  an independently usable or shipped slice. Production remains accepted build
+  36 and WLD-001 remains incomplete.
 - **Updated:** 2026-08-12
 - **Plan:**
   [complete native Worldline Engine plan](../../docs/plans/WLD-001-native-worldline-engine.md)
@@ -882,7 +883,9 @@ C1-C12 and the initial-audit remediation. Report-only
 CHML `0/0/0/0`; complete Phase 6 later passes
 [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md). Phase 7 is grounded and
 P7-NEST is accepted internally by
-[AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) and P7-DIST is active.
+[AUD-WLD-040](../../docs/audits/AUD-WLD-040.md); P7-DIST is accepted internally
+at `e3c7313ab` by [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md), and
+P7-INTEGRATION is active.
 Production remains accepted build 36 and Worldline remains unshipped.
 
 ## P6-CMT-001 exact-source candidate
@@ -1191,8 +1194,9 @@ is disclosed. Exact implementation source `c34fcfa6b258831c2a0aa95f0bf725a49bda6
 [completion report](../../docs/completions/COMP-P6-INTEGRATION-001.md) are
 recorded. Report-only [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts
 complete Phase 6 at CHML `0/0/0/0`. This is internal proof, not a shipped
-capability; the complete Phase 7 contract is frozen, P7-NEST-001 is pinned at
-`d198b1de5` pending audit and production remains accepted build 36.
+capability; the complete Phase 7 contract is frozen, P7-NEST-001 and
+P7-DIST-001 are accepted internally at CHML zero, P7-INTEGRATION-001 is active,
+and production remains accepted build 36.
 
 ## Phase 7 frozen nested/distributed contract
 
@@ -1240,17 +1244,50 @@ nested evolution 1/1. The
 [completion report](../../docs/completions/COMP-P7-NEST-001.md) closes the
 implementation work package, and report-only
 [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts it at CHML
-`0/0/0/0`. P7-DIST is active; P7-INTEGRATION, the combined immutable Host
-stage and complete Phase 7 audit remain mandatory.
+`0/0/0/0`. Report-only
+[AUD-WLD-042](../../docs/audits/AUD-WLD-042.md) accepts P7-DIST at
+`e3c7313ab` with CHML `0/0/0/0`; P7-INTEGRATION is active, while the combined
+immutable Host stage and complete Phase 7 audit remain mandatory.
 
-Grounding found real incomplete substrate rather than an existing hidden
-feature: participant records can currently be encoded, but branch recovery
-rejects participant journal kind 10; Fabric's authorization digest is policy
-binding rather than a cryptographic signature; and no coordinator, prepare
-fence or distributed apply path exists. The implementation therefore has to
-close journal recovery, native promotion factoring, authority fencing,
-participant trust and effect eligibility together. A table-only coordinator,
-SQL-only demo or independently accepted nesting slice is explicitly rejected.
+### P7-DIST accepted internal dependency
+
+Exact source `e3c7313ab5153e9f3c67eb9ad7e0e0217b191d7c` (tree
+`270a73440127d90050b3ee0b647d69a44697d19d`) closes the complete D1-D20 native
+distribution contract:
+
+- predecessor-chained coordinator and participant histories bind exact-set
+  decisions, terms, nonces, identities, dependency/write/effect digests and
+  policy/config/UCR authority;
+- ES256-signed Fabric envelopes are verified against exact tenant-scoped UCR
+  participant trust before candidate work;
+- Prepare atomically publishes the authority receipt and exact resource fence;
+  restart installs a fail-closed barrier before branch-backed scope refinement;
+- Apply revalidates dependencies and commits relational, graph, vector,
+  schema/module, sequence, promotion, participant receipts and held effects
+  through the native authority transaction;
+- signed global completion releases only matching held effects, once; abort or
+  Reject releases exact fences without promotion data or eligible effects;
+- disabled and emergency admission execute zero new-work closure while exact
+  durable decision recovery remains available.
+
+The real three-authority harness proves both complete commit and signed
+reject-to-abort. Named participant/coordinator crash boundaries, pre/post-
+decision partitions, duplicate/mutation/reorder/term attacks, corrupt evidence,
+signature/tenant/capability failures and every frozen bound have direct tests.
+The [D1-D20 evidence](../../docs/evidence/WLD-001-phase7-distributed-progress.md)
+records Worldline 217 plus one intentional ignore, coordinator receipts 7/7,
+signed protocol 10/10, federation 5/5, combined distributed 17/17, datastore
+fence 8/8 plus 2/2 plus 1/1, standalone Worldline 21/21 and core Clippy without
+a task-owned warning. The
+[completion report](../../docs/completions/COMP-P7-DIST-001.md) and report-only
+[AUD-WLD-042](../../docs/audits/AUD-WLD-042.md) accept this dependency at CHML
+`0/0/0/0`. P7-INTEGRATION and the combined Host stage remain explicitly open.
+
+The original grounding correctly found skeletal substrate rather than a hidden
+feature: participant journal kind 10 was rejected on recovery, Fabric's policy
+digest was not a signature, and no coordinator, prepare fence or distributed
+apply path existed. The candidate above closes those owners together rather
+than substituting a table-only coordinator or SQL-only demo.
 
 Phase 7 remains unshipped. Its combined diff is Host-impacting and cannot be
 accepted from source tests alone: a new immutable stage, executable stamps and

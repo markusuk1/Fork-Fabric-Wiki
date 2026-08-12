@@ -1,3 +1,33 @@
+## [2026-08-12] acceptance | Worldline P7-DIST native distributed protocol
+
+- Accepted: report-only [AUD-WLD-042](../docs/audits/AUD-WLD-042.md) passes
+  exact product source `e3c7313ab` (tree `270a73440`) and the one-pin
+  D1-D20 evidence candidate at CHML `0/0/0/0` without remediation.
+- Verified: real three-authority commit and Reject-to-Abort, crash/partition
+  recovery, exact prepared fences, ES256/UCR security, bounds, transaction
+  atomicity, globally held effects and disabled/emergency recovery.
+- Boundary: P7-INTEGRATION I1-I10 is active. The combined newly numbered
+  immutable Host stage, complete Phase 7 audit, public surfaces, shipment and
+  production remain open; build 36 remains accepted.
+
+## [2026-08-12] implementation | Worldline P7-DIST D1-D20 source candidate
+
+- Source: `e3c7313ab5153e9f3c67eb9ad7e0e0217b191d7c` (tree
+  `270a73440127d90050b3ee0b647d69a44697d19d`).
+- Implemented: signed Fabric coordinator/participants, append-only exact-set
+  decisions, tenant/UCR trust, atomic prepared resource fences, restart
+  fail-closed refinement, native cross-domain apply, held effects and bounded
+  crash/partition recovery.
+- Proved: D1-D20 at one pin, including real three-authority commit and Reject,
+  every participant crash boundary, duplicate/mutation/reorder/term, fences,
+  corruption, ES256/tenant/capability, bounds, dependency drift, transaction
+  atomicity, effect release and disabled/emergency recovery.
+- Evidence: [D1-D20 implementation record](../docs/evidence/WLD-001-phase7-distributed-progress.md)
+  and [completion report](../docs/completions/COMP-P7-DIST-001.md).
+- Boundary: report-only P7-DIST audit remains pending. P7-INTEGRATION, the
+  combined newly numbered immutable Host stage, complete Phase 7 audit, public
+  surfaces, shipment and production remain open; build 36 remains accepted.
+
 ## [2026-08-12] acceptance | Worldline P7-NEST native child promotion
 
 - Accepted: report-only [AUD-WLD-040](../docs/audits/AUD-WLD-040.md) passes

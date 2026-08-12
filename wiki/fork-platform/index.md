@@ -13,7 +13,7 @@ The three composed engines: knowledge, work-in-motion, and attention.
 | [Context Engine](engines/context-engine.md) | Budgeted working sets plus typed, digest-bound commitments, fail-closed exact unfolding, and accepted selective exact assembly proof | 2026-07-16 |
 | [Adaptive Context Policy and Item-Level Utility](engines/adaptive-context-policy.md) | Evidence-first application architecture and frozen ablations; generic Fork interfaces remain current while GPU routing stays application-owned | 2026-07-30 |
 | [Adaptive Context Substrate](engines/adaptive-context-substrate.md) | Build-17 item/CMT evidence, resolvable refs, exact token batches, signed actions, quality gate, retry-safe stages, and carry-forward into later builds | 2026-07-24 |
-| [Worldline Engine](engines/worldline-engine.md) | Phases 0-6 and P7-NEST accepted internally; P7-DIST active; complete Phase 7 remains unshipped | 2026-08-12 |
+| [Worldline Engine](engines/worldline-engine.md) | Phases 0-6, P7-NEST and P7-DIST accepted internally at CHML zero; P7-INTEGRATION active; complete Phase 7 remains unshipped | 2026-08-12 |
 
 ## vector
 
