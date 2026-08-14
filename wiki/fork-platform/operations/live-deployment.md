@@ -1,45 +1,50 @@
 # Live and Legacy Deployment
 
-> Sources: [machine-readable release state](../../docs/release-state.json); [staged-build registry](staged-builds-and-compat.md); [build-36 production promotion](../../raw/operations/2026-07-30-build36-production-promotion.md); [build-36 release evidence](../../raw/engines/2026-07-29-construct-build36.md); [legacy LAN retirement](legacy-lan-host-retirement.md)
-> Commit: 8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0
-> Updated: 2026-07-30
+> Sources: [machine-readable release state](../../docs/release-state.json); [staged-build registry](staged-builds-and-compat.md); [build-39 release evidence](../../raw/engines/2026-08-14-worldline-build39.md); [legacy LAN retirement](legacy-lan-host-retirement.md)
+> Repository source: ea2478522e5dd4e714a242e46fe5a17bcf5b477d
+> Updated: 2026-08-14
 
 ## Current observed state
 
-Fresh checks at `2026-07-30T09:22:24+01:00` establish three aligned truths:
+Fresh checks on 2026-08-14 establish four deliberately separate truths:
 
 | Scope | Authoritative fact | Authority |
 |---|---|---|
-| Repository source | Fork build **36**, release commit `8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0` | `SpacetimeDB/FORK-VERSION` and `SpacetimeDB/fork-version.json` |
-| Newest accepted immutable stage | **`v2.7.0-construct-r1`**, build **36**, standalone SHA-256 `287EBBFAA1FEBC6AACB56DFF3DBEB01DAA5210CBDBC61B599961A74A617EFE83` | Staged executable stamp/hash and build-36 release evidence |
-| Observed public/local runtime | Build **36**, commit `8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0`, executable from **`v2.7.0-construct-r1-production`** | Both `/v1/fork-version` endpoints, local `/v1/status`, and serving-process path |
+| Repository source | Fork build **39**, release commit `ea2478522e5dd4e714a242e46fe5a17bcf5b477d` | `SpacetimeDB/FORK-VERSION` and `SpacetimeDB/fork-version.json` |
+| Newest verified immutable stage | **`v2.7.0-worldline-build39-r1`**, build **39**, standalone SHA-256 `13AFC61EB3602F27795A2D3B795FE28464238C63A04BFE62765E457C06D03E33` | Staged executable stamp/hash, isolated publication, restart and rollback/restore |
+| Newest accepted immutable stage | **`v2.7.0-worldline-build39-r1`**, build **39**, same exact stamp/hash | Build-39 evidence and Phase 9 acceptance record |
+| Observed public/local runtime | Build **39**, commit `ea2478522e5dd4e714a242e46fe5a17bcf5b477d`, executable from **`v2.7.0-worldline-build39-r1-production`** | Both `/v1/fork-version` and `/v1/status` endpoints, capabilities and serving-process path |
 
-Build 36 was production-promoted on 2026-07-30 using a byte-identical
-production-layout copy of the accepted stage. The accepted release folder
-remains immutable. Source, accepted artifact, production executable, and both
-live endpoints now agree on the same build and commit.
+Build 39 was production-promoted from a byte-identical D-only production-layout
+copy of its accepted stage. Earlier accepted stages remain immutable rollback
+evidence; build 36 successfully opened a copied build-39 data root without
+touching its 28 Worldline files, and build 39 restored them exactly.
 
 The local endpoint is `http://127.0.0.1:3012`; the public endpoint is
-`https://app.weyaisoft.com`. Both return the same build-36 stamp. The serving
+`https://app.weyaisoft.com`. Both return the same build-39 stamp. The serving
 process is
-`D:\Projects\SpacetimeDB_Builds\v2.7.0-construct-r1-production\bin\spacetimedb-standalone.exe`.
+`D:\Projects\SpacetimeDB_Builds\v2.7.0-worldline-build39-r1-production\bin\spacetimedb-standalone.exe`.
 The existing detached production supervisor remains responsible for lifecycle.
 
 ## Current runtime capabilities
 
-The build-36 `/v1/status` response reports:
+The build-39 `/v1/status` response reports:
 
 - CUDA compiled into the executable, but GPU discovery/selection **disabled**
   and `accelerated=false`; the configured per-index budget is 1 GiB and there
   is no runtime device budget;
 - all six adaptive-context facilities configured/effective;
-- all five Fabric-orchestration facilities configured/effective;
+- all six Fabric-orchestration facilities configured/effective;
 - CINT batch configured/effective enabled;
 - Security Centre active;
 - consumer-registry and service-hosting capabilities present but
   disabled/effective false;
 - Constructs compiled and present, but configured false, effective false,
-  catalog not ready, and explicit initialization still required.
+  catalog not ready, and explicit initialization still required;
+- Worldlines present/configured/effective with API 1, ABI 10.14, SDK contract 1
+  and HTTP/WebSocket transports. Only the exact create/execute/query/evaluate
+  allowlist is admitted; approval, promotion, effects, subscriptions,
+  retention/GC, nesting, federation and delegated capabilities remain denied.
 
 These are startup/status facts, not proof that a particular query, payload or
 CINT call executed. The CUDA compile default is a source/build property; runtime
@@ -49,8 +54,8 @@ GPU selection remains separately configurable.
 
 Build 33 was production-promoted on 2026-07-29 and build 34 was later observed
 live despite remaining a rejected CINT candidate. Those records remain dated
-history. Build 36 superseded both on the live route on 2026-07-30 after exact
-hash verification, restart, build-34 rollback, and build-36 restore. Historical
+history. Build 36 superseded both, and build 39 now supersedes build 36 after
+exact hash verification, publication, restart and rollback/restore. Historical
 evidence must retain its observation date rather than using an unqualified
 “current” claim.
 

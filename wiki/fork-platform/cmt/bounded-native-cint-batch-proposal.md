@@ -1,9 +1,9 @@
 # Bounded Native CINT Batch Ingest
 
-> Status: **Shipped and release-validated in Fork build 35; available but not
-> production-promoted**
+> Status: **Shipped and release-validated in Fork build 35; carried and
+> effective in production build 39**
 >
-> Updated: 2026-07-30
+> Updated: 2026-08-14
 >
 > Sources: [downstream request](../../docs/requests/CINT-BATCH-001-bounded-native-cint-request.md);
 > [accepted implementation plan](../../docs/plans/CINT-BATCH-001-bounded-native-cint-proposal.md);
@@ -103,10 +103,11 @@ and is staged immutably as `v2.7.0-cint-batch-r2`.
 The exact host and guest artifacts passed mixed result, exact retry,
 conflict/replacement, lowered-budget peer isolation, hot disable/rollback,
 metrics, restart persistence, full-stage build-33 rollback, and build-35
-restore drills. This task did not promote build 35. Build 36, which carries the
-accepted build-35 CINT implementation, was production-promoted on 2026-07-30.
-Build 34 remains rejected audit and rollback evidence; its brief dated live
-presence does not alter build 35's status as the accepted CINT release.
+restore drills. This task did not promote build 35. Build 36 subsequently
+carried the accepted implementation into production, and production build 39
+now carries it with CINT batch configured/effective. Build 34 remains rejected
+audit and rollback evidence; its brief dated live presence does not alter build
+35's status as the accepted CINT release.
 
 ## Non-goals
 

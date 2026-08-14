@@ -54,7 +54,7 @@ the GAME-OPENMW capability baseline above remains unchanged.
 
 | Collection | Summary | Updated |
 |---|---|---|
-| [Complete Fork platform wiki](fork-platform/index.md) | Full architecture, engine, vector, embedding, web, operations, research and workflow knowledge base with its own append-only ingest log. | 2026-08-11 |
+| [Complete Fork platform wiki](fork-platform/index.md) | Full architecture, engine, vector, embedding, web, operations, research and workflow knowledge base through the complete native Worldline Engine and production build 39, with its own append-only ingest log. | 2026-08-14 |
 
 ## openmw
 

@@ -1,31 +1,60 @@
 # Worldline Engine
 
-- **Status:** Accepted end goal; Phases 0-6 are accepted internal dependencies
-  at CHML `0/0/0/0`. Report-only
-  [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts complete Phase 6.
-  The [complete Phase 7 source contract](../../docs/evidence/WLD-001-phase7-grounding.md)
-  is frozen at `c5696700f`. Report-only
-  [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts P7-NEST-001 and
-  [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md) accepts P7-DIST-001 at
-  CHML `0/0/0/0`. P7-INTEGRATION-001 is active. Neither accepted dependency is
-  an independently usable or shipped slice. Production remains accepted build
-  36 and WLD-001 remains incomplete.
-- **Updated:** 2026-08-12
+- **Status:** Shipped in production fork build 39 at exact release source
+  `ea2478522e5dd4e714a242e46fe5a17bcf5b477d`. The native HTTP/WebSocket,
+  CLI, ABI 10.14 and generated SDK contracts are present. Production enables
+  create/execute/query/evaluate only for an exact caller/database/module
+  allowlist; approval, promotion, effects, subscriptions, retention/GC,
+  nesting, federation and delegated capabilities remain disabled. Complete
+  Phase 8 is accepted by
+  [AUD-WLD-055](../../docs/audits/AUD-WLD-055.md); build-39 release and live
+  evidence is in the
+  [Phase 9 record](../../docs/evidence/WLD-001-phase9-release-production.md).
+  Report-only [AUD-WLD-056](../../docs/audits/AUD-WLD-056.md) accepts complete
+  Phase 9, and final whole-system
+  [AUD-WLD-057](../../docs/audits/AUD-WLD-057.md) accepts the complete end goal
+  at CHML `0/0/0/0`. See
+  [COMP-WLD-001](../../docs/completions/COMP-WLD-001.md).
+- **Updated:** 2026-08-14
 - **Plan:**
   [complete native Worldline Engine plan](../../docs/plans/WLD-001-native-worldline-engine.md)
 - **Tracking:** [WLD-001 tracking](../../TRACKING.md)
 
 ## Purpose
 
-The Worldline Engine is Fork's planned native runtime for executable alternative
+The Worldline Engine is Fork's native runtime for executable alternative
 database realities. A worldline pins authoritative state, executes deterministic
 work against an isolated copy-on-write view, records complete dependencies and
 effect intents, compares possible outcomes, and promotes an approved result only
 when serializability can be proven.
 
-This goes beyond the current CMT counterfactual surface. CMT can compare base
-and candidate transaction deltas and explain causal differences; it does not
-currently retain an independently queryable branch or promote it into authority.
+This goes beyond CMT counterfactual comparison. CMT explains causal differences;
+Worldline retains independently queryable branches and can promote an approved
+result into authority when the corresponding operation policy is enabled.
+
+## Production and configuration boundary
+
+Fresh installations are fail-closed: `worldlines.enabled` defaults false, all
+operation-class toggles default true beneath that global gate, and caller,
+database, module and effect-kind allowlists default empty. Enabling the global
+gate alone therefore admits nobody. Hard ceilings remain active regardless of
+the hot policy state.
+
+The build-39 production policy is deliberately narrower than the complete
+engine. It admits the existing owner and a dedicated release identity against
+one database and the exact ABI-10.14 module for create, execute/query and
+evaluate. Approval, promotion, effect delivery, subscriptions, retention/GC,
+nesting, federation and delegated capabilities remain denied. The local and
+public version, status and capability endpoints agree with the
+[machine-readable release state](../../docs/release-state.json). The
+[immutable build evidence](../../raw/engines/2026-08-14-worldline-build39.md)
+records hashes, old/new guest publication, restart and build-36
+rollback/build-39 restore.
+
+The phase sections below are append-only development history. Statements such
+as “unshipped” or “production remains build 36” describe the named internal
+gate at the time it was audited; they are superseded for current operation by
+this build-39 production section and are not live-state claims.
 
 ## Architectural representation
 
@@ -884,9 +913,11 @@ CHML `0/0/0/0`; complete Phase 6 later passes
 [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md). Phase 7 is grounded and
 P7-NEST is accepted internally by
 [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md); P7-DIST is accepted internally
-at `e3c7313ab` by [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md), and
-P7-INTEGRATION is active.
-Production remains accepted build 36 and Worldline remains unshipped.
+at `e3c7313ab` by [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md).
+P7-INTEGRATION and complete Phase 7 are accepted internally by
+[AUD-WLD-045](../../docs/audits/AUD-WLD-045.md) at CHML `0/0/0/0`.
+Build 37 is not production-promoted; production remains build 36 and the public
+Worldline surface remains unshipped while Phase 8 is active.
 
 ## P6-CMT-001 exact-source candidate
 
@@ -1194,9 +1225,9 @@ is disclosed. Exact implementation source `c34fcfa6b258831c2a0aa95f0bf725a49bda6
 [completion report](../../docs/completions/COMP-P6-INTEGRATION-001.md) are
 recorded. Report-only [AUD-WLD-038](../../docs/audits/AUD-WLD-038.md) accepts
 complete Phase 6 at CHML `0/0/0/0`. This is internal proof, not a shipped
-capability; the complete Phase 7 contract is frozen, P7-NEST-001 and
-P7-DIST-001 are accepted internally at CHML zero, P7-INTEGRATION-001 is active,
-and production remains accepted build 36.
+capability; complete Phase 7/build 37 is accepted internally by
+[AUD-WLD-045](../../docs/audits/AUD-WLD-045.md) at CHML zero, Phase 8 is active,
+and production remains build 36.
 
 ## Phase 7 frozen nested/distributed contract
 
@@ -1246,8 +1277,9 @@ implementation work package, and report-only
 [AUD-WLD-040](../../docs/audits/AUD-WLD-040.md) accepts it at CHML
 `0/0/0/0`. Report-only
 [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md) accepts P7-DIST at
-`e3c7313ab` with CHML `0/0/0/0`; P7-INTEGRATION is active, while the combined
-immutable Host stage and complete Phase 7 audit remain mandatory.
+`e3c7313ab` with CHML `0/0/0/0`. P7-INTEGRATION and the combined
+immutable build-37 Host stage are complete; the complete Phase 7 audit remains
+mandatory.
 
 ### P7-DIST accepted internal dependency
 
@@ -1281,7 +1313,8 @@ fence 8/8 plus 2/2 plus 1/1, standalone Worldline 21/21 and core Clippy without
 a task-owned warning. The
 [completion report](../../docs/completions/COMP-P7-DIST-001.md) and report-only
 [AUD-WLD-042](../../docs/audits/AUD-WLD-042.md) accept this dependency at CHML
-`0/0/0/0`. P7-INTEGRATION and the combined Host stage remain explicitly open.
+`0/0/0/0`. P7-INTEGRATION and the combined Host stage were subsequently
+accepted internally by [AUD-WLD-045](../../docs/audits/AUD-WLD-045.md).
 
 The original grounding correctly found skeletal substrate rather than a hidden
 feature: participant journal kind 10 was rejected on recovery, Fabric's policy
@@ -1289,10 +1322,341 @@ digest was not a signature, and no coordinator, prepare fence or distributed
 apply path existed. The candidate above closes those owners together rather
 than substituting a table-only coordinator or SQL-only demo.
 
-Phase 7 remains unshipped. Its combined diff is Host-impacting and cannot be
-accepted from source tests alone: a new immutable stage, executable stamps and
-hashes, smoke, restart and rollback/restore plus report-only CRAFTESB audit at
-CHML `0/0/0/0` are required before Phase 8 begins.
+## Complete Phase 7 integration and accepted build-37 stage
+
+Exact implementation source `7d888e9df` completes I1-I10 without a
+parallel coordinator. A child executes SQL, graph, vector, sequence and effect
+state, merges into its parent and promotes into authority through the accepted
+native owners. Full process restart reconstructs nested/distributed journals;
+current snapshots retain every receipt and prepared fence; pre-Phase-7
+snapshots self-heal all five empty current system tables without installing a
+false fence. The ordinary no-fence path performs no Worldline protocol work,
+and fixed scale fixtures fit the unchanged accepted bounds.
+
+The [I1-I10 evidence](../../docs/evidence/WLD-001-phase7-integration-increment.md)
+records the complete serial matrix: Worldline 217 plus one intentional ignore,
+datastore 233/233, engine 62 plus seven documented ignores, core Worldline 138
+plus one intentional ignore, Fabric 214/214, Memory 160/160, Context 88/88,
+standalone Worldline 30/30 and the full restart/relocation/prior-host
+compatibility workflow.
+
+Release source `5615bd74b` numbers the combined Host stage as Fork
+build 37. The new immutable `v2.7.0-worldline-phase7-r1` stage carries
+the CUDA-default standalone, CLI and updater. Exact stamps/hashes and isolated
+build-37 smoke/restart, accepted-build-36 rollback-copy and build-37 restore are
+in the [release evidence](../../raw/engines/2026-08-12-worldline-phase7-build37.md).
+
+Initial report-only [AUD-WLD-044](../../docs/audits/AUD-WLD-044.md) failed only
+on duplicate build-cache retention. The linked
+[REM-AUD-WLD-044](../../docs/remediations/REM-AUD-WLD-044.md) closed that
+finding, and report-only [AUD-WLD-045](../../docs/audits/AUD-WLD-045.md)
+accepts complete Phase 7 at CHML `0/0/0/0`. Build 37 is the accepted internal
+Host stage but is not production-promoted. Phase 8 public surfaces are active;
+production remains build 36 at `8d4f4531e` with no Worldline surface.
+
+## Phase 8 accepted canonical public-contract dependency
+
+The accepted P8-CONTRACT internal dependency now gives every later public surface
+one transport owner in the client API messages crate. API version 1 fixes
+canonical lower-case identities, exact API/ABI compatibility, a 48-operation
+vocabulary, deny-unknown-field requests, typed content-free results and
+receipts, delegated-capability claims, safe problems and bounded WebSocket
+events/commands. HTTP, CLI and generated clients must consume these types rather
+than independently naming operations or error shapes.
+
+Native catalog discovery is also real rather than a module table or unbounded
+filesystem list. The existing GC manager serializes discovery with its
+cross-process guard, charges the aggregate scan/byte budget, validates each
+directory/create record/manifest/lineage, refuses links without following them
+and returns stable exclusive-cursor pages. Manifests now persist the exact
+lifecycle-machine revision separately from their storage generation; old
+manifests default safely and recovery repairs the value from authenticated
+journal history.
+
+Fresh gates pass contract 7/7, durable discovery 3/3, manifest/recovery 16/16
+and both affected library checks. Report-only
+[AUD-WLD-048](../../docs/audits/AUD-WLD-048.md) accepts exact source
+653067f98 at CHML 0/0/0/0. See the
+[implementation evidence](../../docs/evidence/WLD-001-phase8-contract-increment.md)
+and [completion report](../../docs/completions/COMP-P8-CONTRACT-001.md).
+This accepted internal dependency registers no route, advertises no ABI import
+and publishes no artifact. P8-HOST is active; production remains build 36 with
+no Worldline surface.
+
+## Phase 8 accepted host implementation dependency
+
+P8-HOST is an accepted internal, nonterminal dependency. It exposes authenticated
+bounded routes for the durable catalog, lifecycle, query/execute/replay,
+re-execution, diff, evaluation, Memory/Context evidence, signed Construct
+approval, ordinary/evolved promotion, managed children and lineage, Fabric
+tournaments, and distributed coordination. These routes still exist only in
+source and are not available on production build 36.
+
+The distributed path is host-owned at exact source `13f06d3bd` (tree
+`257042d12`). Clients request Prepare, Decide, Apply, Recover or Complete;
+they do not supply signed frames, fences, nonces or transition times. The host:
+
+- persists a checksum-bound descriptor containing the exact coordinator,
+  participant set, authorities and per-participant promotion material;
+- creates ES256-signed native Fabric messages and accepts only validated signed
+  native participant responses;
+- disables HTTP redirects, bounds request and streamed response bytes, allows
+  cleartext only for loopback development, and requires the exact participant
+  route;
+- uses fresh time after network I/O so delayed responses cannot be admitted
+  against a stale pre-send clock;
+- replays durable coordinator/participant state for retry and recovery; and
+- rejects a local Worldline acting as both coordinator and participant, which
+  removes the self-delivery lock cycle.
+
+Federation trust also now distinguishes each participant profile identity from
+the shared UCR state identity. Every registry mutation atomically advances a
+restart-stable state digest. Admission captures the resolved profile and the
+state revision/digest under one registry mutation lock, preventing mixed-state
+trust. Different participant profiles therefore have different profile
+digests while sharing one exact registry-state pin.
+
+Fresh verification passes client Worldline 14/14, core Worldline 142/142 with
+one intentional release-performance ignore, standalone Worldline 49/49 and
+focused restart/multi-profile trust tests. See the
+[distributed orchestration evidence](../../docs/evidence/WLD-001-phase8-distributed-host-orchestration-increment.md).
+Exact source `9b6b78645` (tree `1d700d673`) closes the remaining host matrix:
+
+- promotion persists a canonical content-digested effect intent while the
+  effect plane owns durable executor leases, attempts, receipts, retry,
+  reconciliation and compensation;
+- distributed prepared apply grants its protocol metadata exemption only to
+  the effect-intent row, never to leases or undeclared business resources;
+- explicit recovery authenticates and reconstructs branch state under the
+  native exclusive guard;
+- typed retention holds are inspectable, idempotently added and released; and
+- bounded GC inspection/collection uses durable tombstones, a hard per-request
+  delete budget and cumulative resume after partial deletion or restart.
+
+Retention and collection have independent unified controls that default on.
+Recovery and GC resume remain available when new work is stopped, preventing
+an operator stop from stranding durable state. Typed HTTP problems preserve
+native lifecycle, authority, bounds, dependency and corruption classes.
+
+Fresh verification passes client Worldline 16/16, native GC 25/25, effect
+9/9, core Worldline 107/107 plus one intentional release-performance ignore,
+standalone Worldline 46/46 and full datastore 234/234. See the
+[host maintenance evidence](../../docs/evidence/WLD-001-phase8-host-maintenance-increment.md).
+Report-only [AUD-WLD-049](../../docs/audits/AUD-WLD-049.md) accepts P8-HOST at
+CHML `0/0/0/0`; P8-WS, P8-CLI and P8-ABI are accepted; P8-SDK is active. SDK/WASM, operator,
+integration, release, production and
+final whole-system gates remain open; production remains build 36.
+
+## Phase 8 native WebSocket subscription acceptance
+
+Exact source `4ce260d19` (tree `bbb73aa45`) exposes the accepted native
+subscription plane through the authenticated API-v1 route
+`GET /v1/worldlines/databases/:database/:worldline/subscribe`:
+
+- authentication, ownership, Read authority, allowlists, captured module and
+  bounded resource admission all run before upgrade;
+- fixed-width subscriber IDs and exact sequence-plus-frame-digest cursors
+  authenticate resume and acknowledgement state;
+- fresh clients receive `hello` plus the native overlay snapshot; retained
+  reconnects receive only later ordered deltas; expired cursors receive one
+  typed gap followed by an exact catch-up snapshot;
+- typed `ack`, `catch-up`, `heartbeat` and `close` commands cannot widen the
+  stream contract, and malformed commands close safely;
+- authorization is refreshed periodically and before every command. Hot
+  identity/policy revocation or the independent unified
+  `worldlines.subscriptions-enabled` stop closes and releases native state;
+- native polling releases the Worldline lock before socket writes. Aggregate
+  send budgets contain unread clients without blocking branch execution; and
+- monotonic hot limit reductions preserve subscriber identity and
+  acknowledgement while converting removed/oversized history to one
+  deterministic gap and catch-up boundary.
+
+Fresh gates pass public protocol 17/17, native subscription 8/8, core
+Worldline 144/144 plus one intentional release-performance ignore, six real
+authenticated WebSocket tests and standalone Worldline 52/52. See the
+[implementation evidence](../../docs/evidence/WLD-001-phase8-websocket-increment.md)
+and [completion report](../../docs/completions/COMP-P8-WS-001.md). Report-only
+[AUD-WLD-050](../../docs/audits/AUD-WLD-050.md) passes at CHML `0/0/0/0`.
+
+This source is an accepted internal dependency, not a complete phase or shipped
+build. P8-CLI and P8-ABI are accepted; P8-SDK is active, while P8-OPS, P8-INTEGRATION, Phase 9 release/production and
+the final whole-system audit remain open. Source/stage remain build 37 and
+production remains build 36 with no Worldline surface.
+
+## Phase 8 complete native CLI acceptance
+
+Exact source `f64f2a56c` (tree `3d53f4ce1`) adds the real
+`spacetime worldline` command family over the accepted shared transport
+contract:
+
+- 51 typed HTTP commands plus `subscribe` cover every canonical Worldline
+  operation and two useful bounded latest-state reads without introducing a
+  second request schema;
+- every non-streaming operation supports `--server` and exact typed `--json`
+  output. Structured requests share one file/stdin decoder, are capped while
+  reading at 16 MiB, reject unknown fields or mismatched discriminants and are
+  re-encoded canonically before dispatch;
+- strict fixed-width lowercase IDs and exact paired cursors fail locally;
+  node-safe capabilities is the only anonymous operation and all other calls
+  use the established CLI authentication path;
+- authority-changing/destructive requests require default-deny confirmation
+  unless `--yes` is explicit. Confirmation precedes authentication, proving a
+  denial sends no request;
+- typed host problems retain their stable kebab-case code and request ID;
+  successful responses must deserialize into the operation's exact shared DTO;
+  and
+- WebSocket subscribe uses the native cursor/command/event types, emits JSON
+  lines, auto-acknowledges and requests catch-up within explicit frame bounds.
+
+The actual binary smoke initially found an existing whole-command-tree panic
+from undocumented host/registry arguments. Those help surfaces are complete
+and a full-tree startup invariant now prevents recurrence. Focused Worldline
+CLI 11/11, complete CLI 169/169, exact 51-route parity, strict task-owned lint,
+package format and the actual binary help smoke pass. See the
+[implementation evidence](../../docs/evidence/WLD-001-phase8-cli-increment.md)
+and [completion candidate](../../docs/completions/COMP-P8-CLI-001.md).
+
+Report-only [AUD-WLD-051](../../docs/audits/AUD-WLD-051.md) accepts this exact
+source at CHML `0/0/0/0` without remediation. This remains an internal
+dependency, not a complete phase or shipped build. P8-ABI is accepted and P8-SDK is active;
+P8-OPS, P8-INTEGRATION, Phase 9 release/production and the
+final whole-system audit remain open. Source/stage remain build 37 and
+production remains build 36 with no Worldline surface.
+
+## Phase 8 native guest ABI acceptance
+
+Exact source `ed8f9bf707285d7b67f50851f95d9bb4dc19d8b7` (tree
+`d67b06bb9c71640f6e1df86fbed2d42120db9b4c`) implements the real ABI 10.14
+guest boundary. `worldline_context` returns one canonical 160-byte current
+execution packet with Worldline/execution/step identity, step
+revision/ordinal, lifecycle, capability grant/revision and exact base/policy
+digests. Outside native execution it returns a stable no-context errno.
+
+Three canonical bounded BSATN calls record deterministic observations, stage
+validated executable effects and request nested Worldlines. Capability and
+transaction context are checked before mutation. Identifiers, child payloads,
+policy bindings and post-commit effect contracts are host-derived; a guest
+cannot recursively create a child while its transaction is open. Procedure
+checkpoints make observations, staged effects, sequence allocations and
+logical IDs rollback-exact.
+
+Wasmtime validates input/output memory windows before mutation, links the four
+calls only under `spacetime_10.14`, and advertises 10.14 only with the imports
+present. The new host accepts <=10.13 and 10.14; the prior 10.13 host rejects
+10.14. V8 exposes equivalent bounded calls through the additive
+`spacetime:sys@2.2` namespace. Native raw definitions remain link-only, while
+safe Rust exposes typed context/observation/effect/child functions and
+`#[worldline_operation]` injects only a typed context lookup with no hidden
+state.
+
+Fresh codec 1/1, safe bindings 1/1, full compile-time bindings, ABI adversarial
+3/3, compatibility 1/1, Worldline 231 plus one intentional ignore and core
+Worldline 147 plus one intentional ignore pass. See the
+[implementation evidence](../../docs/evidence/WLD-001-phase8-abi-increment.md)
+and [completion report](../../docs/completions/COMP-P8-ABI-001.md). Report-only
+[AUD-WLD-052](../../docs/audits/AUD-WLD-052.md) accepts this exact source at
+CHML `0/0/0/0`.
+
+This is Both-impact source, not a release. No host build or guest WASM was
+published and production remains build 36 with no Worldline surface. P8-SDK is
+active for deterministic Rust/TypeScript/C# snapshots and real exact-pin
+old/new WASM build, publish and smoke. P8-OPS, P8-INTEGRATION, Phase 9 and the
+final whole-system audit remain open.
+
+## Deterministic SDK and guest compatibility
+
+P8-SDK generates checked-in Rust, TypeScript and C# contracts from the shared
+Worldline wire vocabulary and carries two real Rust guest modules. The ABI
+10.13 fixture deliberately imports no 10.14 calls; the ABI 10.14 fixture uses
+the current-execution context, records an observation, stages an effect and
+requests a child Worldline. Generator snapshots, Rust/TypeScript compilation
+and the C# Release build are green.
+
+The real SDK smoke uncovered a public lifecycle gap: native creation yields
+Draft and execution requires Running through Ready, but the shared action enum
+had no Ready operation. Exact product source `85731ef8c` now carries `ready`
+through the canonical request, host transition, CLI and generated TypeScript/C#
+surfaces. The host retains native state-machine enforcement and logs a bounded
+operator-only cause for rejected native execution while returning the existing
+generic public engine problem.
+
+The exact old fixture publishes and runs on both the current build-37 host and
+the preserved ABI 10.13 host. The new fixture runs on the current host and the
+prior host rejects it with `abi version 10.14 is not supported (host implements
+10.13)`. A fresh Worldline then completed create, ready, resume, ABI execution,
+exact replay, receipt query and restart recovery; a deliberately unknown
+reducer failed without advancing revision. See the
+[exact evidence](../../docs/evidence/WLD-001-phase8-sdk-increment.md) and
+[completion report](../../docs/completions/COMP-P8-SDK-001.md).
+
+Report-only [AUD-WLD-053](../../docs/audits/AUD-WLD-053.md) accepts this
+internal dependency at CHML `0/0/0/0`. This is not a release or production
+promotion. The exact test artifacts live only in the isolated verification roots. P8-OPS,
+P8-INTEGRATION, immutable Host/Guest staging, publication, rollback/restore,
+production promotion and final whole-system acceptance remain mandatory.
+
+## Complete operator and observability dependency
+
+Exact product source `4c0a2fce0` (tree `be85b77ab`) adds the complete bounded
+operator surface required by P8-OPS. The root `/worldlines` console covers all
+41 typed operations across catalog and lifecycle, detached query and execution,
+replay and diff, evaluation and evidence, approval and evolution, nesting and
+tournaments, distribution, promotion and effects, retention, garbage
+collection and recovery. Mutations and authority changes require explicit
+confirmation; bearer credentials remain only in memory and are never embedded
+in the page or URL. The Construct console reuses the same native approval
+request and decision authority rather than creating a second workflow.
+
+`/v1/status.worldlines` exposes compatibility, transport declarations and an
+honestly labelled content-free `loaded-databases-last-observed` catalog/health
+snapshot. It never performs a public status-path storage scan. Prometheus
+telemetry uses the frozen 50-method/path route set and fixed-cardinality labels
+for requests, latency, in-flight work, domains, catalog health, dependency
+proofs, copy-on-write activity and subscription state. Security Centre events
+cover access denial, corruption or replay divergence, promotion conflicts,
+effect ambiguity or fencing, distributed recovery and stuck prepares, and
+dependency coarsening without recording payload content or credentials.
+
+The complete standalone library suite passes 311/311. Strict task-owned lint,
+configuration registry invariants, exact unauthenticated counter behavior,
+embedded-script syntax and the fixed-route metric contract also pass. An
+isolated build-37 host stamped with the exact source returned the strict
+security headers, node console, content-free status and expected 401 data
+boundary; an explicitly enabled isolated Construct host exposed the shared
+approval controls. See the [exact implementation evidence](../../docs/evidence/WLD-001-phase8-operator-increment.md)
+and [completion report](../../docs/completions/COMP-P8-OPS-001.md). Report-only
+[AUD-WLD-054](../../docs/audits/AUD-WLD-054.md) accepts the exact candidate at
+CHML `0/0/0/0` without remediation.
+
+This remains an accepted internal Host dependency. It is not an immutable release,
+artifact publication or production promotion. P8-INTEGRATION, Phase 9 and the
+final whole-system acceptance remain mandatory, and production remains build
+36 with no Worldline surface.
+
+## Complete Phase 8 integration acceptance
+
+Exact source `e6620d47a` integrates every accepted public host, WebSocket, CLI,
+ABI, generated SDK, WASM and operator package. The exact-pin spine passes
+client 18/18, native Worldline 232, core Worldline 147, standalone 311/311,
+CLI 169/169 and compiled old/new modules 6/6, with the two documented
+release-performance tests intentionally ignored. Generator snapshots/imports,
+TypeScript 5.9 and both C# runtime targets also pass.
+
+Fresh isolated publication proves the <=10.13 guest on exact current and
+preserved prior hosts, the 10.14 guest on current, and exact rejection by the
+prior ABI 10.13 host. The current host advertises API 1, ABI 10.14, HTTP plus
+WebSocket and all 48 canonical operations. Typed CLI query/replay and
+confirmation-before-send behavior pass. After an isolated host restart, the
+ABI 10.14 Worldline retained its state digest and returned the same one-item,
+447-byte receipt digest. The full evidence and artifact hashes are in the
+[Phase 8 integration record](../../docs/evidence/WLD-001-phase8-integration-increment.md)
+and [completion report](../../docs/completions/COMP-P8-INTEGRATION-001.md).
+
+Report-only [AUD-WLD-055](../../docs/audits/AUD-WLD-055.md) accepts complete
+Phase 8 at CHML `0/0/0/0`. This is still not a release: Phase 9 must build and
+stage Host, CLI, updater and both guest artifacts from one new release pin,
+publish and smoke them, promote production and prove restart plus
+rollback/restore.
 
 ## Promotion is not merging
 

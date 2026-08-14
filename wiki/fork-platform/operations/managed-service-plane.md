@@ -2,7 +2,7 @@
 
 > Sources: [SVC-001 request](../../docs/requests/SVC-001-managed-service-plane.md); [implementation plan](../../docs/plans/SVC-001-managed-service-plane.md); [final acceptance audit](../../docs/audits/AUD-SVC-009.md); [current release state](../../docs/release-state.json)
 > Commit: 862f0a81e9bac57905d7427df0cbb3de06e58099
-> Updated: 2026-07-30
+> Updated: 2026-08-14
 
 ## What shipped
 
@@ -159,9 +159,9 @@ Builds 28 and 29 remain immutable rejected stages: the audit loop preserves
 them rather than overwriting evidence.
 
 Build 30 itself remains an immutable unpromoted stage; later builds carry the
-capability. Build 33 was production-promoted on 2026-07-29, and build 36
-superseded it in production on 2026-07-30. The current build-36 runtime carries
-the service plane but reports service hosting disabled/effective false.
+capability. Build 33 was production-promoted on 2026-07-29, build 36 superseded
+it on 2026-07-30, and production build 39 now carries the service plane while
+reporting service hosting disabled/effective false.
 The former
 `192.168.1.211:3000` build-17 listener was subsequently retired as a
 [legacy host](legacy-lan-host-retirement.md): stopped, startup-disabled and

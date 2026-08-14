@@ -1,14 +1,14 @@
 # Host Configuration Management
 
-> Sources: HOSTCFG-001 and HOSTCFG-002 as-built evidence, 2026-07-14; [PRED-004 build-17 evidence](../../raw/engines/2026-07-16-pred004-adaptive-context-substrate-build17.md); [PRED-006 completion](../../docs/completions/COMP-PRED-006.md); [Security Centre completion](../../docs/completions/COMP-SEC-CENTRE-001.md); [build-33 UCR completion](../../docs/completions/COMP-UCR-001.md); [build-35 CINT batch release](../../raw/engines/2026-07-29-cint-batch-build35.md); [build-36 Construct release](../../raw/engines/2026-07-29-construct-build36.md); [current release state](../../docs/release-state.json)
+> Sources: HOSTCFG-001 and HOSTCFG-002 as-built evidence, 2026-07-14; [PRED-004 build-17 evidence](../../raw/engines/2026-07-16-pred004-adaptive-context-substrate-build17.md); [PRED-006 completion](../../docs/completions/COMP-PRED-006.md); [Security Centre completion](../../docs/completions/COMP-SEC-CENTRE-001.md); [build-33 UCR completion](../../docs/completions/COMP-UCR-001.md); [build-35 CINT batch release](../../raw/engines/2026-07-29-cint-batch-build35.md); [build-36 Construct release](../../raw/engines/2026-07-29-construct-build36.md); [build-39 Worldline release](../../raw/engines/2026-08-14-worldline-build39.md); [current release state](../../docs/release-state.json)
 > Raw: [Unified Host Configuration Management](../../raw/operations/2026-07-14-unified-host-configuration.md)
 > Raw: [Exact Multi-GPU Placement](../../raw/operations/2026-07-14-exact-multi-gpu-placement.md)
-> Commit: 8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0
-> Updated: 2026-07-30
+> Commit: ea2478522e5dd4e714a242e46fe5a17bcf5b477d
+> Updated: 2026-08-14
 
 ## Overview
 
-Fork builds 8 through 36 provide one unified, authenticated tool for inspecting
+Fork builds 8 through 39 provide one unified, authenticated tool for inspecting
 and changing a fixed set of standalone host features. Settings truthfully
 declare whether they apply hot or require restart. The surface does not mutate
 durable database policy, infer models, restart its own process, or couple the
@@ -162,6 +162,17 @@ active Construct sockets immediately. The active value remains the
 intersection of compiled bounds, configured gates, authority readiness, and
 catalog readiness; host configuration cannot raise a compiled ceiling.
 
+Build 39 adds the complete native
+[Worldline Engine](../engines/worldline-engine.md) configuration surface.
+`worldlines.enabled` defaults false. The individual operation toggles default
+true beneath that global gate, but all caller/database/module/effect allowlists
+default empty, so a fresh node remains fail-closed. The global, emergency,
+operation, ceiling, allowlist and policy controls are registered in the unified
+host configurator; only storage-root/journal layout changes require restart.
+The production overlay admits an exact caller/database/module allowlist for
+create/execute/query/evaluate and denies approval, promotion, effects,
+subscriptions, retention/GC, nesting, federation and delegated capabilities.
+
 ## Release and Evidence
 
 Exact multi-GPU placement was introduced by build 9. Build 17 added adaptive
@@ -171,20 +182,23 @@ TOML mutation. Build 30 adds the service-hosting hot switches, limits and
 restart-bound policy lists under the same fixed typed surface. Build 33 adds
 the hot consumer-registry controls and compound-JSON CLI transport. Build 35
 adds the hot CINT-batch controls. Build 36 adds the Construct catalog
-initialization barrier and hot runtime policy. See
+initialization barrier and hot runtime policy. Build 39 adds bounded Worldline
+storage, admission and operation-class controls. See
 [Staged Builds & Compatibility](staged-builds-and-compat.md) for the immutable
 artifact registry and [Live Deployment](live-deployment.md) for current node
 stamps.
 
 The former build-17 LAN service is now a stopped/startup-disabled
 [legacy host](legacy-lan-host-retirement.md); its preserved config had GPU
-discovery disabled. The public/local node observed after the 2026-07-30
-promotion runs build 36. It reports CUDA compiled but GPU discovery disabled
-and `accelerated=false`, all five Fabric-orchestration and all six
+discovery disabled. The current public/local node runs build 39. It reports
+CUDA compiled but GPU discovery disabled
+and `accelerated=false`, all six Fabric-orchestration and all six
 adaptive-context facilities configured/effective, CINT batch effective,
 Security Centre active, and consumer-registry/service-hosting present but
 disabled/effective false. Construct settings are present, but configured false,
 effective false, catalog not ready, and explicit initialization still required.
+Worldlines are configured/effective for the exact least-privilege production
+allowlist described above.
 See the [current release state](../../docs/release-state.json).
 
 This is exact placement, not VRAM pooling. The GPUs remain separate allocation

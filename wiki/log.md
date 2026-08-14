@@ -1009,6 +1009,15 @@
   voiced native Orders, live-control-map-checked shortcuts and all burden
   boundaries. Owner acceptance of the combined surface remains deferred.
 
+## [2026-08-14] sync | Complete Fork platform wiki through build 39
+
+- Updated only the additive [Fork platform namespace](fork-platform/README.md)
+  from Fork source `3ebb4d233`; all surrounding GAME-OPENMW, Skyrim and shared
+  architecture knowledge remains unchanged.
+- The mirrored source records complete native Worldline acceptance at CHML
+  `0/0/0/0`, exact production build 39, and reconciled current release/config
+  summaries.
+
 ## [2026-08-12] correction | Companion chatter and grounded resource callouts @ working tree
 
 - Updated: [Frontier Companion System](skyrim/frontier-companion-system.md),

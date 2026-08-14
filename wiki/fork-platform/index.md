@@ -13,7 +13,7 @@ The three composed engines: knowledge, work-in-motion, and attention.
 | [Context Engine](engines/context-engine.md) | Budgeted working sets plus typed, digest-bound commitments, fail-closed exact unfolding, and accepted selective exact assembly proof | 2026-07-16 |
 | [Adaptive Context Policy and Item-Level Utility](engines/adaptive-context-policy.md) | Evidence-first application architecture and frozen ablations; generic Fork interfaces remain current while GPU routing stays application-owned | 2026-07-30 |
 | [Adaptive Context Substrate](engines/adaptive-context-substrate.md) | Build-17 item/CMT evidence, resolvable refs, exact token batches, signed actions, quality gate, retry-safe stages, and carry-forward into later builds | 2026-07-24 |
-| [Worldline Engine](engines/worldline-engine.md) | Phases 0-6, P7-NEST and P7-DIST accepted internally at CHML zero; P7-INTEGRATION active; complete Phase 7 remains unshipped | 2026-08-12 |
+| [Worldline Engine](engines/worldline-engine.md) | Complete native alternative-reality execution, dependency proofs, isolated SQL/graph/vector state, effects, evaluation, approval/promotion, nesting/distribution and HTTP/WebSocket/CLI/ABI/SDK surfaces; final CHML 0/0/0/0; production build 39 enables an exact create/execute/query/evaluate allowlist | 2026-08-14 |
 
 ## vector
 
@@ -42,7 +42,7 @@ The Causal Memory Twin: why-chains, counterfactuals, code intelligence, and the 
 |---------|---------|---------|
 | [Causal Memory Overview](cmt/causal-memory-overview.md) | The why/effects/impact/counterfactual surface, replay capsules, collision-safe tags through predictive 50-59, and rollback-safe exact semantic envelopes | 2026-07-15 |
 | [Code Intelligence](cmt/code-intelligence.md) | Live code-symbol graph, incremental re-index, query surface, CINT↔CMT blast-radius bridge, and ABI 10.13 bounded native microbatch ingest | 2026-07-29 |
-| [Bounded Native CINT Batch Ingest](cmt/bounded-native-cint-batch-proposal.md) | Accepted build-35 ordered microbatch contract, now carried by production build 36 | 2026-07-30 |
+| [Bounded Native CINT Batch Ingest](cmt/bounded-native-cint-batch-proposal.md) | Accepted build-35 ordered microbatch contract, carried and effective in production build 39 | 2026-08-14 |
 | [Causal-Query Wire Contract](cmt/causal-query-wire-contract.md) | The 8-array product, legacy-prefix compat, pin-lockstep rule, the silent-empty failure mode | 2026-07-11 |
 | [Causal Evidence Subscriptions (CMT-SUB)](cmt/causal-evidence-subscriptions.md) | DELIVERED: causal tables Private (owner-scoped SQL+subscribe), CLI schema fallback (the error was client-side all along), same-update evidence tests; rejected alternatives | 2026-07-11 |
 
@@ -57,7 +57,7 @@ The web/app platform: the client surface, the tool surface, hosting, and push.
 | [App Hosting & Gateway](web/app-hosting-and-gateway.md) | Built-in [app-hosting] host/path rules; native reverse-proxy `upstream` target (APP-HOST-002): streaming + WebSocket/HMR passthrough + optional Basic auth gate + clean 502; **runtime rule management API (APP-HOST-003): add/remove routes with no restart, persisted, deny-by-default admin auth + SSRF guard**; the optional allowlist Caddy edge; process model | 2026-07-11 |
 | [Streaming & Live Events](web/streaming-and-live-events.md) | WS subscriptions vs finite SSE tails, the configurable app_event feed, what push unlocks, live proof | 2026-07-11 |
 | [Perception and Control Substrate](web/perception-and-control-substrate.md) | Model-free ordered perception, bounded delivery, and the external GPU/driver producer boundary with calibrated timing and recovery | 2026-07-14 |
-| [Native Constructs — Host-Native Collaboration Rooms](web/native-constructs-proposal.md) | Production build-36 reserved relational collaboration catalog, present but disabled and uninitialized by default | 2026-07-30 |
+| [Native Constructs — Host-Native Collaboration Rooms](web/native-constructs-proposal.md) | Build-36 host-native collaboration catalog carried by production build 39, present but disabled and uninitialized by default | 2026-08-14 |
 
 ## embeddings
 
@@ -78,16 +78,16 @@ Running, building, staging, and upgrading the fork for real.
 |---------|---------|---------|
 | [Native TLS, ACME, and public domain routing](operations/native-tls-and-acme.md) | Opt-in native TLS termination, HTTP/2-correct fail-closed routing, hot SNI/ACME, Windows key hardening, and the build-24 real-CA parser fix; carried by build 27 | 2026-07-24 |
 | [Security Centre](operations/security-centre.md) | Unified typed security evidence in one anchored node chain; tenant events are identity-scoped, not native per-database SQL/subscriptions; final six-gap remediation and 0 C/H/M/L re-audit | 2026-07-24 |
-| [Live Deployment](operations/live-deployment.md) | Source, accepted stage, production bundle, and public/local endpoints agree on build 36 | 2026-07-30 |
+| [Live Deployment](operations/live-deployment.md) | Build-39 exact source, accepted immutable stage and D-only public/local production runtime, with rollback-safe build-36 compatibility proof | 2026-08-14 |
 | [Legacy LAN Host Retirement](operations/legacy-lan-host-retirement.md) | Why the unused :3000 agent-starter host was retired, proof it is disabled, preserved rollback state, and the no-accidental-reactivation rule | 2026-07-30 |
-| [Build & Test Gotchas](operations/build-and-test-gotchas.md) | AppControl 4551, the two-scope check rule, swallowed pipes, the WSL-stub trap, elevation, anonymous-publish identity | 2026-07-11 |
-| [Staged Builds & Compatibility](operations/staged-builds-and-compat.md) | Immutable registry through accepted and production-promoted build 36, including byte-identical production layout | 2026-07-30 |
+| [Build & Test Gotchas](operations/build-and-test-gotchas.md) | D-only bounded Cargo storage, AppControl 4551, two-scope checks, swallowed pipes, WSL-stub and deployment traps | 2026-08-12 |
+| [Staged Builds & Compatibility](operations/staged-builds-and-compat.md) | Immutable registry through accepted and production-promoted build 39, including exact Host/Guest pins and build-36 rollback/build-39 restore evidence | 2026-08-14 |
 | [Auto-Increment Sequence Recovery](operations/sequence-recovery.md) | Replay/publication high-water reconciliation for user, Fabric, and causal tables; replay-stable repair and build-6 evidence | 2026-07-13 |
 | [Upstream Rebase Process](operations/upstream-rebase-process.md) | Drift script → worktree subtree-merge → validation ladder → promote; inherited-red discipline | 2026-07-11 |
-| [Fork Versioning & Drift Detection](operations/fork-versioning.md) | Monotonic source/stage/runtime build 36 with provenance-separated drift surfaces | 2026-07-30 |
-| [Host Configuration Management](operations/host-configuration-management.md) | Deny-by-default typed management through build 36, including registry, CINT-batch and Construct policy | 2026-07-30 |
-| [Generic Managed Service Plane](operations/managed-service-plane.md) | Build-30 protocol-neutral service plane carried by production build 36; present but ineffective by policy | 2026-07-30 |
-| [Unified Consumer Registry and Configuration Spaces](operations/unified-consumer-registry.md) | Build-33 accepted registry/config-space kernel carried disabled by production build 36 | 2026-07-30 |
+| [Fork Versioning & Drift Detection](operations/fork-versioning.md) | Monotonic build-39 source, accepted stage and live runtime identity reconciled across executable stamps, endpoints and release state | 2026-08-14 |
+| [Host Configuration Management](operations/host-configuration-management.md) | Deny-by-default typed management through build 39, including registry, CINT-batch, Construct and bounded Worldline policy | 2026-08-14 |
+| [Generic Managed Service Plane](operations/managed-service-plane.md) | Build-30 protocol-neutral service plane carried by production build 39; present but disabled/effective false by policy | 2026-08-14 |
+| [Unified Consumer Registry and Configuration Spaces](operations/unified-consumer-registry.md) | Build-33 accepted registry/config-space kernel carried disabled/effective false by production build 39 | 2026-08-14 |
 
 ## workflow
 

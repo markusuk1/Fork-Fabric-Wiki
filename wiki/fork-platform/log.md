@@ -1,3 +1,296 @@
+## [2026-08-14] correction | Build-39 operations index reconciliation
+
+- Reconciled the [wiki index](index.md) and current-state paragraphs for CINT,
+  Constructs, managed services, consumer registries, live deployment, staged
+  builds, fork versioning and host configuration with the authoritative
+  build-39 release state.
+- No runtime or capability changed; this closes a publication-time summary
+  drift found before synchronizing the external Fork wiki mirror.
+
+## [2026-08-14] completion | Complete native Worldline Engine
+
+- Final audit: [AUD-WLD-057](../docs/audits/AUD-WLD-057.md) traces the original
+  end goal through native implementation, Phases 0-9, exact build-39 artifacts,
+  production, security/bounds, recovery and knowledge at CHML `0/0/0/0`.
+- Result: all eight CRAFTESB dimensions pass and
+  [COMP-WLD-001](../docs/completions/COMP-WLD-001.md) records the complete
+  released and production-promoted system.
+- Integration: history-preserving merge `542c22731` lands the accepted branch
+  on `main`; the phase/audit history is not squashed.
+
+## [2026-08-14] acceptance | Worldline complete Phase 9
+
+- Audit: report-only [AUD-WLD-056](../docs/audits/AUD-WLD-056.md) passes the
+  build, artifact, publication, production, rollback/restore, policy, storage
+  and knowledge gates at CHML `0/0/0/0` without remediation.
+- Result: all Phases 0-9 are accepted. Build 39 remains live from the exact
+  D-only production bundle with the least-privilege Worldline allowlist.
+- Boundary: the fresh final whole-system report-only audit and merge remain
+  before WLD-001 completion.
+
+## [2026-08-14] release | Worldline build 39 production candidate
+
+- Release source: `ea2478522e5dd4e714a242e46fe5a17bcf5b477d`.
+- Artifacts: immutable build-39 standalone/CLI/updater and ABI 10.13/10.14 WASM
+  guests share one exact pin; all source, stage and production hashes match.
+- Verification: native Worldline 232/232, core 147/147, standalone 311/311,
+  CLI 169/169, strict task lint, fixed performance ceilings, old/new guest
+  publication, restart and build-36 rollback/build-39 restore pass.
+- Production: local/public version, status and capabilities agree on build 39.
+  The D-only runtime admits an exact caller/database/module allowlist for
+  create/execute/query/evaluate; higher-risk operation classes remain denied.
+- Evidence: [Phase 9 release record](../docs/evidence/WLD-001-phase9-release-production.md),
+  [immutable build record](../raw/engines/2026-08-14-worldline-build39.md) and
+  [completion candidate](../docs/completions/COMP-WLD-PHASE9.md).
+- Boundary: Phase 9 and final report-only audits remain before WLD-001 closure.
+
+## [2026-08-14] acceptance | Worldline complete Phase 8
+
+- Product source: `e6620d47a` (tree `360ae1897`).
+- Audit: report-only [AUD-WLD-055](../docs/audits/AUD-WLD-055.md) passes all
+  36 executable IDs and complete Phase 8 at CHML `0/0/0/0` without remediation.
+- Result: public Host/WS/CLI/ABI/SDK/WASM/operator integration is accepted as a
+  nonterminal internal Both-impact gate; Phase 9 release work is active.
+- Boundary: production remains build 36 with no Worldline surface; WLD-001 and
+  final whole-system acceptance remain open.
+
+## [2026-08-14] verification | Worldline complete Phase 8 integration candidate
+
+- Exact source: `e6620d47a` (tree `360ae1897`).
+- Verification: client 18/18, native Worldline 232, core Worldline 147,
+  standalone 311/311, CLI 169/169, compiled modules 6/6, deterministic SDK,
+  TypeScript/C# and ABI binding gates pass.
+- Live proof: fresh <=10.13 guests publish/execute on current and prior hosts;
+  10.14 publishes on current and is rejected by prior; typed capabilities/CLI
+  and exact detached-state/receipt restart recovery pass.
+- Evidence: [P8 integration record](../docs/evidence/WLD-001-phase8-integration-increment.md)
+  and [completion candidate](../docs/completions/COMP-P8-INTEGRATION-001.md).
+- Boundary: report-only complete Phase 8 audit pending; production remains
+  build 36 and Phase 9 plus final acceptance remain open.
+
+## [2026-08-14] acceptance | Worldline P8-OPS dependency
+
+- Product source: `4c0a2fce0` (tree `be85b77ab`).
+- Audit: report-only [AUD-WLD-054](../docs/audits/AUD-WLD-054.md) passes at
+  CHML `0/0/0/0` without remediation.
+- Result: the complete operator consoles, safe status, fixed-cardinality
+  telemetry, bounded Security Centre evidence and unified retention/GC controls
+  are accepted as a nonterminal internal Host dependency.
+- Boundary: P8-INTEGRATION is active; production remains build 36 and Phase 9
+  plus final acceptance remain open.
+
+## [2026-08-14] implementation | Worldline P8-OPS audit candidate
+
+- Exact product source: `4c0a2fce0` (tree `be85b77ab`).
+- Result: the complete 41-operation node console, shared Construct approval
+  controls, non-scanning content-free status, fixed-cardinality 50-route
+  telemetry, bounded Security Centre events and unified retention/GC controls
+  are implemented.
+- Verification: standalone 311/311, strict task-owned lint, config/auth/leak/
+  label invariants, embedded-script syntax and real isolated node/Construct
+  browser checks pass.
+- Evidence: [P8-OPS implementation record](../docs/evidence/WLD-001-phase8-operator-increment.md)
+  and [completion candidate](../docs/completions/COMP-P8-OPS-001.md).
+- Boundary: report-only audit pending; production remains build 36 and
+  P8-INTEGRATION, Phase 9 and final acceptance remain open.
+
+## [2026-08-14] acceptance | Worldline P8-SDK dependency
+
+- Product source: `85731ef8c` (tree `315191974`).
+- Audit: report-only [AUD-WLD-053](../docs/audits/AUD-WLD-053.md) passes at
+  CHML `0/0/0/0` without remediation.
+- Result: deterministic SDKs, exact old/new WASM compatibility, the complete
+  public lifecycle correction and replay/restart matrix are accepted as a
+  nonterminal internal dependency; P8-OPS is active.
+- Boundary: production remains build 36; P8-INTEGRATION, Phase 9 and final
+  acceptance remain open.
+
+## [2026-08-14] implementation | Worldline P8-SDK audit candidate
+
+- Exact product source: `85731ef8c` (tree `315191974`).
+- Result: deterministic Rust/TypeScript/C# artifacts and exact ABI 10.13/10.14
+  WASM fixtures pass the two-host compatibility matrix. The live smoke exposed
+  and closed the missing public Draft-to-Ready lifecycle action.
+- Runtime proof: fresh create, ready, resume, atomic failed operation, ABI 10.14
+  execution, exact replay, receipt query and restart recovery pass on the
+  isolated exact-pin host.
+- Evidence: [P8-SDK implementation record](../docs/evidence/WLD-001-phase8-sdk-increment.md)
+  and [completion candidate](../docs/completions/COMP-P8-SDK-001.md).
+- Boundary: audit pending; production remains build 36 and P8-OPS,
+  P8-INTEGRATION, Phase 9 and final acceptance remain open.
+
+## [2026-08-14] acceptance | Worldline P8-ABI dependency
+
+- Source: `ed8f9bf70` (tree `d67b06bb9`).
+- Audit: report-only [AUD-WLD-052](../docs/audits/AUD-WLD-052.md) passes at
+  CHML `0/0/0/0` without remediation.
+- Result: ABI 10.14, deterministic host staging, rollback, safe Rust bindings
+  and the stateless operation attribute are accepted as a nonterminal internal
+  source dependency; P8-SDK is active.
+- Boundary: no host build or guest WASM publication; source/stage remain build
+  37 and production remains build 36 with no Worldline surface.
+
+## [2026-08-14] implementation | Worldline P8-ABI candidate
+
+- Exact source: `ed8f9bf70` (tree `d67b06bb9`) implements fixed-width
+  context and bounded typed observation/effect/child calls through Wasmtime
+  ABI 10.14 and V8 sys 2.2.
+- Safety: canonical decode, stable errnos, capability and transaction gates,
+  pointer prevalidation, host-derived IDs and exact rollback checkpoints.
+- Verification: codec 1/1, safe bindings 1/1, full trybuild, adversarial 3/3,
+  compatibility 1/1, Worldline 231/231 and core Worldline 147/147 pass, plus
+  one intentional ignore in each broad suite.
+- Evidence: [implementation record](../docs/evidence/WLD-001-phase8-abi-increment.md)
+  and [completion report](../docs/completions/COMP-P8-ABI-001.md).
+- Boundary: Both-impact source only; build, WASM publish, production and final
+  audit remain open.
+
+## [2026-08-13] acceptance | Worldline P8-CLI dependency
+
+- Source: `f64f2a56c` (tree `3d53f4ce1`).
+- Audit: report-only [AUD-WLD-051](../docs/audits/AUD-WLD-051.md) passes at
+  CHML `0/0/0/0` without remediation.
+- Result: the complete typed HTTP/WebSocket CLI surface is accepted as a
+  nonterminal internal dependency and P8-ABI is active.
+- Boundary: no build, artifact or production change; source/stage remain build
+  37 and production remains build 36 with no Worldline surface.
+
+## [2026-08-13] implementation | Worldline P8-CLI candidate
+
+- Exact source: `f64f2a56c` (tree `3d53f4ce1`) exposes 51 typed HTTP commands
+  plus the native WebSocket subscriber through the real CLI command tree.
+- Safety: one 16 MiB-bounded typed request decoder, strict IDs/cursor pairs,
+  confirmation before authentication, exact response/problem DTOs and native
+  subscription ack/catch-up behavior.
+- Verification: Worldline CLI 11/11, whole CLI 169/169, full command-tree help,
+  actual binary help, package format and task-owned strict lint pass.
+- Evidence: [implementation record](../docs/evidence/WLD-001-phase8-cli-increment.md)
+  and [completion candidate](../docs/completions/COMP-P8-CLI-001.md).
+- Boundary: report-only audit is pending. This is not a build or production
+  promotion; production remains build 36 with no Worldline surface.
+
+## [2026-08-13] acceptance | Worldline P8-WS dependency
+
+- Source: `4ce260d19` (tree `bbb73aa45`).
+- Audit: report-only [AUD-WLD-050](../docs/audits/AUD-WLD-050.md) passes at
+  CHML `0/0/0/0` without remediation.
+- Result: the authenticated bounded native WebSocket transport is accepted as
+  a nonterminal internal dependency and P8-CLI is active.
+- Boundary: no build, artifact or production change; source/stage remain build
+  37 and production remains build 36 with no Worldline surface.
+
+## [2026-08-13] implementation | Worldline P8-WS native WebSocket candidate
+- Exact source: `4ce260d19` (tree `bbb73aa45`) routes authenticated API-v1 snapshots, ordered deltas, exact resume/gap/catch-up, acknowledgements, heartbeats, terminal events and typed closure through the native subscription plane.
+- Safety: auth/admission precede upgrade; authority refreshes periodically and before commands; send budgets release the Worldline lock; hot revocation and every disconnect release subscriber state.
+- Verification: protocol 17/17, native subscription 8/8, core Worldline 144 plus one intentional ignore, real WebSocket 6/6 and standalone Worldline 52/52 pass; task-owned lint is clean.
+- Evidence: [implementation record](../docs/evidence/WLD-001-phase8-websocket-increment.md) and [completion candidate](../docs/completions/COMP-P8-WS-001.md).
+- Boundary: report-only audit is pending. This is not a build or production promotion; production remains build 36 with no Worldline surface.
+
+## [2026-08-13] acceptance | Worldline P8-HOST dependency
+
+- Source: `9b6b78645` (tree `1d700d673`).
+- Audit: report-only [AUD-WLD-049](../docs/audits/AUD-WLD-049.md) passes at
+  CHML `0/0/0/0` without remediation.
+- Result: the complete authenticated host matrix is accepted as a nonterminal
+  internal dependency and P8-WS is active.
+- Boundary: no build, artifact or production change; production is build 36.
+
+## [2026-08-13] implementation | Complete Worldline P8-HOST candidate
+
+- Source: `9b6b78645` (tree `1d700d673`).
+- Updated: [Worldline Engine](engines/worldline-engine.md) records durable
+  effect intents/leases, bounded execution and compensation, explicit recovery,
+  typed retention holds and resumable tombstone-backed collection.
+- Evidence: [host maintenance increment](../docs/evidence/WLD-001-phase8-host-maintenance-increment.md).
+- Verified: client 16/16, native GC 25/25, effect 9/9, core Worldline 107/107
+  plus one intentional ignore, standalone Worldline 46/46 and datastore 234/234.
+- Boundary: P8-HOST is an audit candidate, not accepted or shipped. WebSocket,
+  CLI, ABI/bindings, SDK/WASM, operator, integration, release, production and
+  final whole-system gates remain; production is build 36.
+
+## [2026-08-13] implementation | Worldline distributed host orchestration
+
+- Source: `13f06d3bd` (tree `257042d12`).
+- Updated: [Worldline Engine](engines/worldline-engine.md) records host-owned
+  signed Fabric delivery, exact participant-route binding, durable descriptor
+  retry/recovery and atomic per-profile/shared-registry UCR trust.
+- Evidence: [distributed host orchestration](../docs/evidence/WLD-001-phase8-distributed-host-orchestration-increment.md).
+- Verified: client 14/14, core Worldline 142/142 plus one intentional
+  release-performance ignore, standalone Worldline 49/49 and focused
+  registry-restart/multi-profile trust proofs.
+- Boundary: P8-HOST remains active and unshipped. Effect, explicit recovery,
+  hold and GC routes and every later public/release gate remain open;
+  production remains build 36.
+
+## [2026-08-12] acceptance | Worldline P8-CONTRACT dependency
+
+- Source: 653067f98.
+- Audit: report-only [AUD-WLD-048](../docs/audits/AUD-WLD-048.md) passes at
+  CHML 0/0/0/0 without remediation.
+- Result: the canonical API-v1/ABI-10.14 transport contract and bounded native
+  discovery are accepted as a non-terminal internal dependency. P8-HOST is
+  active and P8-ABI is dependency-cleared.
+- Boundary: no public endpoint, ABI advertisement, artifact, build or
+  production change; production remains build 36.
+
+## [2026-08-12] implementation | Worldline P8-CONTRACT candidate
+
+- Added: [Worldline Engine](engines/worldline-engine.md) records the canonical
+  API-v1/ABI-10.14 typed contract, complete operation vocabulary, safe
+  problems/receipts and bounded authenticated native catalog discovery.
+- Evidence: [P8-CONTRACT implementation](../docs/evidence/WLD-001-phase8-contract-increment.md)
+  and [completion report](../docs/completions/COMP-P8-CONTRACT-001.md).
+- Verified: contract 7/7, durable discovery 3/3, manifest/recovery 16/16 and
+  both affected library checks.
+- Boundary: report-only product audit remains pending. No public route, ABI
+  advertisement, artifact, build or production state changed; production
+  remains build 36.
+
+## [2026-08-12] phase-acceptance | Complete Worldline Phase 7
+
+- Source: release `5615bd74b`; acceptance state `dae29ccfc` plus this
+  synchronization checkpoint.
+- Evidence: [P7-INTEGRATION completion report](../docs/completions/COMP-P7-INTEGRATION-001.md),
+  initial [AUD-WLD-044](../docs/audits/AUD-WLD-044.md), linked
+  [REM-AUD-WLD-044](../docs/remediations/REM-AUD-WLD-044.md) and passing
+  [AUD-WLD-045](../docs/audits/AUD-WLD-045.md).
+- Result: complete Phase 7/build 37 is accepted internally at CHML `0/0/0/0`.
+  Build 37 is not production-promoted; the public/local runtime remains prior
+  accepted build 36 with no Worldline surface.
+- Next: Phase 8 public APIs, ABI, bindings, SDK and observability source
+  grounding is active. WLD-001 remains incomplete through Phase 9 and the final
+  whole-system audit.
+
+## [2026-08-12] correction | Bound Worldline build storage to D
+
+- Source: [AUD-WLD-044](../docs/audits/AUD-WLD-044.md) and linked
+  [REM-AUD-WLD-044](../docs/remediations/REM-AUD-WLD-044.md)
+- Change: removed only the verified 62.339 GiB D: and 104.961 GiB C: disposable
+  Cargo roots after explicit approval; preserved source, context mirror, registry,
+  immutable build 37 and live build 36. Filesystem free space recovered 51.30
+  GiB on D: and 91.79 GiB on C:.
+- Durable rule: all further Fork Cargo work uses one bounded
+  `D:\CargoTargets\Fork\wld-active` cache with incremental compilation off;
+  C:, worktree-local targets and duplicate roots are forbidden. See
+  [Build & Test Gotchas](operations/build-and-test-gotchas.md).
+- Boundary: no product rebuild occurred. Phase 7 remains re-audit-pending and
+  Phase 8 remains blocked.
+
+## [2026-08-12] release-candidate | Worldline Phase 7 build 37
+
+- Source: implementation `7d888e9df`; exact release
+  `5615bd74b5f96f4e3594846c7d26058a967dc8ae`.
+- Verified: I1-I10 and the complete N/D/I exact-pin matrix; immutable
+  `v2.7.0-worldline-phase7-r1` standalone/CLI/updater stamps and hashes;
+  build-37 smoke/restart, accepted-build-36 rollback-copy and build-37 restore.
+- Evidence: [I1-I10 implementation record](../docs/evidence/WLD-001-phase7-integration-increment.md),
+  [completion candidate](../docs/completions/COMP-P7-INTEGRATION-001.md) and
+  [build-37 release evidence](../raw/engines/2026-08-12-worldline-phase7-build37.md).
+- Boundary: build 37 is a verified audit-pending Host candidate, not accepted or
+  production-promoted. Production remains accepted build 36 with no Worldline
+  surface. Phase 8 is still blocked on the independent complete-Phase-7
+  CHML-zero audit.
+
 ## [2026-08-12] acceptance | Worldline P7-DIST native distributed protocol
 
 - Accepted: report-only [AUD-WLD-042](../docs/audits/AUD-WLD-042.md) passes

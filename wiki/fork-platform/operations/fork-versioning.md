@@ -1,8 +1,8 @@
 # Fork versioning & drift detection
 
-> Sources: `SpacetimeDB/FORK-VERSION`; `SpacetimeDB/fork-version.json`; [machine-readable release state](../../docs/release-state.json); [staged-build registry](staged-builds-and-compat.md); [build-36 production promotion](../../raw/operations/2026-07-30-build36-production-promotion.md); [build-36 Construct release](../../raw/engines/2026-07-29-construct-build36.md)
-> Commit: 8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0
-> Updated: 2026-07-30
+> Sources: `SpacetimeDB/FORK-VERSION`; `SpacetimeDB/fork-version.json`; [machine-readable release state](../../docs/release-state.json); [staged-build registry](staged-builds-and-compat.md); [build-39 release evidence](../../raw/engines/2026-08-14-worldline-build39.md)
+> Commit: ea2478522e5dd4e714a242e46fe5a17bcf5b477d
+> Updated: 2026-08-14
 
 ## The problem
 
@@ -16,27 +16,32 @@ latest fork?" and "is this build ≥ the one I pinned?" had no cheap answer.
 
 A **monotonic fork build number** layered on top of the upstream base version.
 
-Current staged release: **fork build 36**, commit `8d4f4531e`, folder
-`v2.7.0-construct-r1`. It is accepted and production-promoted. It carries the
+Current staged release: **fork build 39**, commit `ea2478522`, folder
+`v2.7.0-worldline-build39-r1`. It is the current source, newest accepted
+immutable stage and live production release, served from the byte-identical D-only
+`v2.7.0-worldline-build39-r1-production` bundle. Build 39 carries the
 completed build-20 native Fabric
 orchestration platform, build-26 Security Centre, build-27
 `fabric_payload(speculation)` migration fix, the build-30
 [generic managed service plane](managed-service-plane.md), and the build-33
 [unified consumer registry](unified-consumer-registry.md), plus ABI 10.13
 [bounded native CINT microbatch ingest](../cmt/bounded-native-cint-batch-proposal.md),
-plus host-native [collaboration rooms](../web/native-constructs-proposal.md).
-Build 36 was production-promoted on 2026-07-30 from a byte-identical
-`v2.7.0-construct-r1-production` layout. The local node on port 3012 and public
-`app.weyaisoft.com` endpoint both report build 36 and exact commit
-`8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0`.
+plus host-native [collaboration rooms](../web/native-constructs-proposal.md),
+and the complete native [Worldline Engine](../engines/worldline-engine.md).
+The local node on port 3012 and public `app.weyaisoft.com` endpoint both report
+build 39 and exact commit
+`ea2478522e5dd4e714a242e46fe5a17bcf5b477d`. Artifact and runtime identity are
+represented explicitly in `docs/release-state.json` and checked by the semantic
+release audit.
 
-The observed build-36 runtime has CUDA compiled but GPU discovery disabled,
+The observed build-39 runtime has CUDA compiled but GPU discovery disabled,
 `accelerated=false`, and a configured 1 GiB per-index budget with no runtime
-device budget. All five Fabric-orchestration and all six adaptive-context
+device budget. All six Fabric-orchestration and all six adaptive-context
 facilities are configured/effective, CINT batch is effective, Security Centre
 is active, consumer registry and service hosting are present but ineffective,
 and Constructs are present but configured/effective false with no initialized
-catalog. The former LAN listener
+catalog. Worldlines are present/configured/effective for the exact
+create/execute/query/evaluate allowlist. The former LAN listener
 at `192.168.1.211:3000` last ran **build 17** (`ed64e1d0b`,
 `v2.7.0-pred004-r2`); it is now a preserved
 [legacy host](legacy-lan-host-retirement.md) whose service is stopped and

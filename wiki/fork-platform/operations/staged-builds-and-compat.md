@@ -1,8 +1,8 @@
 # Staged Builds & Guest/Host Compatibility
 
-> Sources: SpacetimeDB_Builds folder convention; [machine-readable release state](../../docs/release-state.json); ABI incident records (UTCP-LIVE, FIX-BLAST-WIRE); [build-36 production promotion](../../raw/operations/2026-07-30-build36-production-promotion.md); [build-34 rejection audit](../../docs/audits/AUD-CINT-BATCH-001.md); [build-35 CINT batch release](../../raw/engines/2026-07-29-cint-batch-build35.md); [build-36 Construct release](../../raw/engines/2026-07-29-construct-build36.md)
-> Commit: 8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0
-> Updated: 2026-07-30
+> Sources: SpacetimeDB_Builds folder convention; [machine-readable release state](../../docs/release-state.json); ABI incident records (UTCP-LIVE, FIX-BLAST-WIRE); [build-39 release evidence](../../raw/engines/2026-08-14-worldline-build39.md); [build-37 candidate evidence](../../raw/engines/2026-08-12-worldline-phase7-build37.md); [build-36 production promotion](../../raw/operations/2026-07-30-build36-production-promotion.md)
+> Repository source: ea2478522e5dd4e714a242e46fe5a17bcf5b477d
+> Updated: 2026-08-14
 
 ## Overview
 
@@ -13,15 +13,16 @@ usually `agent-starter.wasm` beside it, and `build.log`. The CLI stamps the
 git commit (`spacetimedb-cli --version`) — verify the stamp matches the
 code you think you shipped.
 
-## Version & commit registry (current stage verified 2026-07-30)
+## Version & commit registry (current accepted stage verified 2026-08-14)
 
-Repo version: **2.7.0** on upstream base **v2.7.0-hotfix1**. Current numbered
-stage: `v2.7.0-construct-r1` (fork build 36, source `8d4f4531e`).
+Repo version: **2.7.0** on upstream base **v2.7.0-hotfix1**. Newest verified and
+accepted stage: `v2.7.0-worldline-build39-r1` (fork build 39, source
+`ea2478522`); its byte-identical D-only production bundle is the live runtime.
 Build root: `D:/Projects/SpacetimeDB_Builds/` (release builds via
-`CARGO_TARGET_DIR=D:/Projects/SpacetimeDB_Builds/target`). The accepted
+the bounded `CARGO_TARGET_DIR=D:/CargoTargets/Fork/wld-active`). The accepted
 build-36 stage predates strict `bin/` packaging and stores its executables at
-the folder root; its byte-identical production bundle provides the canonical
-`bin/` layout without overwriting the accepted stage.
+the folder root. Build 39 uses the canonical `bin/` production layout without
+overwriting its immutable accepted stage.
 
 ### Fork build number (drift detection)
 
@@ -85,6 +86,9 @@ machine-readable in [docs/release-state.json](../../docs/release-state.json).
 | `v2.7.0-cint-batch-r2` | **35** | `6642d121c` | **CINT-BATCH-001 accepted release candidate.** ABI 10.13 ordered native microbatch results, SHA-256 retry identity, conflict rejection, legacy upgrade, atomic replacement, exact symbols/counts, guest/host hard bounds, hot deny-only `[cint-batch]` controls, status and bounded metrics. Build 35 makes a lowered live source budget reject only the offending item without consuming remaining budget. Exact staged host/WASM drills passed mixed results, retry, `Inserted/Conflict/Replaced/Unchanged`, `[Inserted, Rejected(source_limit), Inserted]`, hot disable/rollback, metrics, restart, compatible build-33 full-stage rollback and build-35 restore. Both host and guest; not production-promoted. Standalone SHA-256 `1C37D358FFB95FD611475C576AAF018EAD7AA9B68EEF4D2F12993D61A6CF1D4F`; CLI `CC5429E88F917411A1796D55ECBA08EDC4F9052BA7E304DECB9441D5CA4E219D`; causal-code WASM `D40960496E1D25403F927FFC17DA18FE9841C0D5F026ED09BCE741B0BB1FFA6B`. [Release evidence](../../raw/engines/2026-07-29-cint-batch-build35.md). |
 | `v2.7.0-construct-r1` | **36** | `8d4f4531e` | **CONSTRUCT-001 host-native collaboration rooms, accepted at CHML 0/0/0/0 and production-promoted on 2026-07-30.** Reserved host-owned RelationalDB catalog for rooms, admission, presence, ordered messages/events, blobs, delivery/acks, budgets, operator audit and idempotency; authenticated native HTTP/WebSocket, async-in/steer/turn-boundary tiers, exact-budget catch-up, caller-scoped SQL, operator UI, UCR checks, Security Centre, metrics/status, and typed unified config. Disabled/deny-by-default with restart-bound catalog initialization and hot revocation that closes connected sockets. Exact staged drills passed three-tier admission, replay, durable steer, 1,000 events, drain/ack, scoped SQL, blob full/range/dedup, WebSocket snapshots, operator controls, hot disable/emergency/revocation rollback, restart, build-35 compatibility rollback without touching 17 Construct files, and build-36 restore. Host only; no WASM rebuild. Standalone SHA-256 `287EBBFAA1FEBC6AACB56DFF3DBEB01DAA5210CBDBC61B599961A74A617EFE83`; CLI `03047C9D4A30A45A502E199DDF9E8E28A0F087AC1D0057067C1A96E3C38D6B9D`. [Release evidence](../../raw/engines/2026-07-29-construct-build36.md). |
 | `v2.7.0-construct-r1-production` | **36 production layout** | `8d4f4531e` | **Current production bundle.** New rollback-safe folder containing byte-identical accepted build-36 CLI, standalone, and updater under `bin/`. Source/target SHA-256 equality was verified before promotion. Local/public stamps, restart, explicit build-34 rollback, build-36 restore, public HTTP 200, and disabled/uninitialized Construct policy passed. [Promotion evidence](../../raw/operations/2026-07-30-build36-production-promotion.md). |
+| `v2.7.0-worldline-phase7-r1` | **37** | `5615bd74b` | **Complete native Phase 7 accepted internal Host stage; not production-promoted.** P7-NEST/P7-DIST/P7-INTEGRATION N1-N10/D1-D20/I1-I10, disk restart, snapshot/self-heal, exact fences, unchanged bounds, unified controls and content-free status. Rust 1.93 CUDA-default standalone/CLI/updater stamps and hashes pass; isolated build-37 smoke/restart, accepted-build-36 rollback-copy and build-37 restore pass. Initial AUD-WLD-044 storage finding is closed by REM-AUD-WLD-044; [AUD-WLD-045](../../docs/audits/AUD-WLD-045.md) accepts complete Phase 7 at CHML `0/0/0/0`. Host only; Phase 8 owns guest/public surfaces. Standalone SHA-256 `2C59CA535982F73E8E4A0B804CF5B97B2A229F3B6746FB95F9A1FB0777159827`; CLI `E8EC1C8FEDFDD87E5820A0CEB1C3BB1D208B6F76A4C30F5C00D9798A5275E131`. [Release evidence](../../raw/engines/2026-08-12-worldline-phase7-build37.md). |
+| `v2.7.0-worldline-build39-r1` | **39** | `ea2478522` | **Complete native Worldline Host/Guest release.** CUDA-default standalone/CLI/updater and ABI 10.13/10.14 WASM were built from one exact pin. Native 232/232, core 147/147, standalone 311/311, CLI 169/169, strict lint and unchanged optimized performance gates pass. Old/new publication, native replay, restart, accepted-build-36 copied-root rollback and build-39 restore pass. Standalone SHA-256 `13AFC61EB3602F27795A2D3B795FE28464238C63A04BFE62765E457C06D03E33`. [Release evidence](../../raw/engines/2026-08-14-worldline-build39.md). |
+| `v2.7.0-worldline-build39-r1-production` | **39 production layout** | `ea2478522` | **Current production bundle.** Byte-identical build-39 artifacts, data and hardened JWT keys all reside under the D bundle. The stopped-state migration compared 304,073 files exactly. Local/public version, status and capabilities agree; allowlisted create/execute/query/evaluate, replay and restart recovery pass while higher-risk operations remain denied. |
 | `v2.7.0-tls001` | **21** | `4ce716287` | **Superseded by build 22** (same TLS-001 content, but GPU-off — build 22 carries TLS-001 *and* GPU). **TLS-001 native TLS + ACME + public domain routing, DONE + live-proven** (4-lens adversarial audit → 0 C/H/M; [COMP-TLS-001](../../docs/completions/COMP-TLS-001.md), [AUD-TLS-001](../../docs/audits/AUD-TLS-001.md)). Opt-in native TLS edge in `crates/standalone/src/tls/`: tokio-rustls SNI hot-swap (renewals never restart, open connections survive), instant-acme HTTP-01 issuance + renewal daemon, atomic host-side cert store (`bundle.pem` 0600, no key material in tables/status/logs/errors), fail-closed `domain → app` registry (unknown/missing/public-IP Host → 421, trusted-proxy-only forwarded headers, disabled evicted, expired refused), typed `tls.*` host-config + admin-gated domain API + secret-free status endpoint. **Default (no `[tls]`) builds byte-identical.** All 5 acceptance criteria proven live vs a running host + local Pebble ACME (issuance E2E chaining to Pebble root, forced-renewal hot-swap keeping an open TLS connection alive, 421 fail-closed, spoofed forwarded ignored, zero key material, self-signed dev mode). **⚠ Default features — GPU OFF** (TLS-001 is host-side + GPU-orthogonal; a `--features cuda` build 21 from the same commit is the step for a GPU-serving promotion). **Newest validated stage; NOT LAN-promoted** — `:3000` stays 17, the AI-Collab node stays 20. Standalone SHA-256 `4BAA3DB4324EFB000F454FB20CFB12869862B83D18F8274C1CD9AD277AC9249D`. |
 | `v2.7.0-pred006-r3` | **20** | `73fb27f6e` | **Remediated + DONE PRED-006, live-proven** (AUD-PRED-008 1 High + 4 Medium → fixes → [AUD-PRED-010](../../docs/audits/AUD-PRED-010.md) 0 C/H/M). H1 completed: `fail_work_node` returns a node to Pending while retry budget remains AND writes a Failed receipt only on a *terminal* failure (a receipt marks a node done; `ready_work_nodes` excludes it). M2: `reserve_resource` renews in place instead of panicking on idempotent retry-after-expiry. **Live behavioural drill (operator identity, isolated `:3094`): claim→fail→RE-CLAIM succeeds→fail→claim rejected; final node Failed/attempt_count=2; M2 re-reserve-after-expiry OK, one renewed row, no panic.** CUDA host + fixed `fabric_demo` wasm (staged wasm byte-identical to the drilled one). **⚠ Module ABI 10.11→10.12** — rollback off an 18+ node is **full-stage** (host + build-17 data/module), never host-only. Completed PRED-006 stage; later stages carry it. **NOT LAN-promoted** — `:3000` stays 17. Standalone SHA-256 `C7099B5CAF175C183D1C358D895A70F3B2EEC56918333893FD5A5A0E8C579805`. |
 
@@ -107,15 +111,16 @@ folders remain, and removed the last 2.4.1-era artifact (a 62 GB *cargo cache*
 at `D:\SpacetimeDB_Builds\v2.4.1`, `debug/`+`release/` — build output, never a
 deployable host). Do not plan a rollback below the 2.7.0 staged line.
 
-The newest numbered stage is **`v2.7.0-construct-r1`** (fork build 36,
-`8d4f4531e`). Its standalone SHA-256 is
-`287EBBFAA1FEBC6AACB56DFF3DBEB01DAA5210CBDBC61B599961A74A617EFE83`.
-It is the accepted host-only
-[Native Constructs release](../web/native-constructs-proposal.md). Its
-byte-identical `v2.7.0-construct-r1-production` bundle is the current
-public/local executable. Build 35 remains the accepted host+guest CINT batch
-stage, and build 34 remains rejected audit and rollback evidence. Builds 31/32
-remain rejected, incomplete or superseded evidence.
+The newest verified and accepted stage is
+**`v2.7.0-worldline-build39-r1`** (fork build 39, `ea2478522`), with standalone
+SHA-256
+`13AFC61EB3602F27795A2D3B795FE28464238C63A04BFE62765E457C06D03E33`.
+Its byte-identical `v2.7.0-worldline-build39-r1-production` bundle is the
+current public/local executable. Build 37 remains an accepted internal Host
+rollback point; build 36 remains the prior accepted production rollback source;
+build 35 remains the accepted host+guest CINT batch stage; build 34 remains
+rejected audit evidence. Builds 31/32 remain rejected, incomplete or
+superseded evidence.
 The historical
 LAN-promoted host was
 **`v2.7.0-pred004-r2`** (fork build 17, `ed64e1d0b`). LAN-LEGACY-001 later

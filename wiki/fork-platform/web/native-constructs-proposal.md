@@ -4,9 +4,10 @@
 > [complete CONSTRUCT-001 plan](../../docs/plans/CONSTRUCT-001-native-collaboration-rooms.md);
 > [build-36 release evidence](../../raw/engines/2026-07-29-construct-build36.md);
 > [AI-Collab-v3 source request](../../../AI-Collab-v3/docs/fork-requests/FR-native-construct-rooms.md)
-> Commit: 8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0
-> Updated: 2026-07-30
-> Status: Shipped and production-promoted in Fork build 36
+> Origin commit: 8d4f4531e90e1a2292c0e163f32509d8fdf7c8a0
+> Updated: 2026-08-14
+> Status: Shipped and production-promoted in Fork build 36; carried by
+> production build 39 with configured/effective false and catalog uninitialized
 
 ## What shipped
 
@@ -121,8 +122,9 @@ records:
   byte-exact preservation of the reserved catalog;
 - exact staged CLI/host stamps and binary hashes.
 
-The final report-only audit passes at CHML `0/0/0/0`. Production promotion
-remains a separate owner decision.
+The final report-only audit passes at CHML `0/0/0/0`. Build 36 was subsequently
+production-promoted; build 39 now carries the capability while retaining the
+deny-by-default disabled and uninitialized policy.
 
 ## See also
 

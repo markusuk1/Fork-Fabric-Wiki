@@ -2,7 +2,7 @@
 
 > Sources: [UCR-001 implementation plan](../../docs/plans/UCR-001-unified-consumer-registry.md); [source re-audit](../../docs/audits/AUD-UCR-003.md); [completion evidence](../../docs/completions/COMP-UCR-001.md); [production promotion](../../raw/operations/2026-07-29-build33-production-promotion.md); [current release state](../../docs/release-state.json)
 > Commit: 2c82d1b3560bb1eb454f5b9e0064b0970e8fd36a
-> Updated: 2026-07-30
+> Updated: 2026-08-14
 
 ## Purpose and ownership
 
@@ -148,10 +148,11 @@ incomplete warning-stream evidence, not a deployable stage. Build 33 is the
 first accepted UCR release and was production-promoted on 2026-07-29.
 
 Build 33's 2026-07-29 promotion retained the existing deny-by-default policy.
-Build 36 superseded it in production on 2026-07-30 and carries the same
-consumer-registry capability; `/v1/status` reports it disabled/effective false.
-Enabling the registry remains an explicit unified-config decision rather than
-a side effect of installing a capable binary. The former
+Build 36 superseded it on 2026-07-30, and production build 39 now carries the
+same consumer-registry capability; `/v1/status` reports it
+disabled/effective false. Enabling the registry remains an explicit
+unified-config decision rather than a side effect of installing a capable
+binary. The former
 port-3000 build-17 host remains
 [disabled legacy state](legacy-lan-host-retirement.md).
 
